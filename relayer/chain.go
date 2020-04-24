@@ -226,7 +226,7 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 	defer src.UseSDKContext()()
 	return auth.NewTxBuilder(
 		auth.DefaultTxEncoder(src.Amino.Codec), acc.GetAccountNumber(),
-		acc.GetSequence(), src.Gas, src.GasAdjustment, false, src.ChainID,
+		acc.GetSequence(), src.Gas+10000, src.GasAdjustment, false, src.ChainID,
 		src.Memo, sdk.NewCoins(), src.getGasPrices()).WithKeybase(src.Keybase).
 		BuildAndSign(src.Key, ckeys.DefaultKeyPass, datagram)
 }

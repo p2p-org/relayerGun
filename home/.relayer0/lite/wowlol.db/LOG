@@ -1,0 +1,2237 @@
+=============== Apr 23, 2020 (MSK) ===============
+17:02:22.483570 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:22.507099 db@open opening
+17:02:22.508373 version@stat F·[] S·0B[] Sc·[]
+17:02:22.518686 db@janitor F·2 G·0
+17:02:22.518812 db@open done T·11.627308ms
+17:02:22.656596 db@close closing
+17:02:22.656926 db@close done T·326.312µs
+=============== Apr 23, 2020 (MSK) ===============
+17:02:22.916543 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:22.916855 version@stat F·[] S·0B[] Sc·[]
+17:02:22.916882 db@open opening
+17:02:22.916957 journal@recovery F·1
+17:02:22.917389 journal@recovery recovering @1
+17:02:22.928662 memdb@flush created L0@2 N·3 S·691B "sh/..018,v1":"vs/..018,v2"
+17:02:22.929281 version@stat F·[1] S·691B[691B] Sc·[0.25]
+17:02:22.968635 db@janitor F·3 G·0
+17:02:22.968717 db@open done T·51.814909ms
+17:02:22.969828 db@close closing
+17:02:22.970090 db@close done T·257.886µs
+=============== Apr 23, 2020 (MSK) ===============
+17:02:29.629879 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:29.630389 version@stat F·[1] S·691B[691B] Sc·[0.25]
+17:02:29.630447 db@open opening
+17:02:29.630594 journal@recovery F·1
+17:02:29.633815 journal@recovery recovering @3
+17:02:29.634303 version@stat F·[1] S·691B[691B] Sc·[0.25]
+17:02:29.663654 db@janitor F·3 G·0
+17:02:29.663716 db@open done T·33.242465ms
+17:02:29.710217 db@close closing
+17:02:29.710776 db@close done T·553.861µs
+=============== Apr 23, 2020 (MSK) ===============
+17:02:34.358326 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:34.359349 version@stat F·[1] S·691B[691B] Sc·[0.25]
+17:02:34.359477 db@open opening
+17:02:34.359734 journal@recovery F·1
+17:02:34.360612 journal@recovery recovering @5
+17:02:34.376006 memdb@flush created L0@7 N·3 S·725B "sh/..019,v5":"vs/..019,v6"
+17:02:34.377732 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+17:02:34.420557 db@janitor F·4 G·0
+17:02:34.420615 db@open done T·61.083368ms
+17:02:34.471435 db@close closing
+17:02:34.472100 db@close done T·659.747µs
+=============== Apr 23, 2020 (MSK) ===============
+17:02:44.363412 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:44.363946 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+17:02:44.364013 db@open opening
+17:02:44.364202 journal@recovery F·1
+17:02:44.365228 journal@recovery recovering @8
+17:02:44.378324 memdb@flush created L0@10 N·3 S·750B "sh/..020,v9":"vs/..020,v10"
+17:02:44.379519 version@stat F·[3] S·2KiB[2KiB] Sc·[0.75]
+17:02:44.431175 db@janitor F·5 G·0
+17:02:44.431235 db@open done T·67.194908ms
+17:02:44.531851 db@close closing
+17:02:44.532365 db@close done T·509.283µs
+=============== Apr 23, 2020 (MSK) ===============
+17:02:54.363605 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:02:54.364273 version@stat F·[3] S·2KiB[2KiB] Sc·[0.75]
+17:02:54.364358 db@open opening
+17:02:54.364556 journal@recovery F·1
+17:02:54.369552 journal@recovery recovering @11
+17:02:54.382093 memdb@flush created L0@13 N·3 S·716B "sh/..022,v13":"vs/..022,v14"
+17:02:54.383056 version@stat F·[4] S·2KiB[2KiB] Sc·[1.00]
+17:02:54.422331 db@janitor F·6 G·0
+17:02:54.422398 db@open done T·58.001804ms
+17:02:54.422500 table@compaction L0·4 -> L1·0 S·2KiB Q·16
+17:02:54.432589 table@build created L1@16 N·9 S·1KiB "sh/..018,v1":"vs/..022,v14"
+17:02:54.433285 version@stat F·[0 1] S·1KiB[0B 1KiB] Sc·[0.00 0.00]
+17:02:54.468885 table@compaction committed F-3 S-1KiB Ke·0 D·3 T·46.310271ms
+17:02:54.469807 table@remove removed @10
+17:02:54.470012 table@remove removed @7
+17:02:54.480316 table@remove removed @2
+17:02:54.480641 db@close closing
+17:02:54.480836 db@close done T·191.031µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:04.363714 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:04.364190 version@stat F·[0 1] S·1KiB[0B 1KiB] Sc·[0.00 0.00]
+17:03:04.364275 db@open opening
+17:03:04.364467 journal@recovery F·1
+17:03:04.369926 journal@recovery recovering @14
+17:03:04.383466 memdb@flush created L0@17 N·3 S·691B "sh/..024,v17":"vs/..024,v18"
+17:03:04.384709 version@stat F·[1 1] S·2KiB[691B 1KiB] Sc·[0.25 0.00]
+17:03:04.425957 db@janitor F·5 G·1
+17:03:04.426003 db@janitor removing table-13
+17:03:04.426191 db@open done T·61.876827ms
+17:03:04.494339 db@close closing
+17:03:04.494716 db@close done T·372.386µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:14.363799 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:14.364335 version@stat F·[1 1] S·2KiB[691B 1KiB] Sc·[0.25 0.00]
+17:03:14.365208 db@open opening
+17:03:14.365465 journal@recovery F·1
+17:03:14.366899 journal@recovery recovering @18
+17:03:14.384910 memdb@flush created L0@20 N·3 S·716B "sh/..026,v21":"vs/..026,v22"
+17:03:14.386436 version@stat F·[2 1] S·3KiB[1KiB 1KiB] Sc·[0.50 0.00]
+17:03:14.437349 db@janitor F·5 G·0
+17:03:14.437405 db@open done T·72.154171ms
+17:03:14.516831 db@close closing
+17:03:14.517285 db@close done T·449.658µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:14.548662 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:14.549153 version@stat F·[2 1] S·3KiB[1KiB 1KiB] Sc·[0.50 0.00]
+17:03:14.549220 db@open opening
+17:03:14.549384 journal@recovery F·1
+17:03:14.551194 journal@recovery recovering @21
+17:03:14.562424 memdb@flush created L0@23 N·3 S·693B "sh/..028,v25":"vs/..028,v26"
+17:03:14.563767 version@stat F·[3 1] S·3KiB[2KiB 1KiB] Sc·[0.75 0.00]
+17:03:14.611211 db@janitor F·6 G·0
+17:03:14.611262 db@open done T·62.009872ms
+17:03:14.637137 db@close closing
+17:03:14.637493 db@close done T·350.378µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:24.554022 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:24.554538 version@stat F·[3 1] S·3KiB[2KiB 1KiB] Sc·[0.75 0.00]
+17:03:24.554627 db@open opening
+17:03:24.554847 journal@recovery F·1
+17:03:24.556186 journal@recovery recovering @24
+17:03:24.557638 version@stat F·[3 1] S·3KiB[2KiB 1KiB] Sc·[0.75 0.00]
+17:03:24.595349 db@janitor F·6 G·0
+17:03:24.595419 db@open done T·40.755523ms
+17:03:24.646284 db@close closing
+17:03:24.646925 db@close done T·632.56µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:34.552629 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:34.553166 version@stat F·[3 1] S·3KiB[2KiB 1KiB] Sc·[0.75 0.00]
+17:03:34.553278 db@open opening
+17:03:34.553466 journal@recovery F·1
+17:03:34.554044 journal@recovery recovering @26
+17:03:34.566616 memdb@flush created L0@28 N·3 S·717B "sh/..030,v29":"vs/..030,v30"
+17:03:34.568633 version@stat F·[4 1] S·4KiB[2KiB 1KiB] Sc·[1.00 0.00]
+17:03:34.617099 db@janitor F·7 G·0
+17:03:34.617162 db@open done T·63.851187ms
+17:03:34.617289 table@compaction L0·4 -> L1·1 S·4KiB Q·32
+17:03:34.633083 table@build created L1@31 N·17 S·3KiB "sh/..018,v1":"vs/..030,v30"
+17:03:34.633819 version@stat F·[0 1] S·3KiB[0B 3KiB] Sc·[0.00 0.00]
+17:03:34.654231 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·36.857594ms
+17:03:34.655168 table@remove removed @23
+17:03:34.655584 table@remove removed @20
+17:03:34.655803 table@remove removed @17
+17:03:34.655985 table@remove removed @16
+17:03:34.674698 db@close closing
+17:03:34.674949 db@close done T·245.124µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:44.549585 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:44.550103 version@stat F·[0 1] S·3KiB[0B 3KiB] Sc·[0.00 0.00]
+17:03:44.550163 db@open opening
+17:03:44.550338 journal@recovery F·1
+17:03:44.551241 journal@recovery recovering @29
+17:03:44.564970 memdb@flush created L0@32 N·3 S·703B "sh/..032,v33":"vs/..032,v34"
+17:03:44.570418 version@stat F·[1 1] S·3KiB[703B 3KiB] Sc·[0.25 0.00]
+17:03:44.627097 db@janitor F·5 G·1
+17:03:44.627131 db@janitor removing table-28
+17:03:44.627317 db@open done T·77.127976ms
+17:03:44.705903 db@close closing
+17:03:44.706359 db@close done T·451.568µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:54.554294 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:54.554885 version@stat F·[1 1] S·3KiB[703B 3KiB] Sc·[0.25 0.00]
+17:03:54.554979 db@open opening
+17:03:54.555225 journal@recovery F·1
+17:03:54.555938 journal@recovery recovering @33
+17:03:54.568198 memdb@flush created L0@35 N·3 S·717B "sh/..034,v37":"vs/..034,v38"
+17:03:54.571440 version@stat F·[2 1] S·4KiB[1KiB 3KiB] Sc·[0.50 0.00]
+17:03:54.616106 db@janitor F·5 G·0
+17:03:54.616148 db@open done T·61.131393ms
+17:03:54.698714 db@close closing
+17:03:54.699093 db@close done T·373.442µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:55.634731 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:55.635246 version@stat F·[2 1] S·4KiB[1KiB 3KiB] Sc·[0.50 0.00]
+17:03:55.635313 db@open opening
+17:03:55.635502 journal@recovery F·1
+17:03:55.636317 journal@recovery recovering @36
+17:03:55.654014 memdb@flush created L0@38 N·3 S·693B "sh/..036,v41":"vs/..036,v42"
+17:03:55.658268 version@stat F·[3 1] S·5KiB[2KiB 3KiB] Sc·[0.75 0.00]
+17:03:55.722868 db@janitor F·6 G·0
+17:03:55.722916 db@open done T·87.572153ms
+17:03:55.777087 db@close closing
+17:03:55.777330 db@close done T·239.813µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:56.003800 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:56.004485 version@stat F·[3 1] S·5KiB[2KiB 3KiB] Sc·[0.75 0.00]
+17:03:56.004578 db@open opening
+17:03:56.004825 journal@recovery F·1
+17:03:56.005744 journal@recovery recovering @39
+17:03:56.018593 memdb@flush created L0@41 N·3 S·727B "sh/..037,v45":"vs/..037,v46"
+17:03:56.020614 version@stat F·[4 1] S·5KiB[2KiB 3KiB] Sc·[1.00 0.00]
+17:03:56.058827 db@janitor F·7 G·0
+17:03:56.058902 db@open done T·54.278355ms
+17:03:56.058997 table@compaction L0·4 -> L1·1 S·5KiB Q·48
+17:03:56.069715 table@build created L1@44 N·25 S·4KiB "sh/..018,v1":"vs/..037,v46"
+17:03:56.069811 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:56.079491 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.432349ms
+17:03:56.080198 table@remove removed @38
+17:03:56.080433 table@remove removed @35
+17:03:56.080575 table@remove removed @32
+17:03:56.080782 table@remove removed @31
+17:03:56.093289 db@close closing
+17:03:56.093394 db@close done T·102.206µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:56.362283 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:56.362875 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:56.362954 db@open opening
+17:03:56.363174 journal@recovery F·1
+17:03:56.367432 journal@recovery recovering @42
+17:03:56.368440 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:56.412400 db@janitor F·4 G·1
+17:03:56.412455 db@janitor removing table-41
+17:03:56.412666 db@open done T·49.678539ms
+17:03:56.473954 db@close closing
+17:03:56.474334 db@close done T·374.186µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:56.964652 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:56.965284 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:56.965440 db@open opening
+17:03:56.965635 journal@recovery F·1
+17:03:56.970538 journal@recovery recovering @45
+17:03:56.971781 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:57.007454 db@janitor F·3 G·0
+17:03:57.007505 db@open done T·42.033351ms
+17:03:57.047542 db@close closing
+17:03:57.047906 db@close done T·356.165µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:57.947687 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:57.948131 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:57.948206 db@open opening
+17:03:57.948407 journal@recovery F·1
+17:03:57.949256 journal@recovery recovering @47
+17:03:57.952416 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:58.009215 db@janitor F·3 G·0
+17:03:58.009273 db@open done T·61.033575ms
+17:03:58.090811 db@close closing
+17:03:58.091157 db@close done T·340.694µs
+=============== Apr 23, 2020 (MSK) ===============
+17:03:59.758532 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:03:59.759170 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:59.759279 db@open opening
+17:03:59.759512 journal@recovery F·1
+17:03:59.760293 journal@recovery recovering @49
+17:03:59.764494 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:03:59.820861 db@janitor F·3 G·0
+17:03:59.820938 db@open done T·61.614256ms
+17:03:59.970499 db@close closing
+17:03:59.970861 db@close done T·353.737µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:03.258151 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:03.258686 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:04:03.258778 db@open opening
+17:04:03.258976 journal@recovery F·1
+17:04:03.259833 journal@recovery recovering @51
+17:04:03.260950 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:04:03.325951 db@janitor F·3 G·0
+17:04:03.326009 db@open done T·67.20119ms
+17:04:03.389387 db@close closing
+17:04:03.390154 db@close done T·759.976µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:05.644620 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:05.645031 version@stat F·[0 1] S·4KiB[0B 4KiB] Sc·[0.00 0.00]
+17:04:05.645090 db@open opening
+17:04:05.645221 journal@recovery F·1
+17:04:05.646305 journal@recovery recovering @53
+17:04:05.657947 memdb@flush created L0@55 N·3 S·751B "sh/..038,v49":"vs/..038,v50"
+17:04:05.659442 version@stat F·[1 1] S·5KiB[751B 4KiB] Sc·[0.25 0.00]
+17:04:05.716571 db@janitor F·4 G·0
+17:04:05.716628 db@open done T·71.508854ms
+17:04:05.763163 db@close closing
+17:04:05.764000 db@close done T·830.881µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:05.969976 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:05.970455 version@stat F·[1 1] S·5KiB[751B 4KiB] Sc·[0.25 0.00]
+17:04:05.970538 db@open opening
+17:04:05.970725 journal@recovery F·1
+17:04:05.971703 journal@recovery recovering @56
+17:04:05.985779 memdb@flush created L0@58 N·3 S·751B "sh/..039,v53":"vs/..039,v54"
+17:04:05.987344 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:06.031214 db@janitor F·5 G·0
+17:04:06.031276 db@open done T·60.698334ms
+17:04:06.079201 db@close closing
+17:04:06.079544 db@close done T·339.065µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:06.353260 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:06.353861 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:06.353963 db@open opening
+17:04:06.354194 journal@recovery F·1
+17:04:06.355070 journal@recovery recovering @59
+17:04:06.359203 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:06.394868 db@janitor F·5 G·0
+17:04:06.394919 db@open done T·40.907882ms
+17:04:06.436448 db@close closing
+17:04:06.436857 db@close done T·403.579µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:06.891072 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:06.891569 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:06.891639 db@open opening
+17:04:06.891822 journal@recovery F·1
+17:04:06.892661 journal@recovery recovering @61
+17:04:06.894039 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:06.934852 db@janitor F·5 G·0
+17:04:06.934912 db@open done T·43.246016ms
+17:04:06.965428 db@close closing
+17:04:06.965744 db@close done T·311.213µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:07.814838 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:07.815339 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:07.815412 db@open opening
+17:04:07.815623 journal@recovery F·1
+17:04:07.816280 journal@recovery recovering @63
+17:04:07.817612 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:07.859620 db@janitor F·5 G·0
+17:04:07.859668 db@open done T·44.225997ms
+17:04:07.888788 db@close closing
+17:04:07.888980 db@close done T·189.811µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:09.590177 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:09.590601 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:09.590675 db@open opening
+17:04:09.590840 journal@recovery F·1
+17:04:09.591477 journal@recovery recovering @65
+17:04:09.592899 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:09.659716 db@janitor F·5 G·0
+17:04:09.659771 db@open done T·69.059528ms
+17:04:09.702030 db@close closing
+17:04:09.710774 db@close done T·8.740903ms
+=============== Apr 23, 2020 (MSK) ===============
+17:04:13.029499 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:13.029835 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:13.029895 db@open opening
+17:04:13.030094 journal@recovery F·1
+17:04:13.031038 journal@recovery recovering @67
+17:04:13.031858 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:13.077995 db@janitor F·5 G·0
+17:04:13.078053 db@open done T·48.115414ms
+17:04:13.136615 db@close closing
+17:04:13.137424 db@close done T·802.138µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:15.736559 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:15.737066 version@stat F·[2 1] S·6KiB[1KiB 4KiB] Sc·[0.50 0.00]
+17:04:15.737167 db@open opening
+17:04:15.737375 journal@recovery F·1
+17:04:15.739174 journal@recovery recovering @69
+17:04:15.751149 memdb@flush created L0@71 N·3 S·751B "sh/..040,v57":"vs/..040,v58"
+17:04:15.752960 version@stat F·[3 1] S·6KiB[2KiB 4KiB] Sc·[0.75 0.00]
+17:04:15.809217 db@janitor F·6 G·0
+17:04:15.809286 db@open done T·72.070298ms
+17:04:15.861254 db@close closing
+17:04:15.862134 db@close done T·865.803µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:16.063705 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:16.064682 version@stat F·[3 1] S·6KiB[2KiB 4KiB] Sc·[0.75 0.00]
+17:04:16.064797 db@open opening
+17:04:16.065050 journal@recovery F·1
+17:04:16.066547 journal@recovery recovering @72
+17:04:16.080521 memdb@flush created L0@74 N·3 S·751B "sh/..041,v61":"vs/..041,v62"
+17:04:16.082332 version@stat F·[4 1] S·7KiB[2KiB 4KiB] Sc·[1.00 0.00]
+17:04:16.139808 db@janitor F·7 G·0
+17:04:16.139866 db@open done T·75.022905ms
+17:04:16.139988 table@compaction L0·4 -> L1·1 S·7KiB Q·64
+17:04:16.151101 table@build created L1@77 N·33 S·5KiB "sh/..018,v1":"vs/..041,v62"
+17:04:16.151376 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:16.168695 db@close closing
+17:04:16.170543 table@commit exiting
+17:04:16.171249 db@close done T·2.549005ms
+=============== Apr 23, 2020 (MSK) ===============
+17:04:16.413366 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:16.414126 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:16.414218 db@open opening
+17:04:16.414449 journal@recovery F·1
+17:04:16.415579 journal@recovery recovering @75
+17:04:16.420116 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:16.476263 db@janitor F·8 G·5
+17:04:16.476305 db@janitor removing table-74
+17:04:16.476529 db@janitor removing table-58
+17:04:16.476710 db@janitor removing table-71
+17:04:16.476893 db@janitor removing table-55
+17:04:16.477041 db@janitor removing table-44
+17:04:16.477257 db@open done T·63.005754ms
+17:04:16.512601 db@close closing
+17:04:16.512960 db@close done T·354.743µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:16.951258 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:16.951488 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:16.951518 db@open opening
+17:04:16.951613 journal@recovery F·1
+17:04:16.952441 journal@recovery recovering @78
+17:04:16.957086 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:17.012904 db@janitor F·3 G·0
+17:04:17.012934 db@open done T·61.401021ms
+17:04:17.045309 db@close closing
+17:04:17.045602 db@close done T·270.485µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:17.937292 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:17.937575 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:17.937605 db@open opening
+17:04:17.937680 journal@recovery F·1
+17:04:17.938202 journal@recovery recovering @80
+17:04:17.939206 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:17.981723 db@janitor F·3 G·0
+17:04:17.981781 db@open done T·44.159201ms
+17:04:18.011481 db@close closing
+17:04:18.011765 db@close done T·280.068µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:19.744730 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:19.745252 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:19.745294 db@open opening
+17:04:19.745381 journal@recovery F·1
+17:04:19.745989 journal@recovery recovering @82
+17:04:19.746968 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:19.777566 db@janitor F·3 G·0
+17:04:19.777601 db@open done T·32.289376ms
+17:04:19.816957 db@close closing
+17:04:19.817427 db@close done T·463.158µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:23.103322 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:23.103870 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:23.103956 db@open opening
+17:04:23.104166 journal@recovery F·1
+17:04:23.105024 journal@recovery recovering @84
+17:04:23.106028 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:23.189367 db@janitor F·3 G·0
+17:04:23.189444 db@open done T·85.447476ms
+17:04:23.245423 db@close closing
+17:04:23.246240 db@close done T·809.868µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:25.874921 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:25.875448 version@stat F·[0 1] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+17:04:25.875514 db@open opening
+17:04:25.875698 journal@recovery F·1
+17:04:25.876898 journal@recovery recovering @86
+17:04:25.889085 memdb@flush created L0@88 N·3 S·717B "sh/..042,v65":"vs/..042,v66"
+17:04:25.890474 version@stat F·[1 1] S·6KiB[717B 5KiB] Sc·[0.25 0.00]
+17:04:25.932353 db@janitor F·4 G·0
+17:04:25.932416 db@open done T·56.877347ms
+17:04:25.986021 db@close closing
+17:04:25.986696 db@close done T·670.313µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:26.169270 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:26.169904 version@stat F·[1 1] S·6KiB[717B 5KiB] Sc·[0.25 0.00]
+17:04:26.169990 db@open opening
+17:04:26.170211 journal@recovery F·1
+17:04:26.171624 journal@recovery recovering @89
+17:04:26.185545 memdb@flush created L0@91 N·3 S·727B "sh/..043,v69":"vs/..043,v70"
+17:04:26.187174 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:26.225203 db@janitor F·5 G·0
+17:04:26.225266 db@open done T·55.234379ms
+17:04:26.255644 db@close closing
+17:04:26.256067 db@close done T·417.956µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:26.527109 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:26.527820 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:26.527913 db@open opening
+17:04:26.528149 journal@recovery F·1
+17:04:26.529083 journal@recovery recovering @92
+17:04:26.531914 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:26.567214 db@janitor F·5 G·0
+17:04:26.567277 db@open done T·39.322874ms
+17:04:26.605543 db@close closing
+17:04:26.605934 db@close done T·386.745µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:27.111722 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:27.112246 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:27.112331 db@open opening
+17:04:27.112558 journal@recovery F·1
+17:04:27.113409 journal@recovery recovering @94
+17:04:27.114928 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:27.176566 db@janitor F·5 G·0
+17:04:27.176622 db@open done T·64.257295ms
+17:04:27.207857 db@close closing
+17:04:27.208165 db@close done T·303.837µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:28.143762 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:28.144302 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:28.144395 db@open opening
+17:04:28.144619 journal@recovery F·1
+17:04:28.145511 journal@recovery recovering @96
+17:04:28.147275 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:28.192031 db@janitor F·5 G·0
+17:04:28.192089 db@open done T·47.650294ms
+17:04:28.224588 db@close closing
+17:04:28.224950 db@close done T·354.231µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:29.857573 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:29.857950 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:29.858009 db@open opening
+17:04:29.858162 journal@recovery F·1
+17:04:29.858655 journal@recovery recovering @98
+17:04:29.859765 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:29.899209 db@janitor F·5 G·0
+17:04:29.899269 db@open done T·41.203007ms
+17:04:29.930605 db@close closing
+17:04:29.930916 db@close done T·307.086µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:33.241889 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:33.242411 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:33.242482 db@open opening
+17:04:33.242670 journal@recovery F·1
+17:04:33.243735 journal@recovery recovering @100
+17:04:33.244767 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:33.298226 db@janitor F·5 G·0
+17:04:33.298277 db@open done T·55.76379ms
+17:04:33.349716 db@close closing
+17:04:33.350019 db@close done T·297.189µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:35.808805 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:35.809489 version@stat F·[2 1] S·7KiB[1KiB 5KiB] Sc·[0.50 0.00]
+17:04:35.809549 db@open opening
+17:04:35.809702 journal@recovery F·1
+17:04:35.811094 journal@recovery recovering @102
+17:04:35.823098 memdb@flush created L0@104 N·3 S·759B "sh/..044,v73":"vs/..044,v74"
+17:04:35.824545 version@stat F·[3 1] S·8KiB[2KiB 5KiB] Sc·[0.75 0.00]
+17:04:35.881653 db@janitor F·6 G·0
+17:04:35.881701 db@open done T·72.133769ms
+17:04:35.928293 db@close closing
+17:04:35.928838 db@close done T·539.111µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:36.139710 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:36.140506 version@stat F·[3 1] S·8KiB[2KiB 5KiB] Sc·[0.75 0.00]
+17:04:36.140622 db@open opening
+17:04:36.140852 journal@recovery F·1
+17:04:36.142300 journal@recovery recovering @105
+17:04:36.156736 memdb@flush created L0@107 N·3 S·759B "sh/..045,v77":"vs/..045,v78"
+17:04:36.158520 version@stat F·[4 1] S·8KiB[2KiB 5KiB] Sc·[1.00 0.00]
+17:04:36.216948 db@janitor F·7 G·0
+17:04:36.217009 db@open done T·76.349481ms
+17:04:36.217128 table@compaction L0·4 -> L1·1 S·8KiB Q·80
+17:04:36.227520 table@build created L1@110 N·41 S·7KiB "sh/..018,v1":"vs/..045,v78"
+17:04:36.227608 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:36.241557 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·24.362311ms
+17:04:36.242264 table@remove removed @104
+17:04:36.242456 table@remove removed @91
+17:04:36.242599 table@remove removed @88
+17:04:36.242818 table@remove removed @77
+17:04:36.250637 db@close closing
+17:04:36.250820 db@close done T·179.39µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:36.485438 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:36.486259 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:36.486368 db@open opening
+17:04:36.486702 journal@recovery F·1
+17:04:36.487475 journal@recovery recovering @108
+17:04:36.490215 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:36.556455 db@janitor F·4 G·1
+17:04:36.556496 db@janitor removing table-107
+17:04:36.556680 db@open done T·70.275507ms
+17:04:36.592217 db@close closing
+17:04:36.592489 db@close done T·268.419µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:37.047527 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:37.048005 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:37.048082 db@open opening
+17:04:37.048265 journal@recovery F·1
+17:04:37.049334 journal@recovery recovering @111
+17:04:37.050926 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:37.093071 db@janitor F·3 G·0
+17:04:37.093126 db@open done T·44.987689ms
+17:04:37.127220 db@close closing
+17:04:37.127488 db@close done T·265.588µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:38.038219 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:38.038886 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:38.038976 db@open opening
+17:04:38.039181 journal@recovery F·1
+17:04:38.040040 journal@recovery recovering @113
+17:04:38.041781 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:38.084536 db@janitor F·3 G·0
+17:04:38.084603 db@open done T·45.584741ms
+17:04:38.118481 db@close closing
+17:04:38.118865 db@close done T·380.195µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:39.791330 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:39.792023 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:39.792125 db@open opening
+17:04:39.792335 journal@recovery F·1
+17:04:39.793534 journal@recovery recovering @115
+17:04:39.794685 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:39.847359 db@janitor F·3 G·0
+17:04:39.847403 db@open done T·55.238824ms
+17:04:39.876804 db@close closing
+17:04:39.877087 db@close done T·279.553µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:43.145179 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:43.145864 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:43.146730 db@open opening
+17:04:43.147047 journal@recovery F·1
+17:04:43.147977 journal@recovery recovering @117
+17:04:43.149001 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:43.214021 db@janitor F·3 G·0
+17:04:43.214092 db@open done T·67.296998ms
+17:04:43.269129 db@close closing
+17:04:43.269492 db@close done T·356.187µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:45.957587 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:45.958048 version@stat F·[0 1] S·7KiB[0B 7KiB] Sc·[0.00 0.00]
+17:04:45.958122 db@open opening
+17:04:45.958269 journal@recovery F·1
+17:04:45.959449 journal@recovery recovering @119
+17:04:45.971568 memdb@flush created L0@121 N·3 S·717B "sh/..046,v81":"vs/..046,v82"
+17:04:45.973091 version@stat F·[1 1] S·8KiB[717B 7KiB] Sc·[0.25 0.00]
+17:04:46.042530 db@janitor F·4 G·0
+17:04:46.042600 db@open done T·84.452268ms
+17:04:46.094815 db@close closing
+17:04:46.095202 db@close done T·384.104µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:46.286466 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:46.286748 version@stat F·[1 1] S·8KiB[717B 7KiB] Sc·[0.25 0.00]
+17:04:46.286789 db@open opening
+17:04:46.286894 journal@recovery F·1
+17:04:46.287694 journal@recovery recovering @122
+17:04:46.299532 memdb@flush created L0@124 N·3 S·727B "sh/..047,v85":"vs/..047,v86"
+17:04:46.300802 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:46.337987 db@janitor F·5 G·0
+17:04:46.338045 db@open done T·51.237164ms
+17:04:46.415949 db@close closing
+17:04:46.416307 db@close done T·355.438µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:46.724723 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:46.725365 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:46.725520 db@open opening
+17:04:46.725735 journal@recovery F·1
+17:04:46.726546 journal@recovery recovering @125
+17:04:46.729192 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:46.769395 db@janitor F·5 G·0
+17:04:46.769440 db@open done T·43.885054ms
+17:04:46.798089 db@close closing
+17:04:46.798420 db@close done T·325.723µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:47.321071 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:47.321689 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:47.321787 db@open opening
+17:04:47.322007 journal@recovery F·1
+17:04:47.322885 journal@recovery recovering @127
+17:04:47.324390 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:47.354988 db@janitor F·5 G·0
+17:04:47.355046 db@open done T·33.215408ms
+17:04:47.389209 db@close closing
+17:04:47.389380 db@close done T·168.615µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:48.308625 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:48.309235 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:48.309338 db@open opening
+17:04:48.309604 journal@recovery F·1
+17:04:48.310508 journal@recovery recovering @129
+17:04:48.312363 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:48.366388 db@janitor F·5 G·0
+17:04:48.366458 db@open done T·57.073156ms
+17:04:48.400133 db@close closing
+17:04:48.400562 db@close done T·424.062µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:50.095610 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:50.096241 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:50.096319 db@open opening
+17:04:50.096536 journal@recovery F·1
+17:04:50.097266 journal@recovery recovering @131
+17:04:50.098390 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:50.139931 db@janitor F·5 G·0
+17:04:50.139985 db@open done T·43.636369ms
+17:04:50.166593 db@close closing
+17:04:50.166862 db@close done T·265.774µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:53.506011 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:53.506650 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:53.506753 db@open opening
+17:04:53.506978 journal@recovery F·1
+17:04:53.507868 journal@recovery recovering @133
+17:04:53.508991 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:53.557574 db@janitor F·5 G·0
+17:04:53.557624 db@open done T·50.830213ms
+17:04:53.624385 db@close closing
+17:04:53.625079 db@close done T·686.634µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:55.987614 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:55.988162 version@stat F·[2 1] S·8KiB[1KiB 7KiB] Sc·[0.50 0.00]
+17:04:55.988253 db@open opening
+17:04:55.988473 journal@recovery F·1
+17:04:55.990228 journal@recovery recovering @135
+17:04:56.002125 memdb@flush created L0@137 N·3 S·753B "sh/..048,v89":"vs/..048,v90"
+17:04:56.003584 version@stat F·[3 1] S·9KiB[2KiB 7KiB] Sc·[0.75 0.00]
+17:04:56.061720 db@janitor F·6 G·0
+17:04:56.061777 db@open done T·73.492147ms
+17:04:56.111119 db@close closing
+17:04:56.111461 db@close done T·335.447µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:56.314356 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:56.314976 version@stat F·[3 1] S·9KiB[2KiB 7KiB] Sc·[0.75 0.00]
+17:04:56.315074 db@open opening
+17:04:56.315310 journal@recovery F·1
+17:04:56.316475 journal@recovery recovering @138
+17:04:56.330734 memdb@flush created L0@140 N·3 S·751B "sh/..049,v93":"vs/..049,v94"
+17:04:56.332538 version@stat F·[4 1] S·10KiB[2KiB 7KiB] Sc·[1.00 0.00]
+17:04:56.371174 db@janitor F·7 G·0
+17:04:56.371234 db@open done T·56.12027ms
+17:04:56.371356 table@compaction L0·4 -> L1·1 S·10KiB Q·96
+17:04:56.382284 table@build created L1@143 N·49 S·8KiB "sh/..018,v1":"vs/..049,v94"
+17:04:56.382421 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:56.391952 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.504547ms
+17:04:56.392802 table@remove removed @137
+17:04:56.393140 table@remove removed @124
+17:04:56.393346 table@remove removed @121
+17:04:56.393680 table@remove removed @110
+17:04:56.404844 db@close closing
+17:04:56.405037 db@close done T·186.796µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:56.690479 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:56.691068 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:56.691170 db@open opening
+17:04:56.691405 journal@recovery F·1
+17:04:56.692283 journal@recovery recovering @141
+17:04:56.694711 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:56.730164 db@janitor F·4 G·1
+17:04:56.730217 db@janitor removing table-140
+17:04:56.730424 db@open done T·39.177625ms
+17:04:56.758902 db@close closing
+17:04:56.759133 db@close done T·228.36µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:57.320730 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:57.321175 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:57.321252 db@open opening
+17:04:57.321415 journal@recovery F·1
+17:04:57.322246 journal@recovery recovering @144
+17:04:57.324035 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:57.359290 db@janitor F·3 G·0
+17:04:57.359345 db@open done T·38.067107ms
+17:04:57.404013 db@close closing
+17:04:57.404408 db@close done T·389.552µs
+=============== Apr 23, 2020 (MSK) ===============
+17:04:58.294388 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:04:58.294932 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:58.295001 db@open opening
+17:04:58.295163 journal@recovery F·1
+17:04:58.295867 journal@recovery recovering @146
+17:04:58.298433 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:04:58.338596 db@janitor F·3 G·0
+17:04:58.338641 db@open done T·43.613625ms
+17:04:58.556524 db@close closing
+17:04:58.556976 db@close done T·445.231µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:00.234840 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:00.235289 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:05:00.235371 db@open opening
+17:05:00.235541 journal@recovery F·1
+17:05:00.236369 journal@recovery recovering @148
+17:05:00.239292 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:05:00.280941 db@janitor F·3 G·0
+17:05:00.281004 db@open done T·45.599338ms
+17:05:00.312704 db@close closing
+17:05:00.313055 db@close done T·346.17µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:03.639248 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:03.639769 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:05:03.639853 db@open opening
+17:05:03.640071 journal@recovery F·1
+17:05:03.640911 journal@recovery recovering @150
+17:05:03.641977 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:05:03.694909 db@janitor F·3 G·0
+17:05:03.694969 db@open done T·55.073561ms
+17:05:03.744533 db@close closing
+17:05:03.745283 db@close done T·743.369µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:05.989313 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:05.989765 version@stat F·[0 1] S·8KiB[0B 8KiB] Sc·[0.00 0.00]
+17:05:05.989830 db@open opening
+17:05:05.990009 journal@recovery F·1
+17:05:05.990634 journal@recovery recovering @152
+17:05:06.004030 memdb@flush created L0@154 N·3 S·757B "sh/..050,v97":"vs/..050,v98"
+17:05:06.005458 version@stat F·[1 1] S·9KiB[757B 8KiB] Sc·[0.25 0.00]
+17:05:06.062536 db@janitor F·4 G·0
+17:05:06.062602 db@open done T·72.747707ms
+17:05:06.107790 db@close closing
+17:05:06.108285 db@close done T·487.358µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:06.418195 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:06.418746 version@stat F·[1 1] S·9KiB[757B 8KiB] Sc·[0.25 0.00]
+17:05:06.418847 db@open opening
+17:05:06.419046 journal@recovery F·1
+17:05:06.420537 journal@recovery recovering @155
+17:05:06.434483 memdb@flush created L0@157 N·3 S·751B "sh/..051,v101":"vs/..051,v102"
+17:05:06.436065 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:06.476833 db@janitor F·5 G·0
+17:05:06.476892 db@open done T·58.006122ms
+17:05:06.505263 db@close closing
+17:05:06.505691 db@close done T·417.171µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:06.783774 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:06.784297 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:06.784387 db@open opening
+17:05:06.784588 journal@recovery F·1
+17:05:06.786344 journal@recovery recovering @158
+17:05:06.789094 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:06.849934 db@janitor F·5 G·0
+17:05:06.849994 db@open done T·65.571732ms
+17:05:06.880634 db@close closing
+17:05:06.880856 db@close done T·218.108µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:07.310877 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:07.311359 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:07.311425 db@open opening
+17:05:07.311628 journal@recovery F·1
+17:05:07.312484 journal@recovery recovering @160
+17:05:07.314299 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:07.354897 db@janitor F·5 G·0
+17:05:07.354947 db@open done T·43.493125ms
+17:05:07.391030 db@close closing
+17:05:07.391388 db@close done T·353.533µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:08.312339 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:08.312861 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:08.312949 db@open opening
+17:05:08.313154 journal@recovery F·1
+17:05:08.313975 journal@recovery recovering @162
+17:05:08.315038 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:08.368538 db@janitor F·5 G·0
+17:05:08.368600 db@open done T·55.612578ms
+17:05:08.404172 db@close closing
+17:05:08.404572 db@close done T·394.659µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:10.069846 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:10.070290 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:10.070369 db@open opening
+17:05:10.070531 journal@recovery F·1
+17:05:10.071332 journal@recovery recovering @164
+17:05:10.073769 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:10.118970 db@janitor F·5 G·0
+17:05:10.119025 db@open done T·48.627877ms
+17:05:10.147939 db@close closing
+17:05:10.148269 db@close done T·325.883µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:13.461876 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:13.462544 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:13.463345 db@open opening
+17:05:13.463650 journal@recovery F·1
+17:05:13.464605 journal@recovery recovering @166
+17:05:13.465791 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:13.546493 db@janitor F·5 G·0
+17:05:13.546563 db@open done T·83.168755ms
+17:05:13.603590 db@close closing
+17:05:13.604179 db@close done T·583.48µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:16.051553 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:16.052069 version@stat F·[2 1] S·10KiB[1KiB 8KiB] Sc·[0.50 0.00]
+17:05:16.052134 db@open opening
+17:05:16.052366 journal@recovery F·1
+17:05:16.054460 journal@recovery recovering @168
+17:05:16.071966 memdb@flush created L0@170 N·3 S·751B "sh/..052,v105":"vs/..052,v106"
+17:05:16.073251 version@stat F·[3 1] S·10KiB[2KiB 8KiB] Sc·[0.75 0.00]
+17:05:16.128941 db@janitor F·6 G·0
+17:05:16.128998 db@open done T·76.838329ms
+17:05:16.179520 db@close closing
+17:05:16.180286 db@close done T·758.909µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:16.388771 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:16.389357 version@stat F·[3 1] S·10KiB[2KiB 8KiB] Sc·[0.75 0.00]
+17:05:16.389443 db@open opening
+17:05:16.389643 journal@recovery F·1
+17:05:16.390671 journal@recovery recovering @171
+17:05:16.404143 memdb@flush created L0@173 N·3 S·757B "sh/..053,v109":"vs/..053,v110"
+17:05:16.405594 version@stat F·[4 1] S·11KiB[2KiB 8KiB] Sc·[1.00 0.00]
+17:05:16.436608 db@janitor F·7 G·0
+17:05:16.436643 db@open done T·47.15624ms
+17:05:16.436682 table@compaction L0·4 -> L1·1 S·11KiB Q·112
+17:05:16.447570 table@build created L1@176 N·57 S·10KiB "sh/..018,v1":"vs/..053,v110"
+17:05:16.447697 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:16.456870 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.135432ms
+17:05:16.457432 table@remove removed @170
+17:05:16.457555 table@remove removed @157
+17:05:16.457657 table@remove removed @154
+17:05:16.457772 table@remove removed @143
+17:05:16.462679 db@close closing
+17:05:16.462841 db@close done T·157.865µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:16.775260 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:16.775834 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:16.775951 db@open opening
+17:05:16.776149 journal@recovery F·1
+17:05:16.778079 journal@recovery recovering @174
+17:05:16.780595 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:16.824848 db@janitor F·4 G·1
+17:05:16.824886 db@janitor removing table-173
+17:05:16.825037 db@open done T·49.055228ms
+17:05:16.860956 db@close closing
+17:05:16.861280 db@close done T·319.608µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:17.300142 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:17.300642 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:17.300724 db@open opening
+17:05:17.300910 journal@recovery F·1
+17:05:17.301514 journal@recovery recovering @177
+17:05:17.303054 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:17.338612 db@janitor F·3 G·0
+17:05:17.338670 db@open done T·37.913887ms
+17:05:17.378471 db@close closing
+17:05:17.378796 db@close done T·320.277µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:18.308831 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:18.309348 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:18.309431 db@open opening
+17:05:18.309609 journal@recovery F·1
+17:05:18.310436 journal@recovery recovering @179
+17:05:18.312116 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:18.354137 db@janitor F·3 G·0
+17:05:18.354203 db@open done T·44.735334ms
+17:05:18.378393 db@close closing
+17:05:18.378811 db@close done T·412.416µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:20.049942 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:20.050443 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:20.050512 db@open opening
+17:05:20.050667 journal@recovery F·1
+17:05:20.051493 journal@recovery recovering @181
+17:05:20.053358 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:20.090115 db@janitor F·3 G·0
+17:05:20.090171 db@open done T·39.633855ms
+17:05:20.159939 db@close closing
+17:05:20.160354 db@close done T·411.103µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:23.438612 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:23.439270 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:23.439365 db@open opening
+17:05:23.439600 journal@recovery F·1
+17:05:23.440511 journal@recovery recovering @183
+17:05:23.441584 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:23.490132 db@janitor F·3 G·0
+17:05:23.490203 db@open done T·50.791602ms
+17:05:23.544037 db@close closing
+17:05:23.544902 db@close done T·856.742µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:26.138787 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:26.139071 version@stat F·[0 1] S·10KiB[0B 10KiB] Sc·[0.00 0.00]
+17:05:26.139125 db@open opening
+17:05:26.139240 journal@recovery F·1
+17:05:26.139926 journal@recovery recovering @185
+17:05:26.151132 memdb@flush created L0@187 N·3 S·719B "sh/..054,v113":"vs/..054,v114"
+17:05:26.152626 version@stat F·[1 1] S·10KiB[719B 10KiB] Sc·[0.25 0.00]
+17:05:26.194438 db@janitor F·4 G·0
+17:05:26.194485 db@open done T·55.339943ms
+17:05:26.237814 db@close closing
+17:05:26.238521 db@close done T·705.275µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:26.462043 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:26.462603 version@stat F·[1 1] S·10KiB[719B 10KiB] Sc·[0.25 0.00]
+17:05:26.462698 db@open opening
+17:05:26.462890 journal@recovery F·1
+17:05:26.464463 journal@recovery recovering @188
+17:05:26.477897 memdb@flush created L0@190 N·3 S·725B "sh/..055,v117":"vs/..055,v118"
+17:05:26.478901 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:26.525674 db@janitor F·5 G·0
+17:05:26.525724 db@open done T·62.991147ms
+17:05:26.570007 db@close closing
+17:05:26.570263 db@close done T·252.472µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:26.829247 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:26.829714 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:26.829777 db@open opening
+17:05:26.829932 journal@recovery F·1
+17:05:26.830584 journal@recovery recovering @191
+17:05:26.831513 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:26.872757 db@janitor F·5 G·0
+17:05:26.872814 db@open done T·43.011817ms
+17:05:26.910475 db@close closing
+17:05:26.910797 db@close done T·317.683µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:27.376784 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:27.377289 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:27.377364 db@open opening
+17:05:27.377556 journal@recovery F·1
+17:05:27.378188 journal@recovery recovering @193
+17:05:27.379525 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:27.409245 db@janitor F·5 G·0
+17:05:27.409298 db@open done T·31.897118ms
+17:05:27.443005 db@close closing
+17:05:27.443299 db@close done T·290.269µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:28.312248 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:28.312895 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:28.312978 db@open opening
+17:05:28.313201 journal@recovery F·1
+17:05:28.314117 journal@recovery recovering @195
+17:05:28.315897 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:28.346618 db@janitor F·5 G·0
+17:05:28.346682 db@open done T·33.674631ms
+17:05:28.386312 db@close closing
+17:05:28.386703 db@close done T·385.811µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:30.042315 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:30.043154 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:30.043285 db@open opening
+17:05:30.043557 journal@recovery F·1
+17:05:30.044555 journal@recovery recovering @197
+17:05:30.045614 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:30.097473 db@janitor F·5 G·0
+17:05:30.097538 db@open done T·54.19974ms
+17:05:30.126696 db@close closing
+17:05:30.126923 db@close done T·225.138µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:33.403885 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:33.404531 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:33.404633 db@open opening
+17:05:33.404850 journal@recovery F·1
+17:05:33.405730 journal@recovery recovering @199
+17:05:33.406773 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:33.486285 db@janitor F·5 G·0
+17:05:33.486356 db@open done T·81.683695ms
+17:05:33.550250 db@close closing
+17:05:33.550938 db@close done T·681.893µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:36.224059 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:36.224960 version@stat F·[2 1] S·11KiB[1KiB 10KiB] Sc·[0.50 0.00]
+17:05:36.225166 db@open opening
+17:05:36.225451 journal@recovery F·1
+17:05:36.227210 journal@recovery recovering @201
+17:05:36.239250 memdb@flush created L0@203 N·3 S·716B "sh/..056,v121":"vs/..056,v122"
+17:05:36.240428 version@stat F·[3 1] S·12KiB[2KiB 10KiB] Sc·[0.75 0.00]
+17:05:36.282321 db@janitor F·6 G·0
+17:05:36.282370 db@open done T·57.166109ms
+17:05:36.333609 db@close closing
+17:05:36.334241 db@close done T·626.686µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:36.548335 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:36.548909 version@stat F·[3 1] S·12KiB[2KiB 10KiB] Sc·[0.75 0.00]
+17:05:36.549003 db@open opening
+17:05:36.549209 journal@recovery F·1
+17:05:36.550610 journal@recovery recovering @204
+17:05:36.564788 memdb@flush created L0@206 N·3 S·725B "sh/..057,v125":"vs/..057,v126"
+17:05:36.566361 version@stat F·[4 1] S·13KiB[2KiB 10KiB] Sc·[1.00 0.00]
+17:05:36.605077 db@janitor F·7 G·0
+17:05:36.605139 db@open done T·56.105658ms
+17:05:36.605231 table@compaction L0·4 -> L1·1 S·13KiB Q·128
+17:05:36.615983 table@build created L1@209 N·65 S·11KiB "sh/..018,v1":"vs/..057,v126"
+17:05:36.616104 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:36.630980 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·25.67433ms
+17:05:36.631563 table@remove removed @203
+17:05:36.631786 table@remove removed @190
+17:05:36.632050 table@remove removed @187
+17:05:36.632281 table@remove removed @176
+17:05:36.638031 db@close closing
+17:05:36.638237 db@close done T·201.748µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:36.878400 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:36.879009 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:36.879098 db@open opening
+17:05:36.879323 journal@recovery F·1
+17:05:36.880189 journal@recovery recovering @207
+17:05:36.882643 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:36.918211 db@janitor F·4 G·1
+17:05:36.918259 db@janitor removing table-206
+17:05:36.918480 db@open done T·39.343194ms
+17:05:36.998765 db@close closing
+17:05:36.999062 db@close done T·293.024µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:37.491390 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:37.491938 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:37.492031 db@open opening
+17:05:37.492245 journal@recovery F·1
+17:05:37.493074 journal@recovery recovering @210
+17:05:37.494784 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:37.535520 db@janitor F·3 G·0
+17:05:37.535579 db@open done T·43.503904ms
+17:05:37.582102 db@close closing
+17:05:37.582437 db@close done T·330.167µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:39.243084 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:39.243712 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:39.243829 db@open opening
+17:05:39.244067 journal@recovery F·1
+17:05:39.244958 journal@recovery recovering @212
+17:05:39.246578 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:39.286913 db@janitor F·3 G·0
+17:05:39.286973 db@open done T·43.104638ms
+17:05:39.341078 db@close closing
+17:05:39.341438 db@close done T·355.694µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:41.002615 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:41.003214 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:41.003316 db@open opening
+17:05:41.003555 journal@recovery F·1
+17:05:41.004649 journal@recovery recovering @214
+17:05:41.006081 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:41.044489 db@janitor F·3 G·0
+17:05:41.044551 db@open done T·41.190385ms
+17:05:41.079337 db@close closing
+17:05:41.079699 db@close done T·354.544µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:44.355559 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:44.356013 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:44.356092 db@open opening
+17:05:44.356279 journal@recovery F·1
+17:05:44.357094 journal@recovery recovering @216
+17:05:44.358058 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:44.416983 db@janitor F·3 G·0
+17:05:44.417041 db@open done T·60.912334ms
+17:05:44.463084 db@close closing
+17:05:44.463398 db@close done T·308.341µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:51.196630 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:51.197133 version@stat F·[0 1] S·11KiB[0B 11KiB] Sc·[0.00 0.00]
+17:05:51.197202 db@open opening
+17:05:51.197366 journal@recovery F·1
+17:05:51.198970 journal@recovery recovering @218
+17:05:51.215993 memdb@flush created L0@220 N·3 S·716B "sh/..058,v129":"vs/..058,v130"
+17:05:51.217438 version@stat F·[1 1] S·12KiB[716B 11KiB] Sc·[0.25 0.00]
+17:05:51.260794 db@janitor F·4 G·0
+17:05:51.260851 db@open done T·63.615948ms
+17:05:51.309697 db@close closing
+17:05:51.310309 db@close done T·606.225µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:51.448163 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:51.448699 version@stat F·[1 1] S·12KiB[716B 11KiB] Sc·[0.25 0.00]
+17:05:51.448782 db@open opening
+17:05:51.448979 journal@recovery F·1
+17:05:51.450269 journal@recovery recovering @221
+17:05:51.464031 memdb@flush created L0@223 N·3 S·725B "sh/..060,v133":"vs/..060,v134"
+17:05:51.465718 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:51.504253 db@janitor F·5 G·0
+17:05:51.504309 db@open done T·55.484389ms
+17:05:51.536470 db@close closing
+17:05:51.536742 db@close done T·268.462µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:51.811962 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:51.812730 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:51.812837 db@open opening
+17:05:51.813044 journal@recovery F·1
+17:05:51.813914 journal@recovery recovering @224
+17:05:51.816381 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:51.850490 db@janitor F·5 G·0
+17:05:51.850544 db@open done T·37.66502ms
+17:05:51.912421 db@close closing
+17:05:51.912784 db@close done T·358.389µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:52.421896 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:52.422572 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:52.422707 db@open opening
+17:05:52.422970 journal@recovery F·1
+17:05:52.426533 journal@recovery recovering @226
+17:05:52.429044 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:52.491551 db@janitor F·5 G·0
+17:05:52.491592 db@open done T·68.835973ms
+17:05:52.521612 db@close closing
+17:05:52.521825 db@close done T·207.026µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:53.416433 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:53.416729 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:53.416759 db@open opening
+17:05:53.416833 journal@recovery F·1
+17:05:53.417245 journal@recovery recovering @228
+17:05:53.420498 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:53.493445 db@janitor F·5 G·0
+17:05:53.493500 db@open done T·76.727092ms
+17:05:53.525029 db@close closing
+17:05:53.525184 db@close done T·153.433µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:55.185690 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:55.186028 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:55.186069 db@open opening
+17:05:55.186185 journal@recovery F·1
+17:05:55.186807 journal@recovery recovering @230
+17:05:55.188778 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:55.271510 db@janitor F·5 G·0
+17:05:55.271540 db@open done T·85.451322ms
+17:05:55.297522 db@close closing
+17:05:55.297697 db@close done T·173.319µs
+=============== Apr 23, 2020 (MSK) ===============
+17:05:58.588073 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:05:58.588614 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:58.588868 db@open opening
+17:05:58.589286 journal@recovery F·1
+17:05:58.590175 journal@recovery recovering @232
+17:05:58.591400 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:05:58.649655 db@janitor F·5 G·0
+17:05:58.649694 db@open done T·60.800034ms
+17:05:58.762628 db@close closing
+17:05:58.762789 db@close done T·159.822µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:01.237377 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:01.238902 version@stat F·[2 1] S·12KiB[1KiB 11KiB] Sc·[0.50 0.00]
+17:06:01.239068 db@open opening
+17:06:01.239999 journal@recovery F·1
+17:06:01.240584 journal@recovery recovering @234
+17:06:01.263513 memdb@flush created L0@236 N·3 S·716B "sh/..061,v137":"vs/..061,v138"
+17:06:01.265238 version@stat F·[3 1] S·13KiB[2KiB 11KiB] Sc·[0.75 0.00]
+17:06:01.303266 db@janitor F·6 G·0
+17:06:01.303315 db@open done T·64.098338ms
+17:06:01.355298 db@close closing
+17:06:01.355794 db@close done T·493.105µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:01.521507 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:01.522024 version@stat F·[3 1] S·13KiB[2KiB 11KiB] Sc·[0.75 0.00]
+17:06:01.522102 db@open opening
+17:06:01.522279 journal@recovery F·1
+17:06:01.522929 journal@recovery recovering @237
+17:06:01.537270 memdb@flush created L0@239 N·3 S·725B "sh/..062,v141":"vs/..062,v142"
+17:06:01.540962 version@stat F·[4 1] S·14KiB[2KiB 11KiB] Sc·[1.00 0.00]
+17:06:01.585842 db@janitor F·7 G·0
+17:06:01.585904 db@open done T·63.770346ms
+17:06:01.585968 table@compaction L0·4 -> L1·1 S·14KiB Q·144
+17:06:01.597071 table@build created L1@242 N·73 S·12KiB "sh/..018,v1":"vs/..062,v142"
+17:06:01.597173 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:01.615602 db@close closing
+17:06:01.615825 table@commit exiting
+17:06:01.616511 table@remove removed @236
+17:06:01.616669 db@close done T·1.060992ms
+=============== Apr 23, 2020 (MSK) ===============
+17:06:01.941174 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:01.943358 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:01.943442 db@open opening
+17:06:01.943643 journal@recovery F·1
+17:06:01.944383 journal@recovery recovering @240
+17:06:01.945612 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:01.990590 db@janitor F·7 G·4
+17:06:01.990621 db@janitor removing table-239
+17:06:01.990727 db@janitor removing table-223
+17:06:01.990846 db@janitor removing table-209
+17:06:01.991007 db@janitor removing table-220
+17:06:01.991116 db@open done T·47.637703ms
+17:06:02.017979 db@close closing
+17:06:02.018383 db@close done T·399.845µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:02.520164 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:02.520864 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:02.520972 db@open opening
+17:06:02.521448 journal@recovery F·1
+17:06:02.522621 journal@recovery recovering @243
+17:06:02.523802 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:02.574615 db@janitor F·3 G·0
+17:06:02.574668 db@open done T·53.579621ms
+17:06:02.603199 db@close closing
+17:06:02.603383 db@close done T·181.16µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:04.258966 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:04.259250 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:04.259286 db@open opening
+17:06:04.259368 journal@recovery F·1
+17:06:04.260495 journal@recovery recovering @245
+17:06:04.261280 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:04.308144 db@janitor F·3 G·0
+17:06:04.308171 db@open done T·48.866768ms
+17:06:04.346078 db@close closing
+17:06:04.346255 db@close done T·174.498µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:06.069480 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:06.070187 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:06.070288 db@open opening
+17:06:06.070539 journal@recovery F·1
+17:06:06.071423 journal@recovery recovering @247
+17:06:06.072659 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:06.118984 db@janitor F·3 G·0
+17:06:06.119101 db@open done T·48.773763ms
+17:06:06.149642 db@close closing
+17:06:06.149921 db@close done T·275.679µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:09.404753 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:09.405348 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:09.405450 db@open opening
+17:06:09.405643 journal@recovery F·1
+17:06:09.406408 journal@recovery recovering @249
+17:06:09.407223 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:09.460017 db@janitor F·3 G·0
+17:06:09.460067 db@open done T·54.582651ms
+17:06:09.510928 db@close closing
+17:06:09.511816 db@close done T·880.972µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:11.346995 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:11.347505 version@stat F·[0 1] S·12KiB[0B 12KiB] Sc·[0.00 0.00]
+17:06:11.347566 db@open opening
+17:06:11.347701 journal@recovery F·1
+17:06:11.349146 journal@recovery recovering @251
+17:06:11.361010 memdb@flush created L0@253 N·3 S·717B "sh/..063,v145":"vs/..063,v146"
+17:06:11.362626 version@stat F·[1 1] S·13KiB[717B 12KiB] Sc·[0.25 0.00]
+17:06:11.408249 db@janitor F·4 G·0
+17:06:11.408302 db@open done T·60.707352ms
+17:06:11.470926 db@close closing
+17:06:11.472882 db@close done T·1.948487ms
+=============== Apr 23, 2020 (MSK) ===============
+17:06:13.356485 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:13.356971 version@stat F·[1 1] S·13KiB[717B 12KiB] Sc·[0.25 0.00]
+17:06:13.357044 db@open opening
+17:06:13.357230 journal@recovery F·1
+17:06:13.358102 journal@recovery recovering @254
+17:06:13.374269 memdb@flush created L0@256 N·3 S·725B "sh/..064,v149":"vs/..064,v150"
+17:06:13.375519 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:13.415614 db@janitor F·5 G·0
+17:06:13.415729 db@open done T·58.645072ms
+17:06:13.447059 db@close closing
+17:06:13.447442 db@close done T·375.244µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:13.720497 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:13.720982 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:13.721050 db@open opening
+17:06:13.721204 journal@recovery F·1
+17:06:13.722490 journal@recovery recovering @257
+17:06:13.725219 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:13.772203 db@janitor F·5 G·0
+17:06:13.772241 db@open done T·51.161197ms
+17:06:13.804187 db@close closing
+17:06:13.804469 db@close done T·279.158µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:14.243553 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:14.244241 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:14.244391 db@open opening
+17:06:14.244614 journal@recovery F·1
+17:06:14.246082 journal@recovery recovering @259
+17:06:14.247934 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:14.305815 db@janitor F·5 G·0
+17:06:14.305853 db@open done T·61.428807ms
+17:06:14.328441 db@close closing
+17:06:14.328646 db@close done T·202.622µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:15.241893 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:15.242498 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:15.242569 db@open opening
+17:06:15.242742 journal@recovery F·1
+17:06:15.243428 journal@recovery recovering @261
+17:06:15.244865 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:15.306244 db@janitor F·5 G·0
+17:06:15.306286 db@open done T·63.68572ms
+17:06:15.336372 db@close closing
+17:06:15.336714 db@close done T·338.333µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:16.985850 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:16.986740 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:16.986858 db@open opening
+17:06:16.987118 journal@recovery F·1
+17:06:16.988123 journal@recovery recovering @263
+17:06:16.989040 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:17.037548 db@janitor F·5 G·0
+17:06:17.037733 db@open done T·50.823617ms
+17:06:17.091509 db@close closing
+17:06:17.092207 db@close done T·692.173µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:21.381402 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:21.381911 version@stat F·[2 1] S·14KiB[1KiB 12KiB] Sc·[0.50 0.00]
+17:06:21.381988 db@open opening
+17:06:21.382143 journal@recovery F·1
+17:06:21.383592 journal@recovery recovering @265
+17:06:21.401047 memdb@flush created L0@267 N·3 S·720B "sh/..065,v153":"vs/..065,v154"
+17:06:21.402447 version@stat F·[3 1] S·15KiB[2KiB 12KiB] Sc·[0.75 0.00]
+17:06:21.447606 db@janitor F·6 G·0
+17:06:21.447654 db@open done T·65.642442ms
+17:06:21.508729 db@close closing
+17:06:21.509314 db@close done T·579.659µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:21.673718 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:21.674713 version@stat F·[3 1] S·15KiB[2KiB 12KiB] Sc·[0.75 0.00]
+17:06:21.674831 db@open opening
+17:06:21.675121 journal@recovery F·1
+17:06:21.676592 journal@recovery recovering @268
+17:06:21.691065 memdb@flush created L0@270 N·3 S·727B "sh/..066,v157":"vs/..066,v158"
+17:06:21.692867 version@stat F·[4 1] S·15KiB[2KiB 12KiB] Sc·[1.00 0.00]
+17:06:21.738340 db@janitor F·7 G·0
+17:06:21.738382 db@open done T·63.500441ms
+17:06:21.738442 table@compaction L0·4 -> L1·1 S·15KiB Q·160
+17:06:21.749272 table@build created L1@273 N·81 S·14KiB "sh/..018,v1":"vs/..066,v158"
+17:06:21.749403 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:21.759105 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.583266ms
+17:06:21.759925 table@remove removed @267
+17:06:21.760331 table@remove removed @256
+17:06:21.760582 table@remove removed @253
+17:06:21.760878 table@remove removed @242
+17:06:21.772430 db@close closing
+17:06:21.772652 db@close done T·218.517µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:22.037238 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:22.037906 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:22.038008 db@open opening
+17:06:22.038235 journal@recovery F·1
+17:06:22.039146 journal@recovery recovering @271
+17:06:22.041418 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:22.088602 db@janitor F·4 G·1
+17:06:22.088655 db@janitor removing table-270
+17:06:22.088859 db@open done T·50.803501ms
+17:06:22.128294 db@close closing
+17:06:22.128652 db@close done T·355.113µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:22.638457 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:22.638998 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:22.639085 db@open opening
+17:06:22.639280 journal@recovery F·1
+17:06:22.640122 journal@recovery recovering @274
+17:06:22.641636 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:22.698899 db@janitor F·3 G·0
+17:06:22.698963 db@open done T·59.845309ms
+17:06:22.728575 db@close closing
+17:06:22.728816 db@close done T·238.218µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:23.584872 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:23.585345 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:23.585411 db@open opening
+17:06:23.585575 journal@recovery F·1
+17:06:23.586193 journal@recovery recovering @276
+17:06:23.586935 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:23.623475 db@janitor F·3 G·0
+17:06:23.623529 db@open done T·38.081426ms
+17:06:23.651144 db@close closing
+17:06:23.651474 db@close done T·323.111µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:25.337851 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:25.338432 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:25.338520 db@open opening
+17:06:25.338695 journal@recovery F·1
+17:06:25.339514 journal@recovery recovering @278
+17:06:25.340838 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:25.396929 db@janitor F·3 G·0
+17:06:25.396980 db@open done T·58.43246ms
+17:06:25.422454 db@close closing
+17:06:25.422801 db@close done T·342.348µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:28.703143 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:28.703682 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:28.703770 db@open opening
+17:06:28.703976 journal@recovery F·1
+17:06:28.705374 journal@recovery recovering @280
+17:06:28.706427 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:28.776877 db@janitor F·3 G·0
+17:06:28.776936 db@open done T·73.125139ms
+17:06:28.836524 db@close closing
+17:06:28.836823 db@close done T·294.392µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:31.391663 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:31.392141 version@stat F·[0 1] S·14KiB[0B 14KiB] Sc·[0.00 0.00]
+17:06:31.392207 db@open opening
+17:06:31.392369 journal@recovery F·1
+17:06:31.393523 journal@recovery recovering @282
+17:06:31.405875 memdb@flush created L0@284 N·3 S·719B "sh/..067,v161":"vs/..067,v162"
+17:06:31.407504 version@stat F·[1 1] S·14KiB[719B 14KiB] Sc·[0.25 0.00]
+17:06:31.453731 db@janitor F·4 G·0
+17:06:31.453798 db@open done T·61.563822ms
+17:06:31.505191 db@close closing
+17:06:31.505660 db@close done T·465.693µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:31.639491 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:31.640004 version@stat F·[1 1] S·14KiB[719B 14KiB] Sc·[0.25 0.00]
+17:06:31.640082 db@open opening
+17:06:31.640269 journal@recovery F·1
+17:06:31.641510 journal@recovery recovering @285
+17:06:31.654609 memdb@flush created L0@287 N·3 S·727B "sh/..068,v165":"vs/..068,v166"
+17:06:31.656274 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:31.697553 db@janitor F·5 G·0
+17:06:31.697612 db@open done T·57.494361ms
+17:06:31.729580 db@close closing
+17:06:31.729982 db@close done T·396.792µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:32.049028 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:32.049545 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:32.049625 db@open opening
+17:06:32.049818 journal@recovery F·1
+17:06:32.050653 journal@recovery recovering @288
+17:06:32.053029 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:32.087258 db@janitor F·5 G·0
+17:06:32.087317 db@open done T·37.654953ms
+17:06:32.120867 db@close closing
+17:06:32.121259 db@close done T·364.924µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:32.615245 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:32.615866 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:32.615963 db@open opening
+17:06:32.616163 journal@recovery F·1
+17:06:32.619333 journal@recovery recovering @290
+17:06:32.620220 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:32.665893 db@janitor F·5 G·0
+17:06:32.665992 db@open done T·49.987835ms
+17:06:32.697437 db@close closing
+17:06:32.697869 db@close done T·393.782µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:33.548888 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:33.549390 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:33.549464 db@open opening
+17:06:33.549653 journal@recovery F·1
+17:06:33.551433 journal@recovery recovering @292
+17:06:33.553668 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:33.589693 db@janitor F·5 G·0
+17:06:33.589743 db@open done T·40.251546ms
+17:06:33.662933 db@close closing
+17:06:33.663610 db@close done T·659.713µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:35.315216 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:35.315872 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:35.315961 db@open opening
+17:06:35.316189 journal@recovery F·1
+17:06:35.317231 journal@recovery recovering @294
+17:06:35.319704 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:35.364823 db@janitor F·5 G·0
+17:06:35.364879 db@open done T·48.890072ms
+17:06:35.397727 db@close closing
+17:06:35.398112 db@close done T·380.364µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:38.685948 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:38.686654 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:38.686773 db@open opening
+17:06:38.687032 journal@recovery F·1
+17:06:38.687899 journal@recovery recovering @296
+17:06:38.688942 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:38.741292 db@janitor F·5 G·0
+17:06:38.741358 db@open done T·54.547491ms
+17:06:38.793100 db@close closing
+17:06:38.793742 db@close done T·636.088µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:41.559471 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:41.560121 version@stat F·[2 1] S·15KiB[1KiB 14KiB] Sc·[0.50 0.00]
+17:06:41.560192 db@open opening
+17:06:41.560367 journal@recovery F·1
+17:06:41.561627 journal@recovery recovering @298
+17:06:41.573682 memdb@flush created L0@300 N·3 S·717B "sh/..069,v169":"vs/..069,v170"
+17:06:41.575275 version@stat F·[3 1] S·16KiB[2KiB 14KiB] Sc·[0.75 0.00]
+17:06:41.608754 db@janitor F·6 G·0
+17:06:41.608810 db@open done T·48.583691ms
+17:06:41.656760 db@close closing
+17:06:41.657435 db@close done T·669.907µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:41.863528 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:41.864166 version@stat F·[3 1] S·16KiB[2KiB 14KiB] Sc·[0.75 0.00]
+17:06:41.864263 db@open opening
+17:06:41.864484 journal@recovery F·1
+17:06:41.865125 journal@recovery recovering @301
+17:06:41.880858 memdb@flush created L0@303 N·3 S·727B "sh/..070,v173":"vs/..070,v174"
+17:06:41.882177 version@stat F·[4 1] S·16KiB[2KiB 14KiB] Sc·[1.00 0.00]
+17:06:41.938872 db@janitor F·7 G·0
+17:06:41.938932 db@open done T·74.625078ms
+17:06:41.939055 table@compaction L0·4 -> L1·1 S·16KiB Q·176
+17:06:41.950890 table@build created L1@306 N·89 S·15KiB "sh/..018,v1":"vs/..070,v174"
+17:06:41.951076 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:41.960120 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.972729ms
+17:06:41.961035 table@remove removed @300
+17:06:41.961472 table@remove removed @287
+17:06:41.961716 table@remove removed @284
+17:06:41.962032 table@remove removed @273
+17:06:41.972019 db@close closing
+17:06:41.972235 db@close done T·212.227µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:42.290696 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:42.291434 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:42.291521 db@open opening
+17:06:42.291735 journal@recovery F·1
+17:06:42.292698 journal@recovery recovering @304
+17:06:42.293663 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:42.331109 db@janitor F·4 G·1
+17:06:42.331160 db@janitor removing table-303
+17:06:42.331348 db@open done T·39.790964ms
+17:06:42.360712 db@close closing
+17:06:42.361038 db@close done T·316.885µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:42.882942 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:42.883423 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:42.884243 db@open opening
+17:06:42.884489 journal@recovery F·1
+17:06:42.885400 journal@recovery recovering @307
+17:06:42.886803 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:42.933468 db@janitor F·3 G·0
+17:06:42.933531 db@open done T·49.247126ms
+17:06:42.964568 db@close closing
+17:06:42.964903 db@close done T·329.859µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:43.897441 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:43.898038 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:43.898126 db@open opening
+17:06:43.898351 journal@recovery F·1
+17:06:43.899118 journal@recovery recovering @309
+17:06:43.900163 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:43.943073 db@janitor F·3 G·0
+17:06:43.943136 db@open done T·44.97257ms
+17:06:43.989812 db@close closing
+17:06:43.990156 db@close done T·338.825µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:45.692487 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:45.692989 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:45.693065 db@open opening
+17:06:45.693260 journal@recovery F·1
+17:06:45.693962 journal@recovery recovering @311
+17:06:45.694838 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:45.742813 db@janitor F·3 G·0
+17:06:45.742879 db@open done T·49.771515ms
+17:06:45.778697 db@close closing
+17:06:45.779041 db@close done T·340.404µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:49.056076 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:49.056583 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:49.056642 db@open opening
+17:06:49.056802 journal@recovery F·1
+17:06:49.057786 journal@recovery recovering @313
+17:06:49.058693 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:49.106214 db@janitor F·3 G·0
+17:06:49.106269 db@open done T·49.599845ms
+17:06:49.167090 db@close closing
+17:06:49.167657 db@close done T·561.507µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:51.590690 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:51.591187 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:06:51.591253 db@open opening
+17:06:51.591422 journal@recovery F·1
+17:06:51.592029 journal@recovery recovering @315
+17:06:51.606201 memdb@flush created L0@317 N·3 S·723B "sh/..071,v177":"vs/..071,v178"
+17:06:51.607199 version@stat F·[1 1] S·16KiB[723B 15KiB] Sc·[0.25 0.00]
+17:06:51.651879 db@janitor F·4 G·0
+17:06:51.651918 db@open done T·60.64223ms
+17:06:51.701374 db@close closing
+17:06:51.702123 db@close done T·742.386µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:51.904035 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:51.904746 version@stat F·[1 1] S·16KiB[723B 15KiB] Sc·[0.25 0.00]
+17:06:51.904850 db@open opening
+17:06:51.905092 journal@recovery F·1
+17:06:51.907953 journal@recovery recovering @318
+17:06:51.922106 memdb@flush created L0@320 N·3 S·729B "sh/..072,v181":"vs/..072,v182"
+17:06:51.923765 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:51.981203 db@janitor F·5 G·0
+17:06:51.981241 db@open done T·76.344313ms
+17:06:52.012426 db@close closing
+17:06:52.012661 db@close done T·231.616µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:52.282988 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:52.283556 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:52.283641 db@open opening
+17:06:52.283872 journal@recovery F·1
+17:06:52.284868 journal@recovery recovering @321
+17:06:52.287554 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:52.323238 db@janitor F·5 G·0
+17:06:52.323305 db@open done T·39.622964ms
+17:06:52.357771 db@close closing
+17:06:52.358147 db@close done T·371.606µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:52.795409 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:52.796133 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:52.796223 db@open opening
+17:06:52.796441 journal@recovery F·1
+17:06:52.797575 journal@recovery recovering @323
+17:06:52.799267 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:52.846453 db@janitor F·5 G·0
+17:06:52.846525 db@open done T·50.269903ms
+17:06:52.883543 db@close closing
+17:06:52.883938 db@close done T·389.867µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:53.736482 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:53.737181 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:53.737290 db@open opening
+17:06:53.737533 journal@recovery F·1
+17:06:53.738431 journal@recovery recovering @325
+17:06:53.740042 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:53.773168 db@janitor F·5 G·0
+17:06:53.773241 db@open done T·35.909192ms
+17:06:53.805945 db@close closing
+17:06:53.806351 db@close done T·401.303µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:55.491285 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:55.491964 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:55.492073 db@open opening
+17:06:55.492303 journal@recovery F·1
+17:06:55.493223 journal@recovery recovering @327
+17:06:55.494615 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:55.537791 db@janitor F·5 G·0
+17:06:55.537852 db@open done T·45.73519ms
+17:06:55.582081 db@close closing
+17:06:55.582539 db@close done T·446.992µs
+=============== Apr 23, 2020 (MSK) ===============
+17:06:58.919937 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:06:58.920563 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:58.920657 db@open opening
+17:06:58.920885 journal@recovery F·1
+17:06:58.921713 journal@recovery recovering @329
+17:06:58.922715 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:06:58.975033 db@janitor F·5 G·0
+17:06:58.975122 db@open done T·54.421524ms
+17:06:59.090459 db@close closing
+17:06:59.091336 db@close done T·866.917µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:01.728301 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:01.728898 version@stat F·[2 1] S·17KiB[1KiB 15KiB] Sc·[0.50 0.00]
+17:07:01.728965 db@open opening
+17:07:01.729122 journal@recovery F·1
+17:07:01.730201 journal@recovery recovering @331
+17:07:01.742329 memdb@flush created L0@333 N·3 S·719B "sh/..073,v185":"vs/..073,v186"
+17:07:01.743259 version@stat F·[3 1] S·17KiB[2KiB 15KiB] Sc·[0.75 0.00]
+17:07:01.783274 db@janitor F·6 G·0
+17:07:01.783331 db@open done T·54.340175ms
+17:07:01.856447 db@close closing
+17:07:01.857209 db@close done T·754.874µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:02.070196 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:02.070793 version@stat F·[3 1] S·17KiB[2KiB 15KiB] Sc·[0.75 0.00]
+17:07:02.070907 db@open opening
+17:07:02.071152 journal@recovery F·1
+17:07:02.072019 journal@recovery recovering @334
+17:07:02.084394 memdb@flush created L0@336 N·3 S·727B "sh/..074,v189":"vs/..074,v190"
+17:07:02.086013 version@stat F·[4 1] S·18KiB[2KiB 15KiB] Sc·[1.00 0.00]
+17:07:02.138155 db@janitor F·7 G·0
+17:07:02.138195 db@open done T·67.227171ms
+17:07:02.138253 table@compaction L0·4 -> L1·1 S·18KiB Q·192
+17:07:02.148629 table@build created L1@339 N·97 S·16KiB "sh/..018,v1":"vs/..074,v190"
+17:07:02.148727 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:02.158514 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·20.200844ms
+17:07:02.159287 table@remove removed @333
+17:07:02.159571 table@remove removed @320
+17:07:02.159809 table@remove removed @317
+17:07:02.160057 table@remove removed @306
+17:07:02.166136 db@close closing
+17:07:02.166344 db@close done T·203.623µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:02.410494 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:02.411174 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:02.411271 db@open opening
+17:07:02.411505 journal@recovery F·1
+17:07:02.412414 journal@recovery recovering @337
+17:07:02.414640 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:02.450736 db@janitor F·4 G·1
+17:07:02.450787 db@janitor removing table-336
+17:07:02.451007 db@open done T·39.694688ms
+17:07:02.482341 db@close closing
+17:07:02.482664 db@close done T·318.297µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:02.939664 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:02.940182 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:02.940263 db@open opening
+17:07:02.940470 journal@recovery F·1
+17:07:02.941298 journal@recovery recovering @340
+17:07:02.942574 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:02.983218 db@janitor F·3 G·0
+17:07:02.983273 db@open done T·42.983138ms
+17:07:03.007894 db@close closing
+17:07:03.008245 db@close done T·346.625µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:03.869443 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:03.870105 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:03.870203 db@open opening
+17:07:03.870419 journal@recovery F·1
+17:07:03.871300 journal@recovery recovering @342
+17:07:03.873147 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:03.913889 db@janitor F·3 G·0
+17:07:03.913945 db@open done T·43.700472ms
+17:07:03.942808 db@close closing
+17:07:03.943047 db@close done T·235.611µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:05.600096 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:05.600615 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:05.600686 db@open opening
+17:07:05.600887 journal@recovery F·1
+17:07:05.601783 journal@recovery recovering @344
+17:07:05.603212 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:05.638904 db@janitor F·3 G·0
+17:07:05.638959 db@open done T·38.240266ms
+17:07:05.664836 db@close closing
+17:07:05.665163 db@close done T·322.374µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:08.949676 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:08.950148 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:08.950220 db@open opening
+17:07:08.950380 journal@recovery F·1
+17:07:08.951175 journal@recovery recovering @346
+17:07:08.952117 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:09.005367 db@janitor F·3 G·0
+17:07:09.005426 db@open done T·55.177953ms
+17:07:09.066675 db@close closing
+17:07:09.067046 db@close done T·361.552µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:11.629664 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:11.630124 version@stat F·[0 1] S·16KiB[0B 16KiB] Sc·[0.00 0.00]
+17:07:11.630198 db@open opening
+17:07:11.630366 journal@recovery F·1
+17:07:11.631718 journal@recovery recovering @348
+17:07:11.643731 memdb@flush created L0@350 N·3 S·717B "sh/..075,v193":"vs/..075,v194"
+17:07:11.645309 version@stat F·[1 1] S·17KiB[717B 16KiB] Sc·[0.25 0.00]
+17:07:11.689922 db@janitor F·4 G·0
+17:07:11.689995 db@open done T·59.764192ms
+17:07:11.739265 db@close closing
+17:07:11.739477 db@close done T·202.457µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:11.972142 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:11.972599 version@stat F·[1 1] S·17KiB[717B 16KiB] Sc·[0.25 0.00]
+17:07:11.972676 db@open opening
+17:07:11.972851 journal@recovery F·1
+17:07:11.974001 journal@recovery recovering @351
+17:07:11.987717 memdb@flush created L0@353 N·3 S·727B "sh/..076,v197":"vs/..076,v198"
+17:07:11.989171 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:12.041060 db@janitor F·5 G·0
+17:07:12.041120 db@open done T·68.410434ms
+17:07:12.069481 db@close closing
+17:07:12.069821 db@close done T·335.216µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:12.385446 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:12.386026 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:12.386111 db@open opening
+17:07:12.386355 journal@recovery F·1
+17:07:12.387214 journal@recovery recovering @354
+17:07:12.389415 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:12.430295 db@janitor F·5 G·0
+17:07:12.430351 db@open done T·44.200897ms
+17:07:12.460751 db@close closing
+17:07:12.461141 db@close done T·370.224µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:12.991434 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:12.991990 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:12.992851 db@open opening
+17:07:12.993098 journal@recovery F·1
+17:07:12.994006 journal@recovery recovering @356
+17:07:12.995580 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:13.030421 db@janitor F·5 G·0
+17:07:13.030477 db@open done T·37.582157ms
+17:07:13.066322 db@close closing
+17:07:13.066666 db@close done T·340.094µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:13.959224 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:13.959669 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:13.959736 db@open opening
+17:07:13.959930 journal@recovery F·1
+17:07:13.960524 journal@recovery recovering @358
+17:07:13.963203 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:13.999116 db@janitor F·5 G·0
+17:07:13.999175 db@open done T·39.409444ms
+17:07:14.028834 db@close closing
+17:07:14.029104 db@close done T·262.798µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:15.747575 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:15.748209 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:15.748349 db@open opening
+17:07:15.748591 journal@recovery F·1
+17:07:15.749310 journal@recovery recovering @360
+17:07:15.752083 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:15.797757 db@janitor F·5 G·0
+17:07:15.797848 db@open done T·49.450347ms
+17:07:15.832120 db@close closing
+17:07:15.832545 db@close done T·420.861µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:19.090186 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:19.090503 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:19.090546 db@open opening
+17:07:19.090647 journal@recovery F·1
+17:07:19.091371 journal@recovery recovering @362
+17:07:19.091921 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:19.138759 db@janitor F·5 G·0
+17:07:19.138809 db@open done T·48.24328ms
+17:07:19.184864 db@close closing
+17:07:19.185352 db@close done T·483.693µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:21.797218 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:21.797600 version@stat F·[2 1] S·18KiB[1KiB 16KiB] Sc·[0.50 0.00]
+17:07:21.797665 db@open opening
+17:07:21.797816 journal@recovery F·1
+17:07:21.799857 journal@recovery recovering @364
+17:07:21.810162 memdb@flush created L0@366 N·3 S·717B "sh/..077,v201":"vs/..077,v202"
+17:07:21.811420 version@stat F·[3 1] S·18KiB[2KiB 16KiB] Sc·[0.75 0.00]
+17:07:21.845777 db@janitor F·6 G·0
+17:07:21.845843 db@open done T·48.150161ms
+17:07:21.898691 db@close closing
+17:07:21.899243 db@close done T·545.423µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:22.125278 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:22.125837 version@stat F·[3 1] S·18KiB[2KiB 16KiB] Sc·[0.75 0.00]
+17:07:22.125924 db@open opening
+17:07:22.126141 journal@recovery F·1
+17:07:22.128829 journal@recovery recovering @367
+17:07:22.143030 memdb@flush created L0@369 N·3 S·727B "sh/..078,v205":"vs/..078,v206"
+17:07:22.144816 version@stat F·[4 1] S·19KiB[2KiB 16KiB] Sc·[1.00 0.00]
+17:07:22.182407 db@janitor F·7 G·0
+17:07:22.182447 db@open done T·56.48579ms
+17:07:22.182499 table@compaction L0·4 -> L1·1 S·19KiB Q·208
+17:07:22.192882 table@build created L1@372 N·105 S·18KiB "sh/..018,v1":"vs/..078,v206"
+17:07:22.192972 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:22.201758 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·19.209638ms
+17:07:22.202357 table@remove removed @366
+17:07:22.202549 table@remove removed @353
+17:07:22.202674 table@remove removed @350
+17:07:22.202890 table@remove removed @339
+17:07:22.220240 db@close closing
+17:07:22.220335 db@close done T·92.543µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:22.530455 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:22.530876 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:22.530930 db@open opening
+17:07:22.531062 journal@recovery F·1
+17:07:22.531573 journal@recovery recovering @370
+17:07:22.532403 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:22.577682 db@janitor F·4 G·1
+17:07:22.577727 db@janitor removing table-369
+17:07:22.577930 db@open done T·46.973812ms
+17:07:22.607372 db@close closing
+17:07:22.607723 db@close done T·345.383µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:23.053216 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:23.053881 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:23.053985 db@open opening
+17:07:23.054230 journal@recovery F·1
+17:07:23.055177 journal@recovery recovering @373
+17:07:23.057038 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:23.099381 db@janitor F·3 G·0
+17:07:23.099453 db@open done T·45.417308ms
+17:07:23.138512 db@close closing
+17:07:23.138924 db@close done T·405.781µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:24.068916 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:24.069572 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:24.069670 db@open opening
+17:07:24.069900 journal@recovery F·1
+17:07:24.070776 journal@recovery recovering @375
+17:07:24.072527 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:24.108728 db@janitor F·3 G·0
+17:07:24.108796 db@open done T·39.082261ms
+17:07:24.161692 db@close closing
+17:07:24.162078 db@close done T·380.502µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:25.851842 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:25.852473 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:25.852584 db@open opening
+17:07:25.852800 journal@recovery F·1
+17:07:25.853730 journal@recovery recovering @377
+17:07:25.854776 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:25.894719 db@janitor F·3 G·0
+17:07:25.894778 db@open done T·42.156007ms
+17:07:25.920851 db@close closing
+17:07:25.921170 db@close done T·314.663µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:29.269157 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:29.269706 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:29.269790 db@open opening
+17:07:29.270013 journal@recovery F·1
+17:07:29.270881 journal@recovery recovering @379
+17:07:29.271902 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:29.317968 db@janitor F·3 G·0
+17:07:29.318026 db@open done T·48.198252ms
+17:07:29.369336 db@close closing
+17:07:29.370162 db@close done T·818.824µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:31.738275 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:31.738833 version@stat F·[0 1] S·18KiB[0B 18KiB] Sc·[0.00 0.00]
+17:07:31.738926 db@open opening
+17:07:31.739182 journal@recovery F·1
+17:07:31.740169 journal@recovery recovering @381
+17:07:31.752128 memdb@flush created L0@383 N·3 S·717B "sh/..079,v209":"vs/..079,v210"
+17:07:31.753252 version@stat F·[1 1] S·18KiB[717B 18KiB] Sc·[0.25 0.00]
+17:07:31.808376 db@janitor F·4 G·0
+17:07:31.808431 db@open done T·69.468502ms
+17:07:31.865351 db@close closing
+17:07:31.865693 db@close done T·336.006µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:32.017912 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:32.018503 version@stat F·[1 1] S·18KiB[717B 18KiB] Sc·[0.25 0.00]
+17:07:32.018583 db@open opening
+17:07:32.018774 journal@recovery F·1
+17:07:32.019879 journal@recovery recovering @384
+17:07:32.034231 memdb@flush created L0@386 N·3 S·727B "sh/..080,v213":"vs/..080,v214"
+17:07:32.035791 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:32.092483 db@janitor F·5 G·0
+17:07:32.092535 db@open done T·73.911945ms
+17:07:32.120050 db@close closing
+17:07:32.120407 db@close done T·345.411µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:32.372313 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:32.372792 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:32.372916 db@open opening
+17:07:32.373131 journal@recovery F·1
+17:07:32.373928 journal@recovery recovering @387
+17:07:32.375847 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:32.407023 db@janitor F·5 G·0
+17:07:32.407081 db@open done T·34.117675ms
+17:07:32.434332 db@close closing
+17:07:32.434642 db@close done T·306.204µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:32.945958 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:32.946489 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:32.946569 db@open opening
+17:07:32.946747 journal@recovery F·1
+17:07:32.947359 journal@recovery recovering @389
+17:07:32.948780 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:32.983912 db@janitor F·5 G·0
+17:07:32.983968 db@open done T·37.36867ms
+17:07:33.099027 db@close closing
+17:07:33.099346 db@close done T·313.946µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:34.001853 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:34.002329 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:34.002415 db@open opening
+17:07:34.002686 journal@recovery F·1
+17:07:34.003621 journal@recovery recovering @391
+17:07:34.005162 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:34.042609 db@janitor F·5 G·0
+17:07:34.042671 db@open done T·40.214527ms
+17:07:34.079863 db@close closing
+17:07:34.080221 db@close done T·353.652µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:36.464954 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:36.465565 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:36.465649 db@open opening
+17:07:36.465862 journal@recovery F·1
+17:07:36.466711 journal@recovery recovering @393
+17:07:36.468016 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:36.503944 db@janitor F·5 G·0
+17:07:36.504000 db@open done T·38.318257ms
+17:07:36.530875 db@close closing
+17:07:36.531201 db@close done T·321.821µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:40.463174 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:40.463759 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:40.463857 db@open opening
+17:07:40.464094 journal@recovery F·1
+17:07:40.464938 journal@recovery recovering @395
+17:07:40.465943 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:40.522268 db@janitor F·5 G·0
+17:07:40.522321 db@open done T·58.411667ms
+17:07:40.600660 db@close closing
+17:07:40.601203 db@close done T·536.47µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:46.818809 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:46.819415 version@stat F·[2 1] S·19KiB[1KiB 18KiB] Sc·[0.50 0.00]
+17:07:46.819493 db@open opening
+17:07:46.819765 journal@recovery F·1
+17:07:46.821320 journal@recovery recovering @397
+17:07:46.833300 memdb@flush created L0@399 N·3 S·717B "sh/..081,v217":"vs/..081,v218"
+17:07:46.834330 version@stat F·[3 1] S·20KiB[2KiB 18KiB] Sc·[0.75 0.00]
+17:07:46.871674 db@janitor F·6 G·0
+17:07:46.871728 db@open done T·52.205119ms
+17:07:46.918751 db@close closing
+17:07:46.919502 db@close done T·745.193µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:47.109440 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:47.109983 version@stat F·[3 1] S·20KiB[2KiB 18KiB] Sc·[0.75 0.00]
+17:07:47.110066 db@open opening
+17:07:47.110239 journal@recovery F·1
+17:07:47.111565 journal@recovery recovering @400
+17:07:47.125473 memdb@flush created L0@402 N·3 S·727B "sh/..083,v221":"vs/..083,v222"
+17:07:47.127009 version@stat F·[4 1] S·21KiB[2KiB 18KiB] Sc·[1.00 0.00]
+17:07:47.164670 db@janitor F·7 G·0
+17:07:47.164724 db@open done T·54.631206ms
+17:07:47.164826 table@compaction L0·4 -> L1·1 S·21KiB Q·224
+17:07:47.176154 table@build created L1@405 N·113 S·19KiB "sh/..018,v1":"vs/..083,v222"
+17:07:47.176291 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:47.186210 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·21.313152ms
+17:07:47.187134 table@remove removed @399
+17:07:47.187469 table@remove removed @386
+17:07:47.187640 table@remove removed @383
+17:07:47.187919 table@remove removed @372
+17:07:47.261792 db@close closing
+17:07:47.261989 db@close done T·193.212µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:47.578276 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:47.578866 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:47.578953 db@open opening
+17:07:47.579138 journal@recovery F·1
+17:07:47.579727 journal@recovery recovering @403
+17:07:47.581556 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:47.617702 db@janitor F·4 G·1
+17:07:47.617747 db@janitor removing table-402
+17:07:47.617925 db@open done T·38.935809ms
+17:07:47.656510 db@close closing
+17:07:47.656817 db@close done T·300.017µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:48.137512 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:48.138023 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:48.138095 db@open opening
+17:07:48.138269 journal@recovery F·1
+17:07:48.139113 journal@recovery recovering @406
+17:07:48.140709 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:48.172208 db@janitor F·3 G·0
+17:07:48.172268 db@open done T·34.140064ms
+17:07:48.236975 db@close closing
+17:07:48.237298 db@close done T·317.632µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:49.078692 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:49.079294 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:49.079369 db@open opening
+17:07:49.079538 journal@recovery F·1
+17:07:49.080167 journal@recovery recovering @408
+17:07:49.081368 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:49.117801 db@janitor F·3 G·0
+17:07:49.117864 db@open done T·38.460751ms
+17:07:49.146540 db@close closing
+17:07:49.146888 db@close done T·342.643µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:50.805975 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:50.806550 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:50.806649 db@open opening
+17:07:50.806847 journal@recovery F·1
+17:07:50.807571 journal@recovery recovering @410
+17:07:50.808930 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:50.852647 db@janitor F·3 G·0
+17:07:50.852723 db@open done T·46.030502ms
+17:07:50.884515 db@close closing
+17:07:50.884877 db@close done T·357.092µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:54.207621 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:54.208310 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:54.208421 db@open opening
+17:07:54.208635 journal@recovery F·1
+17:07:54.209614 journal@recovery recovering @412
+17:07:54.210683 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:54.262828 db@janitor F·3 G·0
+17:07:54.262900 db@open done T·54.430949ms
+17:07:54.314227 db@close closing
+17:07:54.314899 db@close done T·664.042µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:56.934982 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:56.935499 version@stat F·[0 1] S·19KiB[0B 19KiB] Sc·[0.00 0.00]
+17:07:56.935551 db@open opening
+17:07:56.935703 journal@recovery F·1
+17:07:56.936547 journal@recovery recovering @414
+17:07:56.949082 memdb@flush created L0@416 N·3 S·719B "sh/..084,v225":"vs/..084,v226"
+17:07:56.950850 version@stat F·[1 1] S·20KiB[719B 19KiB] Sc·[0.25 0.00]
+17:07:56.997688 db@janitor F·4 G·0
+17:07:56.997761 db@open done T·62.179724ms
+17:07:57.053924 db@close closing
+17:07:57.054320 db@close done T·382.363µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:57.186470 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:57.187115 version@stat F·[1 1] S·20KiB[719B 19KiB] Sc·[0.25 0.00]
+17:07:57.187191 db@open opening
+17:07:57.187378 journal@recovery F·1
+17:07:57.188931 journal@recovery recovering @417
+17:07:57.205383 memdb@flush created L0@419 N·3 S·727B "sh/..085,v229":"vs/..085,v230"
+17:07:57.206862 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:07:57.244344 db@janitor F·5 G·0
+17:07:57.244383 db@open done T·57.16083ms
+17:07:57.270132 db@close closing
+17:07:57.270489 db@close done T·351.857µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:57.601838 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:57.602128 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:07:57.602171 db@open opening
+17:07:57.602276 journal@recovery F·1
+17:07:57.603434 journal@recovery recovering @420
+17:07:57.604887 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:07:57.647075 db@janitor F·5 G·0
+17:07:57.647132 db@open done T·44.937878ms
+17:07:57.820240 db@close closing
+17:07:57.820596 db@close done T·351.036µs
+=============== Apr 23, 2020 (MSK) ===============
+17:07:58.500470 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:07:58.501140 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:07:58.501249 db@open opening
+17:07:58.501495 journal@recovery F·1
+17:07:58.502450 journal@recovery recovering @422
+17:07:58.504203 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:07:58.545768 db@janitor F·5 G·0
+17:07:58.545812 db@open done T·44.514935ms
+17:07:58.743861 db@close closing
+17:07:58.744292 db@close done T·422.204µs
+=============== Apr 23, 2020 (MSK) ===============
+17:15:19.627980 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:15:19.629378 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:15:19.629470 db@open opening
+17:15:19.629651 journal@recovery F·1
+17:15:19.629837 journal@recovery recovering @424
+17:15:19.630983 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:15:19.660582 db@janitor F·5 G·0
+17:15:19.660643 db@open done T·31.148024ms
+17:15:19.664365 db@close closing
+17:15:19.664752 db@close done T·382.417µs
+=============== Apr 23, 2020 (MSK) ===============
+17:16:10.534731 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:16:10.535001 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:16:10.535031 db@open opening
+17:16:10.535145 journal@recovery F·1
+17:16:10.535263 journal@recovery recovering @426
+17:16:10.535926 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:16:10.567066 db@janitor F·5 G·0
+17:16:10.567166 db@open done T·32.092898ms
+17:16:10.682243 db@close closing
+17:16:10.682836 db@close done T·589.338µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:55.460305 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:55.463686 version@stat F·[2 1] S·20KiB[1KiB 19KiB] Sc·[0.50 0.00]
+17:18:55.463829 db@open opening
+17:18:55.464054 journal@recovery F·1
+17:18:55.464437 journal@recovery recovering @428
+17:18:55.505462 memdb@flush created L0@430 N·3 S·680B "sh/..183,v233":"vs/..183,v234"
+17:18:55.510161 version@stat F·[3 1] S·21KiB[2KiB 19KiB] Sc·[0.75 0.00]
+17:18:55.559488 db@janitor F·6 G·0
+17:18:55.559522 db@open done T·95.628622ms
+17:18:55.619098 db@close closing
+17:18:55.619728 db@close done T·625.396µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:55.856437 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:55.857153 version@stat F·[3 1] S·21KiB[2KiB 19KiB] Sc·[0.75 0.00]
+17:18:55.857273 db@open opening
+17:18:55.857525 journal@recovery F·1
+17:18:55.861289 journal@recovery recovering @431
+17:18:55.878748 memdb@flush created L0@433 N·3 S·708B "sh/..216,v237":"vs/..216,v238"
+17:18:55.880555 version@stat F·[4 1] S·22KiB[2KiB 19KiB] Sc·[1.00 0.00]
+17:18:55.932655 db@janitor F·7 G·0
+17:18:55.932699 db@open done T·75.396533ms
+17:18:55.932809 table@compaction L0·4 -> L1·1 S·22KiB Q·240
+17:18:55.944977 table@build created L1@436 N·121 S·21KiB "sh/..018,v1":"vs/..216,v238"
+17:18:55.945782 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:55.965867 table@compaction committed F-4 S-1KiB Ke·0 D·4 T·32.973334ms
+17:18:55.966549 table@remove removed @430
+17:18:55.966827 table@remove removed @419
+17:18:55.967052 table@remove removed @416
+17:18:55.967374 table@remove removed @405
+17:18:55.969233 db@close closing
+17:18:55.969448 db@close done T·209.92µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:56.244513 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:56.245103 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:56.245193 db@open opening
+17:18:56.245429 journal@recovery F·1
+17:18:56.250618 journal@recovery recovering @434
+17:18:56.254447 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:56.290987 db@janitor F·4 G·1
+17:18:56.291040 db@janitor removing table-433
+17:18:56.291250 db@open done T·46.014992ms
+17:18:56.329528 db@close closing
+17:18:56.329828 db@close done T·297.367µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:56.820855 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:56.821492 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:56.821586 db@open opening
+17:18:56.821806 journal@recovery F·1
+17:18:56.822652 journal@recovery recovering @437
+17:18:56.823796 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:56.882649 db@janitor F·3 G·0
+17:18:56.882726 db@open done T·61.108557ms
+17:18:56.922136 db@close closing
+17:18:56.922400 db@close done T·259.04µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:57.825703 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:57.826165 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:57.826236 db@open opening
+17:18:57.826394 journal@recovery F·1
+17:18:57.826992 journal@recovery recovering @439
+17:18:57.828168 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:57.872873 db@janitor F·3 G·0
+17:18:57.872919 db@open done T·46.655949ms
+17:18:58.087766 db@close closing
+17:18:58.088204 db@close done T·431.343µs
+=============== Apr 23, 2020 (MSK) ===============
+17:18:59.938258 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:18:59.938813 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:59.938907 db@open opening
+17:18:59.939090 journal@recovery F·1
+17:18:59.939683 journal@recovery recovering @441
+17:18:59.940863 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:18:59.975720 db@janitor F·3 G·0
+17:18:59.975779 db@open done T·36.835076ms
+17:19:00.005591 db@close closing
+17:19:00.005886 db@close done T·290.719µs
+=============== Apr 23, 2020 (MSK) ===============
+17:19:03.287602 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:19:03.288182 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:19:03.288271 db@open opening
+17:19:03.288482 journal@recovery F·1
+17:19:03.289562 journal@recovery recovering @443
+17:19:03.291260 version@stat F·[0 1] S·21KiB[0B 21KiB] Sc·[0.00 0.00]
+17:19:03.343308 db@janitor F·3 G·0
+17:19:03.343386 db@open done T·55.069692ms
+17:19:03.408763 db@close closing
+17:19:03.409200 db@close done T·431.585µs

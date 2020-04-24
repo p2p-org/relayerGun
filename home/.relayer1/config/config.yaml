@@ -1,0 +1,36 @@
+global:
+  timeout: 10s
+  lite-cache-size: 20
+chains:
+- key: faucet
+  chain-id: wowlol
+  rpc-addr: http://79.143.28.38:26657
+  account-prefix: cosmos
+  gas: 200000
+  gas-prices: 0.025sometoken
+  default-denom: sometoken
+  trusting-period: 330h
+- key: faucet
+  chain-id: lolchain
+  rpc-addr: http://78.155.217.123:26657
+  account-prefix: cosmos
+  gas: 200000
+  gas-prices: 0.025loltoken
+  default-denom: loltoken
+  trusting-period: 330h
+paths:
+  wowlol-lolchain:
+    src:
+      chain-id: wowlol
+      client-id: tbzaqzdjbg
+      connection-id: ncdfiqkstp
+      channel-id: avhlichoxl
+      port-id: transfer
+    dst:
+      chain-id: lolchain
+      client-id: mjepyrafag
+      connection-id: zvgytspemu
+      channel-id: ttakhvvwjo
+      port-id: transfer
+    strategy:
+      type: naive

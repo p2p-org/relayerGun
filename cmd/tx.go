@@ -38,6 +38,7 @@ func transactionCmd() *cobra.Command {
 		fullPathCmd(),
 		relayMsgsCmd(),
 		transferCmd(),
+		gunCmd(),
 		flags.LineBreak,
 		createClientsCmd(),
 		createConnectionCmd(),

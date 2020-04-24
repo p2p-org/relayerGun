@@ -1,0 +1,1 @@
+{"key":"faucet","chain-id":"lolchain","rpc-addr":"http://78.155.217.123:26657","account-prefix":"cosmos","gas":200000,"gas-prices":"0.025loltoken","default-denom":"loltoken","trusting-period":"330h"}

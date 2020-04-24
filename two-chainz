@@ -9,7 +9,7 @@ if [[ ! -d $GOPATH ]] || [[ ! -d $GOBIN ]] || [[ ! -x "$(which go)" ]]; then
 fi
 
 GAIA_REPO="$GOPATH/src/github.com/cosmos/gaia"
-GAIA_BRANCH=ibc-alpha
+GAIA_BRANCH=9a09e5499c25f8bbe48f2f9abe6f74360923266b
 GAIA_DATA="$(pwd)/data"
 
 # ARGS: 
@@ -126,5 +126,7 @@ gaiacli config --home $chainid0/$gclpth node http://localhost:26657 &> /dev/null
 gaiacli config --home $chainid1/$gclpth node http://localhost:26557 &> /dev/null
 
 echo "Starting Gaiad instances..."
-gaiad --home $GAIA_DATA/$chainid0/n0/gaiad start --pruning=nothing > $chainid0.log 2>&1 &
-gaiad --home $GAIA_DATA/$chainid1/n0/gaiad start --pruning=nothing > $chainid1.log 2>&1 & 
+gaiad --home $GAIA_DATA/$chainid0/n0/gaiad start --pruning=nothing --log_level=debug > $chainid0.log 2>&1 &
+gaiad --home $GAIA_DATA/$chainid1/n0/gaiad start --pruning=nothing --log_level=debug > $chainid1.log 2>&1 &
+
+tail -f $chainid1.log
