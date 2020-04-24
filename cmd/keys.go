@@ -78,6 +78,14 @@ func keysAddCmd() *cobra.Command {
 
 			ko := keyOutput{Mnemonic: mnemonic, Address: info.GetAddress().String()}
 
+			chain.Keys = append(chain.Keys, keyName)
+
+			if err = config.DeleteChain(chain.ChainID).AddChain(chain); err != nil {
+				return err
+			}
+			if err = overWriteConfig(cmd, config); err != nil {
+				return err
+			}
 			return chain.Print(ko, false, false)
 		},
 	}

@@ -183,6 +183,12 @@ func cfgFilesAdd(dir string) (cfg *Config, err error) {
 				fmt.Printf("failed to unmarshal file %s, skipping...\n", pth)
 			}
 
+			// In the case that order isn't added to the path, add it manually
+			if p.Src.Order == "" || p.Dst.Order == "" {
+				p.Src.Order = "ORDERED"
+				p.Dst.Order = "ORDERED"
+			}
+
 			pthName := strings.Split(f.Name(), ".")[0]
 			if err = cfg.AddPath(pthName, p); err != nil {
 				fmt.Printf("%s: %s\n", pth, err.Error())
@@ -353,6 +359,8 @@ func overWriteConfig(cmd *cobra.Command, cfg *Config) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("Config overwrite!!!!", home)
 
 	cfgPath := path.Join(home, "config", "config.yaml")
 	if _, err = os.Stat(cfgPath); err == nil {

@@ -9,41 +9,34 @@ port_id="transfer"
 src_chain_id=$(jq -r '."chain-id"' $SRC_CHAIN_FILE)
 dst_chain_id=$(jq -r '."chain-id"' $DST_CHAIN_FILE)
 
-N=2
+N=5
 
-home=home/.relayer
-
-for ((i=0; i<$N; i++))
-do
-  rly --home $home$i cfg init
-
-  rly --home $home$i ch a -f $SRC_CHAIN_FILE
-  rly --home $home$i ch a -f $DST_CHAIN_FILE
-
-  rly --home $home$i lite init $src_chain_id -f
-  rly --home $home$i lite init $dst_chain_id -f
-
-  rly --home $home$i chains list
-
-  rly --home $home$i keys add $src_chain_id
-  rly --home $home$i keys add $dst_chain_id
-
-  rly --home $home$i tst req $src_chain_id
-  rly --home $home$i tst req $dst_chain_id
-
-  rly --home $home$i paths gen $src_chain_id $port_id $dst_chain_id $port_id "$src_chain_id-$dst_chain_id"
-
-  rly --home $home$i tx link "$src_chain_id-$dst_chain_id"
-
-  echo "Starting gun..."
-  rly --home $home$i tx gun $src_chain_id $dst_chain_id $AMOUNT true $(rly --home $home$i ch addr $dst_chain_id) > $home$i.log 2>&1 &
-  echo "Started!"
-
-done
-
-#for (( ; ; ))
+#rly cfg init
+#
+#rly ch a -f $SRC_CHAIN_FILE
+#rly ch a -f $DST_CHAIN_FILE
+#
+#rly lite init $src_chain_id -f
+#rly lite init $dst_chain_id -f
+#
+#rly keys add $src_chain_id
+#rly tst req $src_chain_id
+#
+#rly keys add $dst_chain_id
+#rly tst req $dst_chain_id
+#
+#for ((i=0; i<$N; i++))
 #do
-#    rly --home $home$i tx transfer $src_chain_id $dst_chain_id $AMOUNT true $(rly --home $home$i ch addr $dst_chain_id)
-#    rly --home $home$i q bal $src_chain_id
-#    rly --home $home$i q bal $dst_chain_id
+#
+#  rly keys add $src_chain_id "key$i"
+#  rly tst req $src_chain_id "key$i"
+#
 #done
+#
+#rly config show
+#
+#rly paths gen $src_chain_id $port_id $dst_chain_id $port_id "$src_chain_id-$dst_chain_id"
+#
+#rly tx link "$src_chain_id-$dst_chain_id"
+
+rly tx gun $src_chain_id $dst_chain_id $AMOUNT true $(rly ch addr $dst_chain_id) -d
