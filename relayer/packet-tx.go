@@ -2,9 +2,9 @@ package relayer
 
 import (
 	"fmt"
+	"log"
 	"sync"
 	"time"
-	"log"
 
 	retry "github.com/avast/retry-go"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -263,9 +263,9 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		var (
 			err error
 			//timeoutHeight uint64
-			done func()
+			done          func()
 			dstAddrString string
-			txs RelayMsgs
+			txs           RelayMsgs
 		)
 		dstHeader, err := dst.UpdateLiteWithHeader()
 		if err != nil {
@@ -298,15 +298,15 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 				Dst: []sdk.Msg{},
 			}
 
+			wg.Add(1)
+			a := *src
 			go func() {
-				wg.Add(1)
-				defer wg.Done()
-				a := *src
 				if txs.Send(&a, dst); !txs.Success() {
 					fmt.Println("failed to send first transaction")
 				}
+				log.Println("transfer sent")
+				wg.Done()
 			}()
-			log.Println("transfer sent")
 		}
 		wg.Wait()
 
