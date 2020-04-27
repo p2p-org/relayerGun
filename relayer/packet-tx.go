@@ -3,7 +3,6 @@ package relayer
 import (
 	"fmt"
 	"log"
-	"sync"
 	"time"
 
 	retry "github.com/avast/retry-go"
@@ -261,8 +260,8 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 	for {
 
 		var (
-			err error
-			//timeoutHeight uint64
+			err           error
+			timeoutHeight uint64
 			done          func()
 			dstAddrString string
 			txs           RelayMsgs
@@ -272,135 +271,125 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 			return err
 		}
 
-		//timeoutHeight = dstHeader.GetHeight() + uint64(defaultPacketTimeout)
+		timeoutHeight = dstHeader.GetHeight() + uint64(defaultPacketTimeout)
 
 		// Properly render the address string
 		done = dst.UseSDKContext()
 		dstAddrString = dstAddr.String()
 		done()
 
-		N := uint64(2)
+		N := uint64(5)
 
-		wg := sync.WaitGroup{}
-		for _, key := range src.Keys {
-			src.Key = key
-			msgs := make([]sdk.Msg, 0, N)
+		msgs := make([]sdk.Msg, 0, N)
 
-			for i := uint64(0); i < N; i++ {
-				msgs = append(msgs, src.PathEnd.MsgTransfer(
-					dst.PathEnd, dstHeader.GetHeight(), sdk.NewCoins(amount), dstAddrString, src.MustGetAddress(),
-				))
-			}
-
-			// MsgTransfer will call SendPacket on src chain
-			txs = RelayMsgs{
-				Src: msgs,
-				Dst: []sdk.Msg{},
-			}
-
-			wg.Add(1)
-			a := *src
-			go func() {
-				if txs.Send(&a, dst); !txs.Success() {
-					fmt.Println("failed to send first transaction")
-				}
-				log.Println("transfer sent")
-				wg.Done()
-			}()
+		for i := uint64(0); i < N; i++ {
+			msgs = append(msgs, src.PathEnd.MsgTransfer(
+				dst.PathEnd, dstHeader.GetHeight(), sdk.NewCoins(amount), dstAddrString, src.MustGetAddress(),
+			))
 		}
-		wg.Wait()
+
+		// MsgTransfer will call SendPacket on src chain
+		txs = RelayMsgs{
+			Src: msgs,
+			Dst: []sdk.Msg{},
+		}
+
+		if txs.Send(src, dst); !txs.Success() {
+			return fmt.Errorf("failed to send first transaction")
+		}
+		log.Println("transfer sent")
 
 		// Working on SRC chain :point_up:
 		// Working on DST chain :point_down:
 
-		//var (
-		//	hs           map[string]*tmclient.Header
-		//	seqRecv      chanTypes.RecvResponse
-		//	seqSend      uint64
-		//	srcCommitResponses []CommitmentResponse
-		//)
-		//
-		//if err = retry.Do(func() error {
-		//	srcCommitResponses = nil
-		//
-		//	hs, err = UpdatesWithHeaders(src, dst)
-		//	if err != nil {
-		//		return err
-		//	}
-		//
-		//	seqRecv, err = dst.QueryNextSeqRecv(hs[dst.ChainID].Height)
-		//	if err != nil {
-		//		return err
-		//	}
-		//
-		//	seqSend, err = src.QueryNextSeqSend(hs[src.ChainID].Height)
-		//	if err != nil {
-		//		return err
-		//	}
-		//
-		//	for i := seqSend - N; i < seqSend; i++ {
-		//		srcCommitRes, err := src.QueryPacketCommitment(hs[src.ChainID].Height-1, int64(i))
-		//		if err != nil {
-		//			return err
-		//		}
-		//
-		//		if srcCommitRes.Proof.Proof == nil {
-		//			return fmt.Errorf("proof nil, retrying")
-		//		}
-		//		srcCommitResponses = append(srcCommitResponses, srcCommitRes)
-		//	}
-		//
-		//	return nil
-		//}); err != nil {
-		//	return err
-		//}
-		//
-		//// Properly render the source and destination address strings
-		//done = src.UseSDKContext()
-		//srcAddrString := src.MustGetAddress().String()
-		//done()
-		//
-		//done = dst.UseSDKContext()
-		//dstAddrString = dstAddr.String()
-		//done()
-		//
-		//// reconstructing packet data here instead of retrieving from an indexed node
-		//xferPacket := src.PathEnd.XferPacket(
-		//	sdk.NewCoins(amount),
-		//	srcAddrString,
-		//	dstAddrString,
-		//)
-		//
-		//dstMsgs := make([]sdk.Msg, 0, N+1)
-		//
-		//dstMsgs = append(dstMsgs, dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()))
-		//
-		//for i, srcCommitRes := range srcCommitResponses {
-		//	dstMsgs = append(dstMsgs,
-		//		dst.PathEnd.MsgRecvPacket(
-		//			src.PathEnd,
-		//			seqRecv.NextSequenceRecv+uint64(i),
-		//			timeoutHeight,
-		//			defaultPacketTimeoutStamp(),
-		//			xferPacket,
-		//			srcCommitRes.Proof,
-		//			srcCommitRes.ProofHeight,
-		//			dst.MustGetAddress(),
-		//		))
-		//}
-		//
-		//// Debugging by simply passing in the packet information that we know was sent earlier in the SendPacket
-		//// part of the command. In a real relayer, this would be a separate command that retrieved the packet
-		//// information from an indexing node
-		//txs = RelayMsgs{
-		//	Dst: dstMsgs,
-		//	Src: []sdk.Msg{},
-		//}
-		//
-		//if txs.Send(src, dst); !txs.Success() {
-		//	return fmt.Errorf("failed to receive tx")
-		//}
-		//log.Println("transfer received")
+		var (
+			hs                 map[string]*tmclient.Header
+			seqRecv            chanTypes.RecvResponse
+			seqSend            uint64
+			srcCommitResponses []CommitmentResponse
+		)
+
+		if err = retry.Do(func() error {
+			srcCommitResponses = nil
+
+			hs, err = UpdatesWithHeaders(src, dst)
+			if err != nil {
+				return err
+			}
+
+			seqRecv, err = dst.QueryNextSeqRecv(hs[dst.ChainID].Height)
+			if err != nil {
+				return err
+			}
+
+			seqSend, err = src.QueryNextSeqSend(hs[src.ChainID].Height)
+			if err != nil {
+				return err
+			}
+
+			for i := seqSend - N; i < seqSend; i++ {
+				srcCommitRes, err := src.QueryPacketCommitment(hs[src.ChainID].Height-1, int64(i))
+				if err != nil {
+					return err
+				}
+
+				if srcCommitRes.Proof.Proof == nil {
+					return fmt.Errorf("proof nil, retrying")
+				}
+				srcCommitResponses = append(srcCommitResponses, srcCommitRes)
+			}
+
+			return nil
+		}); err != nil {
+			return err
+		}
+
+		// Properly render the source and destination address strings
+		done = src.UseSDKContext()
+		srcAddrString := src.MustGetAddress().String()
+		done()
+
+		done = dst.UseSDKContext()
+		dstAddrString = dstAddr.String()
+		done()
+
+		// reconstructing packet data here instead of retrieving from an indexed node
+		xferPacket := src.PathEnd.XferPacket(
+			sdk.NewCoins(amount),
+			srcAddrString,
+			dstAddrString,
+		)
+
+		dstMsgs := make([]sdk.Msg, 0, N+1)
+
+		dstMsgs = append(dstMsgs, dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()))
+
+		for i, srcCommitRes := range srcCommitResponses {
+			dstMsgs = append(dstMsgs,
+				dst.PathEnd.MsgRecvPacket(
+					src.PathEnd,
+					seqRecv.NextSequenceRecv+uint64(i),
+					timeoutHeight,
+					defaultPacketTimeoutStamp(),
+					xferPacket,
+					srcCommitRes.Proof,
+					srcCommitRes.ProofHeight,
+					dst.MustGetAddress(),
+				))
+		}
+
+		// Debugging by simply passing in the packet information that we know was sent earlier in the SendPacket
+		// part of the command. In a real relayer, this would be a separate command that retrieved the packet
+		// information from an indexing node
+		txs = RelayMsgs{
+			Dst: dstMsgs,
+			Src: []sdk.Msg{},
+		}
+
+		if txs.Send(src, dst); !txs.Success() {
+			return fmt.Errorf("failed to receive tx")
+		}
+		log.Println("transfer received")
 	}
 	return nil
 }
