@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"fmt"
+	"strconv"
 
 	ckeys "github.com/cosmos/cosmos-sdk/client/keys"
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
@@ -38,6 +39,7 @@ func keysCmd() *cobra.Command {
 	cmd.AddCommand(keysListCmd())
 	cmd.AddCommand(keysShowCmd())
 	cmd.AddCommand(keysExportCmd())
+	cmd.AddCommand(keysGenCmd())
 
 	return cmd
 }
@@ -258,6 +260,56 @@ func keysExportCmd() *cobra.Command {
 			}
 
 			return chain.Print(info, false, false)
+		},
+	}
+
+	return cmd
+}
+
+func keysGenCmd() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "gen [chain-id] [count]",
+		Aliases: []string{"a"},
+		Short:   "generates keys for the chain",
+		Args:    cobra.ExactArgs(2),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			chain, err := config.Chains.Get(args[0])
+			if err != nil {
+				return err
+			}
+
+			count, err := strconv.Atoi(args[1])
+			if err != nil {
+				return err
+			}
+
+			for i := 0; i < count; i++ {
+				keyName := relayer.RandLowerCaseLetterString(10)
+				mnemonic, err := relayer.CreateMnemonic()
+				if err != nil {
+					return err
+				}
+
+				info, err := chain.Keybase.NewAccount(keyName, mnemonic, "", hd.CreateHDPath(118, 0, 0).String(), hd.Secp256k1)
+				if err != nil {
+					return err
+				}
+
+				ko := keyOutput{Mnemonic: mnemonic, Address: info.GetAddress().String()}
+
+				chain.Keys = append(chain.Keys, keyName)
+
+				if err = config.DeleteChain(chain.ChainID).AddChain(chain); err != nil {
+					return err
+				}
+				if err = overWriteConfig(cmd, config); err != nil {
+					return err
+				}
+				if err = chain.Print(ko, false, false); err != nil {
+					return err
+				}
+			}
+			return nil
 		},
 	}
 
