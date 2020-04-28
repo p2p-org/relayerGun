@@ -219,6 +219,14 @@ func (src *Chain) SendMsgs(datagrams []sdk.Msg) (res sdk.TxResponse, err error) 
 	return src.BroadcastTxCommit(out)
 }
 
+func (src *Chain) SendMsgsSync(datagrams []sdk.Msg) (res sdk.TxResponse, err error) {
+	var out []byte
+	if out, err = src.BuildAndSignTx(datagrams); err != nil {
+		return res, err
+	}
+	return src.BroadcastTxSync(out)
+}
+
 // BuildAndSignTx takes messages and builds, signs and marshals a sdk.Tx to prepare it for broadcast
 func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 	// Fetch account and sequence numbers for the account
@@ -238,6 +246,16 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 // BroadcastTxCommit takes the marshaled transaction bytes and broadcasts them
 func (src *Chain) BroadcastTxCommit(txBytes []byte) (sdk.TxResponse, error) {
 	res, err := sdkCtx.CLIContext{Client: src.Client}.BroadcastTxCommit(txBytes)
+
+	if !src.debug {
+		res.RawLog = ""
+	}
+
+	return res, err
+}
+
+func (src *Chain) BroadcastTxSync(txBytes []byte) (sdk.TxResponse, error) {
+	res, err := sdkCtx.CLIContext{Client: src.Client}.BroadcastTxSync(txBytes)
 
 	if !src.debug {
 		res.RawLog = ""

@@ -72,6 +72,43 @@ func (r *RelayMsgs) Send(src, dst *Chain) {
 	r.success = true
 }
 
+func (r *RelayMsgs) SendSync(src, dst *Chain) {
+	var failed = false
+	// TODO: maybe figure out a better way to indicate error here?
+
+	// TODO: Parallelize? Maybe?
+	if len(r.Src) > 0 {
+		// Submit the transactions to src chain
+		res, err := src.SendMsgsSync(r.Src)
+		if err != nil || res.Code != 0 {
+			src.LogFailedTx(res, err, r.Src)
+			failed = true
+		} else {
+			// NOTE: Add more data to this such as identifiers
+			src.LogSuccessTx(res, r.Src)
+		}
+	}
+
+	if len(r.Dst) > 0 {
+		// Submit the transactions to dst chain
+		res, err := dst.SendMsgsSync(r.Dst)
+		if err != nil || res.Code != 0 {
+			dst.LogFailedTx(res, err, r.Dst)
+			failed = true
+		} else {
+			// NOTE: Add more data to this such as identifiers
+			dst.LogSuccessTx(res, r.Dst)
+
+		}
+	}
+
+	if failed {
+		r.success = false
+		return
+	}
+	r.success = true
+}
+
 func getMsgAction(msgs []sdk.Msg) string {
 	var out string
 	for i, msg := range msgs {

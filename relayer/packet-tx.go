@@ -249,7 +249,7 @@ func (src *Chain) SendPacket(dst *Chain, packetData []byte) error {
 	return nil
 }
 
-func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, source bool) error {
+func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, source bool, msgsCount int) error {
 
 	if source {
 		amount.Denom = fmt.Sprintf("%s/%s/%s", dst.PathEnd.PortID, dst.PathEnd.ChannelID, amount.Denom)
@@ -278,7 +278,7 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		dstAddrString = dstAddr.String()
 		done()
 
-		N := uint64(5)
+		N := uint64(msgsCount)
 
 		msgs := make([]sdk.Msg, 0, N)
 
