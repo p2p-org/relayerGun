@@ -360,8 +360,6 @@ func overWriteConfig(cmd *cobra.Command, cfg *Config) error {
 		return err
 	}
 
-	fmt.Println("Config overwrite!!!!", home)
-
 	cfgPath := path.Join(home, "config", "config.yaml")
 	if _, err = os.Stat(cfgPath); err == nil {
 		viper.SetConfigFile(cfgPath)
