@@ -29,4 +29,4 @@ rly paths gen $src_chain_id $port_id $dst_chain_id $port_id "$src_chain_id-$dst_
 
 rly tx link "$src_chain_id-$dst_chain_id"
 
-rly tx gun $src_chain_id $dst_chain_id $AMOUNT true $(rly ch addr $dst_chain_id) -d
+rly tx gun $src_chain_id $dst_chain_id $AMOUNT true $(rly ch addr $dst_chain_id) 2 -d
