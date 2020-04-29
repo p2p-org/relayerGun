@@ -194,7 +194,7 @@ func (nrs *NaiveStrategy) RelayPacketsOrderedChan(src, dst *Chain, sp *RelaySequ
 		if err != nil {
 			return err
 		}
-		msgs.Dst = append(msgs.Dst, msg)
+		msgs.Dst = append(msgs.Dst, msg...)
 	}
 
 	// add messages for dst -> src
@@ -203,7 +203,7 @@ func (nrs *NaiveStrategy) RelayPacketsOrderedChan(src, dst *Chain, sp *RelaySequ
 		if err != nil {
 			return err
 		}
-		msgs.Src = append(msgs.Src, msg)
+		msgs.Src = append(msgs.Src, msg...)
 	}
 
 	if !msgs.Ready() {
@@ -226,11 +226,13 @@ func (nrs *NaiveStrategy) RelayPacketsOrderedChan(src, dst *Chain, sp *RelaySequ
 }
 
 // packetMsgFromTxQuery returns a sdk.Msg to relay a packet with a given seq on src
-func packetMsgFromTxQuery(src, dst *Chain, sh *SyncHeaders, seq uint64) (sdk.Msg, error) {
+func packetMsgFromTxQuery(src, dst *Chain, sh *SyncHeaders, seq uint64) ([]sdk.Msg, error) {
 	eveSend, err := ParseEvents(fmt.Sprintf(defaultPacketSendQuery, src.PathEnd.ChannelID, seq))
 	if err != nil {
 		return nil, err
 	}
+
+	msgs := make([]sdk.Msg, 0)
 
 	tx, err := src.QueryTxs(sh.GetHeight(src.ChainID), 1, 1000, eveSend)
 	switch {
@@ -248,23 +250,28 @@ func packetMsgFromTxQuery(src, dst *Chain, sh *SyncHeaders, seq uint64) (sdk.Msg
 		return nil, err
 	case len(rlyPackets) == 0:
 		return nil, fmt.Errorf("no relay msgs created from query response")
-	case len(rlyPackets) > 1:
-		return nil, fmt.Errorf("more than one relay msg found in tx query")
+		//case len(rlyPackets) > 1:
+		//	return nil, fmt.Errorf("more than one relay msg found in tx query")
 	}
 
 	// sanity check the sequence number against the one we are querying for
 	// TODO: move this into relayPacketFromQueryResponse?
-	if seq != rlyPackets[0].Seq() {
-		return nil, fmt.Errorf("Different sequence number from query (%d vs %d)", seq, rlyPackets[0].Seq())
-	}
+	//if seq != rlyPackets[0].Seq() {
+	//	return nil, fmt.Errorf("Different sequence number from query (%d vs %d)", seq, rlyPackets[0].Seq())
+	//}
 
 	// fetch the proof from the sending chain
-	if err = rlyPackets[0].FetchCommitResponse(dst, src, sh); err != nil {
-		return nil, err
+	for i, _ := range rlyPackets {
+		if err = rlyPackets[i].FetchCommitResponse(dst, src, sh); err != nil {
+			return nil, err
+		}
 	}
 
 	// return the sending msg
-	return rlyPackets[0].Msg(dst, src), nil
+	for i, _ := range rlyPackets {
+		msgs = append(msgs, rlyPackets[i].Msg(dst, src))
+	}
+	return msgs, nil
 }
 
 // relayPacketFromQueryResponse looks through the events in a sdk.Response

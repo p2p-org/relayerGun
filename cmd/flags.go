@@ -24,6 +24,7 @@ var (
 	flagBlock      = "no-block"
 	flagData       = "data"
 	flagOrder      = "unordered"
+	flagGas        = "gas"
 )
 
 func liteFlags(cmd *cobra.Command) *cobra.Command {
@@ -159,6 +160,14 @@ func getTimeout(cmd *cobra.Command) (time.Duration, error) {
 func urlFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().StringP(flagURL, "u", "", "url to fetch data from")
 	if err := viper.BindPFlag(flagURL, cmd.Flags().Lookup(flagURL)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func gasFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().Uint64P(flagGas, "g", 200000, "gas for transaction")
+	if err := viper.BindPFlag(flagGas, cmd.Flags().Lookup(flagGas)); err != nil {
 		panic(err)
 	}
 	return cmd

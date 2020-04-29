@@ -25,6 +25,11 @@ func gunCmd() *cobra.Command {
 				return err
 			}
 
+			gas, err := cmd.Flags().GetUint64(flagGas)
+			if err != nil {
+				return err
+			}
+
 			if _, err = setPathsFromArgs(c[src], c[dst], pth); err != nil {
 				return err
 			}
@@ -49,8 +54,12 @@ func gunCmd() *cobra.Command {
 				return err
 			}
 
+			c[src].NewGas = gas
+			c[dst].NewGas = gas
+
 			return c[src].Gun(c[dst], amount, dstAddr, source, msgsCount)
 		},
 	}
-	return pathFlag(cmd)
+	cmd = pathFlag(cmd)
+	return gasFlag(cmd)
 }
