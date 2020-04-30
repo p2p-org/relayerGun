@@ -51,7 +51,7 @@ func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequence
 		break
 	}
 
-	// add messages for dst -> src
+	////add messages for dst -> src
 	//for _, seq := range sp.Dst {
 	//	msg, err := packetMsgFromTxQuery(dst, src, sh, seq)
 	//	if err != nil {
@@ -317,9 +317,6 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 			return fmt.Errorf("failed to send first transaction")
 		}
 		log.Println("transfer sent")
-
-		// Working on SRC chain :point_up:
-		// Working on DST chain :point_down:
 	}
 	return nil
 }
