@@ -4,6 +4,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/spf13/cobra"
 	"strconv"
+	"time"
 )
 
 func gunCmd() *cobra.Command {
@@ -58,6 +59,41 @@ func gunCmd() *cobra.Command {
 			c[dst].NewGas = gas
 
 			return c[src].Gun(c[dst], amount, dstAddr, source, msgsCount)
+		},
+	}
+	cmd = pathFlag(cmd)
+	return gasFlag(cmd)
+}
+
+func slowGunCmd() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:     "gun_update_client [src-chain-id] [dst-chain-id] [timeout]",
+		Aliases: []string{"g"},
+		Short:   "update client",
+		Long:    "",
+		Args:    cobra.ExactArgs(3),
+		RunE: func(cmd *cobra.Command, args []string) error {
+			src, dst := args[0], args[1]
+			c, err := config.Chains.Gets(src, dst)
+			if err != nil {
+				return err
+			}
+
+			pth, err := cmd.Flags().GetString(flagPath)
+			if err != nil {
+				return err
+			}
+
+			if _, err = setPathsFromArgs(c[src], c[dst], pth); err != nil {
+				return err
+			}
+
+			timeout, err := time.ParseDuration(args[2])
+			if err != nil {
+				return err
+			}
+
+			return c[src].SlowGun(c[dst], timeout)
 		},
 	}
 	cmd = pathFlag(cmd)

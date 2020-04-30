@@ -323,3 +323,34 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 	}
 	return nil
 }
+
+func (src *Chain) SlowGun(dst *Chain, timeout time.Duration) error {
+
+	for {
+		var (
+			err error
+			hs  map[string]*tmclient.Header
+		)
+
+		if err = retry.Do(func() error {
+			hs, err = UpdatesWithHeaders(src, dst)
+			if err != nil {
+				return err
+			}
+			return nil
+		}); err != nil {
+			return err
+		}
+
+		txs := RelayMsgs{
+			Dst: []sdk.Msg{
+				dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()),
+			},
+			Src: []sdk.Msg{},
+		}
+
+		txs.Send(src, dst)
+		time.Sleep(timeout)
+	}
+	return nil
+}
