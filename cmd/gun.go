@@ -93,9 +93,14 @@ func slowGunCmd() *cobra.Command {
 				return err
 			}
 
-			return c[src].SlowGun(c[dst], timeout)
+			metricsPort, err := cmd.Flags().GetString(flagMetricsPort)
+			if err != nil {
+				return err
+			}
+
+			return c[src].SlowGun(c[dst], timeout, metricsPort)
 		},
 	}
 	cmd = pathFlag(cmd)
-	return gasFlag(cmd)
+	return metricsPortFlag(cmd)
 }

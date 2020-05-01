@@ -3,6 +3,7 @@ package relayer
 import (
 	"fmt"
 	"log"
+	"net/http"
 	"time"
 
 	retry "github.com/avast/retry-go"
@@ -10,6 +11,9 @@ import (
 	chanTypes "github.com/cosmos/cosmos-sdk/x/ibc/04-channel/types"
 	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 	commitmentypes "github.com/cosmos/cosmos-sdk/x/ibc/23-commitment/types"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 var (
@@ -319,7 +323,23 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 	return nil
 }
 
-func (src *Chain) SlowGun(dst *Chain, timeout time.Duration) error {
+var (
+	lastClientUpdateTime = prometheus.NewGauge(prometheus.GaugeOpts{
+		Name: "last_client_update_time",
+		Help: "Last client update time",
+	})
+)
+
+func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterPort string) error {
+
+	prometheus.MustRegister(lastClientUpdateTime)
+
+	go func() {
+		http.Handle("/metrics", promhttp.Handler())
+		if err := http.ListenAndServe(":"+prometheusExporterPort, nil); err != nil {
+			log.Fatalf("failed to run prometheus: %v", err)
+		}
+	}()
 
 	for {
 		var (
@@ -344,7 +364,11 @@ func (src *Chain) SlowGun(dst *Chain, timeout time.Duration) error {
 			Src: []sdk.Msg{},
 		}
 
-		txs.Send(src, dst)
+		if txs.Send(src, dst); txs.Success() {
+			lastClientUpdateTime.SetToCurrentTime()
+		} else {
+
+		}
 		time.Sleep(timeout)
 	}
 	return nil

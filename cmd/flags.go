@@ -9,22 +9,23 @@ import (
 )
 
 var (
-	flagHash       = "hash"
-	flagURL        = "url"
-	flagForce      = "force"
-	flagFlags      = "flags"
-	flagTimeout    = "timeout"
-	flagConfig     = "config"
-	flagJSON       = "json"
-	flagYAML       = "yaml"
-	flagFile       = "file"
-	flagPath       = "path"
-	flagListenAddr = "listen"
-	flagTx         = "no-tx"
-	flagBlock      = "no-block"
-	flagData       = "data"
-	flagOrder      = "unordered"
-	flagGas        = "gas"
+	flagHash        = "hash"
+	flagURL         = "url"
+	flagForce       = "force"
+	flagFlags       = "flags"
+	flagTimeout     = "timeout"
+	flagConfig      = "config"
+	flagJSON        = "json"
+	flagYAML        = "yaml"
+	flagFile        = "file"
+	flagPath        = "path"
+	flagListenAddr  = "listen"
+	flagTx          = "no-tx"
+	flagBlock       = "no-block"
+	flagData        = "data"
+	flagOrder       = "unordered"
+	flagGas         = "gas"
+	flagMetricsPort = "metrics-port"
 )
 
 func liteFlags(cmd *cobra.Command) *cobra.Command {
@@ -168,6 +169,14 @@ func urlFlag(cmd *cobra.Command) *cobra.Command {
 func gasFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().Uint64P(flagGas, "g", 200000, "gas for transaction")
 	if err := viper.BindPFlag(flagGas, cmd.Flags().Lookup(flagGas)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func metricsPortFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().StringP(flagMetricsPort, "m", "3030", "metrics port")
+	if err := viper.BindPFlag(flagMetricsPort, cmd.Flags().Lookup(flagMetricsPort)); err != nil {
 		panic(err)
 	}
 	return cmd
