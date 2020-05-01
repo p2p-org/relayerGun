@@ -21,8 +21,9 @@ import (
 
 	ckeys "github.com/cosmos/cosmos-sdk/client/keys"
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
-	"github.com/iqlusioninc/relayer/relayer"
 	"github.com/spf13/cobra"
+
+	"github.com/iqlusioninc/relayer/relayer"
 )
 
 // keysCmd represents the keys command
@@ -56,6 +57,9 @@ func keysAddCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
+
+			done := chain.UseSDKContext()
+			defer done()
 
 			var keyName string
 			if len(args) == 2 {
@@ -113,6 +117,9 @@ func keysRestoreCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
+
+			done := chain.UseSDKContext()
+			defer done()
 
 			if chain.KeyExists(keyName) {
 				return errKeyExists(keyName)
@@ -183,6 +190,9 @@ func keysListCmd() *cobra.Command {
 				return err
 			}
 
+			done := chain.UseSDKContext()
+			defer done()
+
 			info, err := chain.Keybase.List()
 			if err != nil {
 				return err
@@ -211,6 +221,9 @@ func keysShowCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
+
+			done := chain.UseSDKContext()
+			defer done()
 
 			var keyName string
 			if len(args) == 2 {
