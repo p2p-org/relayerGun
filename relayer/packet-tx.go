@@ -330,7 +330,7 @@ var (
 	})
 )
 
-func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterPort string) error {
+func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterPort string, back bool) error {
 
 	prometheus.MustRegister(lastClientUpdateTime)
 
@@ -357,11 +357,17 @@ func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterP
 			return err
 		}
 
+		var backMsg []sdk.Msg
+
+		if back {
+			backMsg = append(backMsg, src.PathEnd.UpdateClient(hs[dst.ChainID], src.MustGetAddress()))
+		}
+
 		txs := RelayMsgs{
 			Dst: []sdk.Msg{
 				dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()),
 			},
-			Src: []sdk.Msg{},
+			Src: backMsg,
 		}
 
 		if txs.Send(src, dst); txs.Success() {

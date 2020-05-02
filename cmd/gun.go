@@ -67,11 +67,11 @@ func gunCmd() *cobra.Command {
 
 func slowGunCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "gun_update_client [src-chain-id] [dst-chain-id] [timeout]",
+		Use:     "gun_update_client [src-chain-id] [dst-chain-id] [timeout] [[back]]",
 		Aliases: []string{"g"},
 		Short:   "update client",
 		Long:    "",
-		Args:    cobra.ExactArgs(3),
+		Args:    cobra.RangeArgs(3, 4),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
 			c, err := config.Chains.Gets(src, dst)
@@ -83,7 +83,6 @@ func slowGunCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-
 			if _, err = setPathsFromArgs(c[src], c[dst], pth); err != nil {
 				return err
 			}
@@ -103,10 +102,19 @@ func slowGunCmd() *cobra.Command {
 				return err
 			}
 
+			back := false
+
+			if len(args) > 3 {
+				back, err = strconv.ParseBool(args[3])
+				if err != nil {
+					return err
+				}
+			}
+
 			c[src].NewGas = gas
 			c[dst].NewGas = gas
 
-			return c[src].SlowGun(c[dst], timeout, metricsPort)
+			return c[src].SlowGun(c[dst], timeout, metricsPort, back)
 		},
 	}
 	cmd = pathFlag(cmd)
