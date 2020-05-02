@@ -29,7 +29,7 @@ build-zip: go.sum
 
 install: go.sum
 	@echo "installing rly binary..."
-	@go build -mod=readonly $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/rly main.go
+	@go build -mod=readonly $(BUILD_FLAGS) -o $${GOBIN-$${GOPATH-$$HOME/go}/bin}/rgun main.go
 
 ###############################################################################
 # Tests / CI
