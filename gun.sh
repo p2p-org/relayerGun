@@ -28,5 +28,7 @@ rly config show
 rly paths gen $src_chain_id $port_id $dst_chain_id $port_id "$src_chain_id-$dst_chain_id"
 
 rly tx link "$src_chain_id-$dst_chain_id"
+
 #rly tx gun $src_chain_id $dst_chain_id $AMOUNT true $(rly ch addr $dst_chain_id) 10 --gas 1000000 -d
 #rly tx gun $dst_chain_id $src_chain_id $AMOUNT false $(rly ch addr $src_chain_id) 10 --gas 1000000 -d
+#rly tx gun_update_client $src_chain_id $dst_chain_id 5s
