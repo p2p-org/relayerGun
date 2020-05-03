@@ -102,6 +102,17 @@ func slowGunCmd() *cobra.Command {
 				return err
 			}
 
+			gasPrices, err := cmd.Flags().GetStringArray(flagGasPrice)
+			if err != nil {
+				return err
+			}
+
+			c[src].NewGasPrices = gasPrices[0]
+			c[dst].NewGasPrices = gasPrices[0]
+			if len(gasPrices) > 1 {
+				c[dst].NewGasPrices = gasPrices[1]
+			}
+
 			back := false
 
 			if len(args) > 3 {
@@ -119,5 +130,6 @@ func slowGunCmd() *cobra.Command {
 	}
 	cmd = pathFlag(cmd)
 	cmd = gasFlag(cmd)
+	cmd = gasPriceFlag(cmd)
 	return metricsPortFlag(cmd)
 }

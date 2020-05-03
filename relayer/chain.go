@@ -40,7 +40,8 @@ type Chain struct {
 	Memo           string  `yaml:"memo,omitempty" json:"memo,omitempty"`
 	TrustingPeriod string  `yaml:"trusting-period" json:"trusting-period"`
 
-	NewGas uint64
+	NewGas       uint64
+	NewGasPrices string
 
 	// TODO: make these private
 	HomePath string                `yaml:"-" json:"-"`
@@ -245,10 +246,15 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 		gas = src.Gas
 	}
 
+	gp := src.getGasPrices()
+	if src.NewGasPrices != "" {
+		gp, _ = sdk.ParseDecCoins(src.NewGasPrices)
+	}
+
 	return auth.NewTxBuilder(
 		auth.DefaultTxEncoder(src.Amino.Codec), acc.GetAccountNumber(),
 		acc.GetSequence(), gas, src.GasAdjustment, false, src.ChainID,
-		src.Memo, sdk.NewCoins(), src.getGasPrices()).WithKeybase(src.Keybase).
+		src.Memo, sdk.NewCoins(), gp).WithKeybase(src.Keybase).
 		BuildAndSign(src.Key, ckeys.DefaultKeyPass, datagram)
 }
 

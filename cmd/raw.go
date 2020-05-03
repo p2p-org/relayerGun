@@ -64,9 +64,30 @@ func updateClientCmd() *cobra.Command {
 				return err
 			}
 
+			gas, err := cmd.Flags().GetUint64(flagGas)
+			if err != nil {
+				return err
+			}
+
+			gasPrices, err := cmd.Flags().GetStringArray(flagGasPrice)
+			if err != nil {
+				return err
+			}
+
+			chains[src].NewGasPrices = gasPrices[0]
+			chains[dst].NewGasPrices = gasPrices[0]
+			if len(gasPrices) > 1 {
+				chains[dst].NewGasPrices = gasPrices[1]
+			}
+
+			chains[src].NewGas = gas
+			chains[dst].NewGas = gas
+
 			return sendAndPrint([]sdk.Msg{chains[src].PathEnd.UpdateClient(dstHeader, chains[src].MustGetAddress())}, chains[src], cmd)
 		},
 	}
+	cmd = gasFlag(cmd)
+	cmd = gasPriceFlag(cmd)
 	return cmd
 }
 

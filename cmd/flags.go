@@ -25,6 +25,7 @@ var (
 	flagData        = "data"
 	flagOrder       = "unordered"
 	flagGas         = "gas"
+	flagGasPrice    = "gas-price"
 	flagMetricsPort = "metrics-port"
 )
 
@@ -169,6 +170,14 @@ func urlFlag(cmd *cobra.Command) *cobra.Command {
 func gasFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().Uint64P(flagGas, "g", 200000, "gas for transaction")
 	if err := viper.BindPFlag(flagGas, cmd.Flags().Lookup(flagGas)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func gasPriceFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().StringArray(flagGasPrice, nil, "gas price: --gas-price src_tokens --gas-price dst_tokens")
+	if err := viper.BindPFlag(flagGasPrice, cmd.Flags().Lookup(flagGasPrice)); err != nil {
 		panic(err)
 	}
 	return cmd
