@@ -248,7 +248,10 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 
 	gp := src.getGasPrices()
 	if src.NewGasPrices != "" {
-		gp, _ = sdk.ParseDecCoins(src.NewGasPrices)
+		gp, err = sdk.ParseDecCoins(src.NewGasPrices)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	return auth.NewTxBuilder(
