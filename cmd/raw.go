@@ -74,9 +74,12 @@ func updateClientCmd() *cobra.Command {
 				return err
 			}
 
-			chains[src].NewGasPrices = gasPrices[0]
-			chains[dst].NewGasPrices = gasPrices[0]
+			if len(gasPrices) == 1 {
+				chains[src].NewGasPrices = gasPrices[0]
+			}
+
 			if len(gasPrices) > 1 {
+				chains[src].NewGasPrices = gasPrices[0]
 				chains[dst].NewGasPrices = gasPrices[1]
 			}
 

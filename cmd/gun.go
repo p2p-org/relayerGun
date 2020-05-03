@@ -107,9 +107,12 @@ func slowGunCmd() *cobra.Command {
 				return err
 			}
 
-			c[src].NewGasPrices = gasPrices[0]
-			c[dst].NewGasPrices = gasPrices[0]
+			if len(gasPrices) == 1 {
+				c[src].NewGasPrices = gasPrices[0]
+			}
+
 			if len(gasPrices) > 1 {
+				c[src].NewGasPrices = gasPrices[0]
 				c[dst].NewGasPrices = gasPrices[1]
 			}
 

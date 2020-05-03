@@ -278,6 +278,7 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 			if err = RelayPacketsOrderedChan(src, dst, sh, sp); err != nil {
 				log.Println(err.Error())
 			}
+			time.Sleep(1 * time.Second)
 		}
 
 	}()
