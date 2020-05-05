@@ -324,14 +324,15 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 	return nil
 }
 
-var (
-	lastClientUpdateTime = prometheus.NewGauge(prometheus.GaugeOpts{
-		Name: "last_client_update_time",
-		Help: "Last client update time",
-	})
-)
-
 func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterPort string, back bool) error {
+
+	var (
+		lastClientUpdateTime = prometheus.NewGauge(prometheus.GaugeOpts{
+			Name:        "last_client_update_time",
+			Help:        "Last client update time",
+			ConstLabels: map[string]string{"client_id": src.PathEnd.ClientID},
+		})
+	)
 
 	prometheus.MustRegister(lastClientUpdateTime)
 
