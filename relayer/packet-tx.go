@@ -372,7 +372,7 @@ func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterP
 			Src: backMsg,
 		}
 
-		if txs.Send(src, dst); txs.Success() {
+		if txs.SendSync(src, dst); txs.Success() {
 			lastClientUpdateTime.SetToCurrentTime()
 		} else {
 			return fmt.Errorf("failed to update client")
