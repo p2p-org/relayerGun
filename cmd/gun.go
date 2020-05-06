@@ -138,13 +138,6 @@ func slowGunCmd() *cobra.Command {
 			c[src].Delay = delay
 			c[dst].Delay = delay
 
-			if len(args) == 5 {
-				delay, err = time.ParseDuration(args[4])
-				if err != nil {
-					return err
-				}
-			}
-
 			c[src].NewGas = gas
 			c[dst].NewGas = gas
 

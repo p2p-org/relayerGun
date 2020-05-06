@@ -256,11 +256,21 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 		}
 	}
 
-	return auth.NewTxBuilder(
+	bldr := auth.NewTxBuilder(
 		auth.DefaultTxEncoder(src.Amino.Codec), acc.GetAccountNumber(),
 		acc.GetSequence(), gas, src.GasAdjustment, false, src.ChainID,
-		src.Memo, sdk.NewCoins(), gp).WithKeybase(src.Keybase).
-		BuildAndSign(src.Key, ckeys.DefaultKeyPass, datagram)
+		src.Memo, sdk.NewCoins(), gp).WithKeybase(src.Keybase)
+
+	if src.debug {
+		msg, err := bldr.BuildSignMsg(datagram)
+		if err != nil {
+			return nil, err
+		}
+		json, _ := src.Cdc.MarshalJSON(auth.NewStdTx(msg.Msgs, msg.Fee, nil, msg.Memo))
+		fmt.Println(string(json))
+	}
+
+	return bldr.BuildAndSign(src.Key, ckeys.DefaultKeyPass, datagram)
 }
 
 // BroadcastTxCommit takes the marshaled transaction bytes and broadcasts them
