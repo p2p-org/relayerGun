@@ -71,7 +71,7 @@ func slowGunCmd() *cobra.Command {
 		Aliases: []string{"g"},
 		Short:   "update client",
 		Long:    "",
-		Args:    cobra.RangeArgs(3, 4),
+		Args:    cobra.RangeArgs(3, 5),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
 			c, err := config.Chains.Gets(src, dst)
@@ -125,6 +125,26 @@ func slowGunCmd() *cobra.Command {
 				}
 			}
 
+			delayString, err := cmd.Flags().GetString(flagDelay)
+			if err != nil {
+				return err
+			}
+
+			delay, err := time.ParseDuration(delayString)
+			if err != nil {
+				return err
+			}
+
+			c[src].Delay = delay
+			c[dst].Delay = delay
+
+			if len(args) == 5 {
+				delay, err = time.ParseDuration(args[4])
+				if err != nil {
+					return err
+				}
+			}
+
 			c[src].NewGas = gas
 			c[dst].NewGas = gas
 
@@ -134,5 +154,6 @@ func slowGunCmd() *cobra.Command {
 	cmd = pathFlag(cmd)
 	cmd = gasFlag(cmd)
 	cmd = gasPriceFlag(cmd)
+	cmd = delayFlag(cmd)
 	return metricsPortFlag(cmd)
 }

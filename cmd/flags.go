@@ -27,6 +27,7 @@ var (
 	flagGas         = "gas"
 	flagGasPrice    = "gas-price"
 	flagMetricsPort = "metrics-port"
+	flagDelay       = "delay"
 )
 
 func liteFlags(cmd *cobra.Command) *cobra.Command {
@@ -178,6 +179,14 @@ func gasFlag(cmd *cobra.Command) *cobra.Command {
 func gasPriceFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().StringArray(flagGasPrice, nil, "gas price: --gas-price src_tokens --gas-price dst_tokens")
 	if err := viper.BindPFlag(flagGasPrice, cmd.Flags().Lookup(flagGasPrice)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func delayFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().StringP(flagDelay, "", "0s", "--delay 10s")
+	if err := viper.BindPFlag(flagDelay, cmd.Flags().Lookup(flagDelay)); err != nil {
 		panic(err)
 	}
 	return cmd

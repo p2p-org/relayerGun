@@ -18,6 +18,7 @@ package cmd
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/iqlusioninc/relayer/relayer"
@@ -160,6 +161,19 @@ func fullPathCmd() *cobra.Command {
 				return err
 			}
 
+			delayString, err := cmd.Flags().GetString(flagDelay)
+			if err != nil {
+				return err
+			}
+
+			delay, err := time.ParseDuration(delayString)
+			if err != nil {
+				return err
+			}
+
+			c[src].Delay = delay
+			c[dst].Delay = delay
+
 			to, err := getTimeout(cmd)
 			if err != nil {
 				return err
@@ -176,7 +190,7 @@ func fullPathCmd() *cobra.Command {
 			return c[src].CreateChannel(c[dst], true, to)
 		},
 	}
-
+	cmd = delayFlag(cmd)
 	return timeoutFlag(cmd)
 }
 

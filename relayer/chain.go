@@ -56,6 +56,8 @@ type Chain struct {
 	timeout time.Duration
 	debug   bool
 
+	Delay time.Duration
+
 	Keys []string `yaml:"keys" json:"keys"`
 
 	// stores facuet addresses that have been used reciently

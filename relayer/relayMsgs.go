@@ -3,6 +3,7 @@ package relayer
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
@@ -37,6 +38,7 @@ func (r *RelayMsgs) Success() bool {
 // Send sends the messages with appropriate output
 func (r *RelayMsgs) Send(src, dst *Chain) {
 	var failed = false
+	time.Sleep(src.Delay)
 	// TODO: maybe figure out a better way to indicate error here?
 
 	// TODO: Parallelize? Maybe?
@@ -74,6 +76,7 @@ func (r *RelayMsgs) Send(src, dst *Chain) {
 
 func (r *RelayMsgs) SendSync(src, dst *Chain) {
 	var failed = false
+	time.Sleep(src.Delay)
 	// TODO: maybe figure out a better way to indicate error here?
 
 	// TODO: Parallelize? Maybe?

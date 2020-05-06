@@ -5,6 +5,7 @@ import (
 	chanState "github.com/cosmos/cosmos-sdk/x/ibc/04-channel/exported"
 	"github.com/iqlusioninc/relayer/relayer"
 	"github.com/spf13/cobra"
+	"time"
 )
 
 ////////////////////////////////////////
@@ -83,6 +84,19 @@ func updateClientCmd() *cobra.Command {
 				chains[dst].NewGasPrices = gasPrices[1]
 			}
 
+			delayString, err := cmd.Flags().GetString(flagDelay)
+			if err != nil {
+				return err
+			}
+
+			delay, err := time.ParseDuration(delayString)
+			if err != nil {
+				return err
+			}
+
+			chains[src].Delay = delay
+			chains[dst].Delay = delay
+
 			chains[src].NewGas = gas
 			chains[dst].NewGas = gas
 
@@ -91,6 +105,7 @@ func updateClientCmd() *cobra.Command {
 	}
 	cmd = gasFlag(cmd)
 	cmd = gasPriceFlag(cmd)
+	cmd = delayFlag(cmd)
 	return cmd
 }
 
