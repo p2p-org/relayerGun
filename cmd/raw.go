@@ -3,8 +3,10 @@ package cmd
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	chanState "github.com/cosmos/cosmos-sdk/x/ibc/04-channel/exported"
+	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 	"github.com/iqlusioninc/relayer/relayer"
 	"github.com/spf13/cobra"
+	"strconv"
 	"time"
 )
 
@@ -41,10 +43,10 @@ func rawTransactionCmd() *cobra.Command {
 }
 func updateClientCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "update-client [src-chain-id] [dst-chain-id] [client-id]",
+		Use:     "update-client [src-chain-id] [dst-chain-id] [client-id] [[height]]",
 		Aliases: []string{"uc"},
 		Short:   "update client for dst-chain on src-chain",
-		Args:    cobra.ExactArgs(3),
+		Args:    cobra.RangeArgs(3, 4),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
 
@@ -56,13 +58,27 @@ func updateClientCmd() *cobra.Command {
 			if err = chains[src].AddPath(args[2], dcon, dcha, dpor, dord); err != nil {
 				return err
 			}
-			if err != nil {
-				return err
+
+			height := 0
+			if len(args) == 4 {
+				height, err = strconv.Atoi(args[3])
+				if err != nil {
+					return err
+				}
 			}
 
-			dstHeader, err := chains[dst].UpdateLiteWithHeader()
-			if err != nil {
-				return err
+			var dstHeader *tmclient.Header
+
+			if height > 0 {
+				dstHeader, err = chains[dst].UpdateLiteWithHeaderHeight(int64(height))
+				if err != nil {
+					return err
+				}
+			} else {
+				dstHeader, err = chains[dst].UpdateLiteWithHeader()
+				if err != nil {
+					return err
+				}
 			}
 
 			gas, err := cmd.Flags().GetUint64(flagGas)

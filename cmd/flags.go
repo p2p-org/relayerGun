@@ -202,7 +202,7 @@ func delayFlag(cmd *cobra.Command) *cobra.Command {
 }
 
 func metricsPortFlag(cmd *cobra.Command) *cobra.Command {
-	cmd.Flags().StringP(flagMetricsPort, "m", "3030", "metrics port")
+	cmd.Flags().StringP(flagMetricsPort, "m", "", "metrics port")
 	if err := viper.BindPFlag(flagMetricsPort, cmd.Flags().Lookup(flagMetricsPort)); err != nil {
 		panic(err)
 	}

@@ -337,6 +337,9 @@ func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterP
 	prometheus.MustRegister(lastClientUpdateTime)
 
 	go func() {
+		if prometheusExporterPort == "" {
+			return
+		}
 		http.Handle("/metrics", promhttp.Handler())
 		if err := http.ListenAndServe(":"+prometheusExporterPort, nil); err != nil {
 			log.Fatalf("failed to run prometheus: %v", err)
