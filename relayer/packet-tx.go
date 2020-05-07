@@ -330,7 +330,7 @@ func (src *Chain) SlowGun(dst *Chain, timeout time.Duration, prometheusExporterP
 		lastClientUpdateTime = prometheus.NewGauge(prometheus.GaugeOpts{
 			Name:        "last_client_update_time",
 			Help:        "Last client update time",
-			ConstLabels: map[string]string{"client_id": src.PathEnd.ClientID},
+			ConstLabels: map[string]string{"client_id": src.PathEnd.ClientID, "chain_id": src.ChainID},
 		})
 	)
 

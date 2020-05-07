@@ -84,6 +84,13 @@ func updateClientCmd() *cobra.Command {
 				chains[dst].NewGasPrices = gasPrices[1]
 			}
 
+			genOnly, err := cmd.Flags().GetBool(flagGenOnly)
+			if err != nil {
+				return err
+			}
+			chains[src].GenOnly = genOnly
+			chains[dst].GenOnly = genOnly
+
 			delayString, err := cmd.Flags().GetString(flagDelay)
 			if err != nil {
 				return err
@@ -106,6 +113,7 @@ func updateClientCmd() *cobra.Command {
 	cmd = gasFlag(cmd)
 	cmd = gasPriceFlag(cmd)
 	cmd = delayFlag(cmd)
+	cmd = genOnlyFlag(cmd)
 	return cmd
 }
 

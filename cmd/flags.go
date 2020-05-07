@@ -28,7 +28,16 @@ var (
 	flagGasPrice    = "gas-price"
 	flagMetricsPort = "metrics-port"
 	flagDelay       = "delay"
+	flagGenOnly     = "gen-only"
 )
+
+func genOnlyFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().BoolP(flagGenOnly, "", false, "--gen-only")
+	if err := viper.BindPFlag(flagGenOnly, cmd.Flags().Lookup(flagGenOnly)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
 
 func liteFlags(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().Int64(flags.FlagHeight, -1, "Trusted header's height")

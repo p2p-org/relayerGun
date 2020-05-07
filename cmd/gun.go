@@ -125,6 +125,13 @@ func slowGunCmd() *cobra.Command {
 				}
 			}
 
+			genOnly, err := cmd.Flags().GetBool(flagGenOnly)
+			if err != nil {
+				return err
+			}
+			c[src].GenOnly = genOnly
+			c[dst].GenOnly = genOnly
+
 			delayString, err := cmd.Flags().GetString(flagDelay)
 			if err != nil {
 				return err
@@ -148,5 +155,6 @@ func slowGunCmd() *cobra.Command {
 	cmd = gasFlag(cmd)
 	cmd = gasPriceFlag(cmd)
 	cmd = delayFlag(cmd)
+	cmd = genOnlyFlag(cmd)
 	return metricsPortFlag(cmd)
 }

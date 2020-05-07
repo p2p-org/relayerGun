@@ -58,6 +58,8 @@ type Chain struct {
 
 	Delay time.Duration
 
+	GenOnly bool
+
 	Keys []string `yaml:"keys" json:"keys"`
 
 	// stores facuet addresses that have been used reciently
@@ -221,6 +223,9 @@ func (src *Chain) SendMsgs(datagrams []sdk.Msg) (res sdk.TxResponse, err error) 
 	if out, err = src.BuildAndSignTx(datagrams); err != nil {
 		return res, err
 	}
+	if src.GenOnly {
+		return sdk.TxResponse{}, nil
+	}
 	return src.BroadcastTxCommit(out)
 }
 
@@ -228,6 +233,9 @@ func (src *Chain) SendMsgsSync(datagrams []sdk.Msg) (res sdk.TxResponse, err err
 	var out []byte
 	if out, err = src.BuildAndSignTx(datagrams); err != nil {
 		return res, err
+	}
+	if src.GenOnly {
+		return sdk.TxResponse{}, nil
 	}
 	return src.BroadcastTxSync(out)
 }
@@ -275,6 +283,7 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 
 // BroadcastTxCommit takes the marshaled transaction bytes and broadcasts them
 func (src *Chain) BroadcastTxCommit(txBytes []byte) (sdk.TxResponse, error) {
+	fmt.Println("sending tx...")
 	res, err := sdkCtx.CLIContext{Client: src.Client}.BroadcastTxCommit(txBytes)
 
 	if !src.debug {
@@ -285,6 +294,7 @@ func (src *Chain) BroadcastTxCommit(txBytes []byte) (sdk.TxResponse, error) {
 }
 
 func (src *Chain) BroadcastTxSync(txBytes []byte) (sdk.TxResponse, error) {
+	fmt.Println("sending tx...")
 	res, err := sdkCtx.CLIContext{Client: src.Client}.BroadcastTxSync(txBytes)
 
 	if !src.debug {

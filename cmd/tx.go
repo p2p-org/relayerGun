@@ -170,9 +170,15 @@ func fullPathCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
-
 			c[src].Delay = delay
 			c[dst].Delay = delay
+
+			genOnly, err := cmd.Flags().GetBool(flagGenOnly)
+			if err != nil {
+				return err
+			}
+			c[src].GenOnly = genOnly
+			c[dst].GenOnly = genOnly
 
 			to, err := getTimeout(cmd)
 			if err != nil {
@@ -191,6 +197,7 @@ func fullPathCmd() *cobra.Command {
 		},
 	}
 	cmd = delayFlag(cmd)
+	cmd = genOnlyFlag(cmd)
 	return timeoutFlag(cmd)
 }
 
