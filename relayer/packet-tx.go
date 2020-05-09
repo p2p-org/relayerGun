@@ -55,15 +55,15 @@ func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequence
 		break
 	}
 
-	////add messages for dst -> src
-	//for _, seq := range sp.Dst {
-	//	msg, err := packetMsgFromTxQuery(dst, src, sh, seq)
-	//	if err != nil {
-	//		return err
-	//	}
-	//	msgs.Src = append(msgs.Src, msg...)
-	//	break
-	//}
+	//add messages for dst -> src
+	for _, seq := range sp.Dst {
+		msg, err := packetMsgFromTxQuery(dst, src, sh, seq)
+		if err != nil {
+			return err
+		}
+		msgs.Src = append(msgs.Src, msg...)
+		break
+	}
 
 	if !msgs.Ready() {
 		src.Log(fmt.Sprintf("- No packets to relay between [%s]port{%s} and [%s]port{%s}", src.ChainID, src.PathEnd.PortID, dst.ChainID, dst.PathEnd.PortID))
@@ -253,7 +253,7 @@ func (src *Chain) SendPacket(dst *Chain, packetData []byte) error {
 	return nil
 }
 
-func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, source bool, msgsCount int) error {
+func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, source bool, msgsCount, repeats int, relay bool) error {
 
 	if source {
 		amount.Denom = fmt.Sprintf("%s/%s/%s", dst.PathEnd.PortID, dst.PathEnd.ChannelID, amount.Denom)
@@ -261,29 +261,34 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		amount.Denom = fmt.Sprintf("%s/%s/%s", src.PathEnd.PortID, src.PathEnd.ChannelID, amount.Denom)
 	}
 
-	go func() {
-		for {
-			sh, err := NewSyncHeaders(src, dst)
-			if err != nil {
-				log.Println(err.Error())
-				continue
+	if relay {
+		go func() {
+			fmt.Println("Start relaying...")
+			for {
+				sh, err := NewSyncHeaders(src, dst)
+				if err != nil {
+					log.Println(err.Error())
+					continue
+				}
+
+				sp, err := UnrelayedSequences(src, dst, sh)
+				if err != nil {
+					log.Println(err.Error())
+					continue
+				}
+
+				if err = RelayPacketsOrderedChan(src, dst, sh, sp); err != nil {
+					log.Println(err.Error())
+				}
+				time.Sleep(1 * time.Second)
 			}
 
-			sp, err := UnrelayedSequences(src, dst, sh)
-			if err != nil {
-				log.Println(err.Error())
-				continue
-			}
+		}()
+	}
 
-			if err = RelayPacketsOrderedChan(src, dst, sh, sp); err != nil {
-				log.Println(err.Error())
-			}
-			time.Sleep(1 * time.Second)
-		}
+	forever := repeats == 0
 
-	}()
-
-	for {
+	for repeats > 0 || forever {
 
 		var (
 			done          func()
@@ -320,6 +325,7 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 			return fmt.Errorf("failed to send first transaction")
 		}
 		log.Println("transfer sent")
+		repeats--
 	}
 	return nil
 }

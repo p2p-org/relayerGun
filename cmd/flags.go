@@ -29,11 +29,20 @@ var (
 	flagMetricsPort = "metrics-port"
 	flagDelay       = "delay"
 	flagGenOnly     = "gen-only"
+	flagRelay       = "relay"
 )
 
 func genOnlyFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().BoolP(flagGenOnly, "", false, "--gen-only")
 	if err := viper.BindPFlag(flagGenOnly, cmd.Flags().Lookup(flagGenOnly)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func relayFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().BoolP(flagRelay, "", false, "--relay")
+	if err := viper.BindPFlag(flagRelay, cmd.Flags().Lookup(flagRelay)); err != nil {
 		panic(err)
 	}
 	return cmd

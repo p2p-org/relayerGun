@@ -213,6 +213,28 @@ func relayMsgsCmd() *cobra.Command {
 				return err
 			}
 
+			gas, err := cmd.Flags().GetUint64(flagGas)
+			if err != nil {
+				return err
+			}
+
+			gasPrices, err := cmd.Flags().GetStringArray(flagGasPrice)
+			if err != nil {
+				return err
+			}
+
+			if len(gasPrices) == 1 {
+				c[src].NewGasPrices = gasPrices[0]
+			}
+
+			if len(gasPrices) > 1 {
+				c[src].NewGasPrices = gasPrices[0]
+				c[dst].NewGasPrices = gasPrices[1]
+			}
+
+			c[src].NewGas = gas
+			c[dst].NewGas = gas
+
 			sh, err := relayer.NewSyncHeaders(c[src], c[dst])
 			if err != nil {
 				return err
@@ -231,6 +253,8 @@ func relayMsgsCmd() *cobra.Command {
 		},
 	}
 
+	cmd = gasFlag(cmd)
+	cmd = gasPriceFlag(cmd)
 	return cmd
 }
 

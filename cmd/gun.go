@@ -9,11 +9,11 @@ import (
 
 func gunCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "gun [src-chain-id] [dst-chain-id] [amount] [source] [dst-chain-addr] [msgs-count]",
+		Use:     "gun [src-chain-id] [dst-chain-id] [amount] [source] [dst-chain-addr] [msgs-count] [[repeats]]",
 		Aliases: []string{"g"},
 		Short:   "transfer tokens from a source chain to a destination chain in one command",
 		Long:    "This sends tokens from a relayers configured wallet on chain src to a dst addr on dst",
-		Args:    cobra.ExactArgs(6),
+		Args:    cobra.RangeArgs(6, 7),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
 			c, err := config.Chains.Gets(src, dst)
@@ -58,10 +58,24 @@ func gunCmd() *cobra.Command {
 			c[src].NewGas = gas
 			c[dst].NewGas = gas
 
-			return c[src].Gun(c[dst], amount, dstAddr, source, msgsCount)
+			relay, err := cmd.Flags().GetBool(flagRelay)
+			if err != nil {
+				return err
+			}
+
+			repeats := 0
+			if len(args) == 7 {
+				repeats, err = strconv.Atoi(args[6])
+				if err != nil {
+					return err
+				}
+			}
+
+			return c[src].Gun(c[dst], amount, dstAddr, source, msgsCount, repeats, relay)
 		},
 	}
 	cmd = pathFlag(cmd)
+	cmd = relayFlag(cmd)
 	return gasFlag(cmd)
 }
 
