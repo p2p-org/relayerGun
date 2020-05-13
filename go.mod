@@ -7,8 +7,8 @@ require (
 	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/cenkalti/backoff/v3 v3.2.2 // indirect
 	github.com/containerd/continuity v0.0.0-20200228182428-0f16d7a0959c // indirect
-	github.com/cosmos/cosmos-sdk v0.34.4-0.20200507135526-b3cada10017d
-	github.com/cosmos/gaia v0.0.1-0.20200507172327-bde5e9c00325
+	github.com/corestario/marketplace v0.0.0-20191227095102-07bb99b5023b
+	github.com/cosmos/cosmos-sdk v0.38.0
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d
 	github.com/gorilla/mux v1.7.4
 	github.com/ory/dockertest/v3 v3.5.5
@@ -16,10 +16,15 @@ require (
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/viper v1.6.3
 	github.com/stretchr/testify v1.5.1
-	github.com/tendermint/go-amino v0.15.1
 	github.com/tendermint/tendermint v0.33.4
 	github.com/tendermint/tm-db v0.5.1
 	gopkg.in/yaml.v2 v2.2.8
 )
 
 replace github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
+
+replace github.com/corestario/marketplace => /Users/pr0n00gler/projects/dgamingfoundation/marketplace
+
+replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.34.4-0.20200507135526-b3cada10017d
+
+replace github.com/cosmos/modules/incubator/nft => /Users/pr0n00gler/projects/dgamingfoundation/modules/incubator/nft

@@ -12,6 +12,7 @@ import (
 	xferTypes "github.com/cosmos/cosmos-sdk/x/ibc/20-transfer/types"
 	commitmenttypes "github.com/cosmos/cosmos-sdk/x/ibc/23-commitment/types"
 	ibctypes "github.com/cosmos/cosmos-sdk/x/ibc/types"
+	nftTypes "github.com/corestario/marketplace/x/nftIBC/types"
 )
 
 // TODO: add Order chanTypes.Order as a property and wire it up in validation
@@ -302,5 +303,21 @@ func (src *Chain) PacketMsg(dst *Chain, xferPacket []byte, timeout, timeoutStamp
 		dstCommitRes.Proof,
 		dstCommitRes.ProofHeight,
 		src.MustGetAddress(),
+	)
+}
+
+func (src *PathEnd) XferNFTPacket(id, denom string, sender sdk.AccAddress) []byte {
+	return nftTypes.NewNFTPacketData(id, denom, sender).GetBytes()
+}
+
+func (src *PathEnd) MsgTransferNFT(dst *PathEnd, dstHeight uint64, id, denom, dstAddr string, signer sdk.AccAddress) sdk.Msg {
+	return nftTypes.NewMsgTransferNFT(
+		src.PortID,
+		src.ChannelID,
+		dstHeight,
+		signer,
+		dstAddr,
+		id,
+		denom,
 	)
 }
