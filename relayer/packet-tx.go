@@ -258,7 +258,7 @@ func (src *Chain) SendPacket(dst *Chain, packetData []byte) error {
 
 func (src *Chain) SendTransferNFTBothSides(dst *Chain, id, denom string, dstAddr sdk.AccAddress, source bool) error {
 	if source {
-		//denom = fmt.Sprintf("%s/%s/%s", dst.PathEnd.PortID, dst.PathEnd.ChannelID, denom)
+		denom = fmt.Sprintf("%s/%s/%s", dst.PathEnd.PortID, dst.PathEnd.ChannelID, denom)
 	} else {
 		denom = fmt.Sprintf("%s/%s/%s", src.PathEnd.PortID, src.PathEnd.ChannelID, denom)
 	}
@@ -268,17 +268,14 @@ func (src *Chain) SendTransferNFTBothSides(dst *Chain, id, denom string, dstAddr
 		return err
 	}
 
-	timeoutHeight := dstHeader.GetHeight() + uint64(defaultPacketTimeout)
-
 	// Properly render the address string
 	done := dst.UseSDKContext()
-	dstAddrString := dstAddr.String()
 	done()
 
 	// MsgTransfer will call SendPacket on src chain
 	txs := RelayMsgs{
 		Src: []sdk.Msg{src.PathEnd.MsgTransferNFT(
-			dst.PathEnd, dstHeader.GetHeight(), id, denom, dstAddrString, src.MustGetAddress(),
+			dst.PathEnd, dstHeader.GetHeight(), id, denom, dstAddr, src.MustGetAddress(),
 		)},
 		Dst: []sdk.Msg{},
 	}
@@ -286,83 +283,5 @@ func (src *Chain) SendTransferNFTBothSides(dst *Chain, id, denom string, dstAddr
 	if txs.Send(src, dst); !txs.Success() {
 		return fmt.Errorf("failed to send first transaction")
 	}
-
-	// Working on SRC chain :point_up:
-	// Working on DST chain :point_down:
-
-	var (
-		hs           map[string]*tmclient.Header
-		seqRecv      chanTypes.RecvResponse
-		seqSend      uint64
-		srcCommitRes CommitmentResponse
-	)
-
-	if err = retry.Do(func() error {
-		hs, err = UpdatesWithHeaders(src, dst)
-		if err != nil {
-			return err
-		}
-
-		seqRecv, err = dst.QueryNextSeqRecv(hs[dst.ChainID].Height)
-		if err != nil {
-			return err
-		}
-
-		seqSend, err = src.QueryNextSeqSend(hs[src.ChainID].Height)
-		if err != nil {
-			return err
-		}
-
-		srcCommitRes, err = src.QueryPacketCommitment(hs[src.ChainID].Height-1, int64(seqSend-1))
-		if err != nil {
-			return err
-		}
-
-		if srcCommitRes.Proof.Proof == nil {
-			return fmt.Errorf("proof nil, retrying")
-		}
-
-		return nil
-	}); err != nil {
-		return err
-	}
-
-	// Properly render the source and destination address strings
-	done = src.UseSDKContext()
-	//srcAddrString := src.MustGetAddress().String()
-	done()
-
-	done = dst.UseSDKContext()
-	dstAddrString = dstAddr.String()
-	done()
-
-	// reconstructing packet data here instead of retrieving from an indexed node
-	xferPacket := src.PathEnd.XferNFTPacket(
-		id,
-		denom,
-		src.MustGetAddress(),
-	)
-
-	// Debugging by simply passing in the packet information that we know was sent earlier in the SendPacket
-	// part of the command. In a real relayer, this would be a separate command that retrieved the packet
-	// information from an indexing node
-	txs = RelayMsgs{
-		Dst: []sdk.Msg{
-			dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()),
-			dst.PathEnd.MsgRecvPacket(
-				src.PathEnd,
-				seqRecv.NextSequenceRecv,
-				timeoutHeight,
-				defaultPacketTimeoutStamp(),
-				xferPacket,
-				srcCommitRes.Proof,
-				srcCommitRes.ProofHeight,
-				dst.MustGetAddress(),
-			),
-		},
-		Src: []sdk.Msg{},
-	}
-
-	txs.Send(src, dst)
 	return nil
 }

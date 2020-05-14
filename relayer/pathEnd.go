@@ -4,6 +4,7 @@ import (
 	"strings"
 	"time"
 
+	nftTypes "github.com/corestario/marketplace/x/nftIBC/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	clientTypes "github.com/cosmos/cosmos-sdk/x/ibc/02-client/types"
 	connTypes "github.com/cosmos/cosmos-sdk/x/ibc/03-connection/types"
@@ -12,7 +13,6 @@ import (
 	xferTypes "github.com/cosmos/cosmos-sdk/x/ibc/20-transfer/types"
 	commitmenttypes "github.com/cosmos/cosmos-sdk/x/ibc/23-commitment/types"
 	ibctypes "github.com/cosmos/cosmos-sdk/x/ibc/types"
-	nftTypes "github.com/corestario/marketplace/x/nftIBC/types"
 )
 
 // TODO: add Order chanTypes.Order as a property and wire it up in validation
@@ -306,11 +306,11 @@ func (src *Chain) PacketMsg(dst *Chain, xferPacket []byte, timeout, timeoutStamp
 	)
 }
 
-func (src *PathEnd) XferNFTPacket(id, denom string, sender sdk.AccAddress) []byte {
-	return nftTypes.NewNFTPacketData(id, denom, sender).GetBytes()
-}
+//func (src *PathEnd) XferNFTPacket(id, denom string, sender, receiver sdk.AccAddress) []byte {
+//	return nftTypes.NewNFTPacketData(id, denom, sender, receiver).GetBytes()
+//}
 
-func (src *PathEnd) MsgTransferNFT(dst *PathEnd, dstHeight uint64, id, denom, dstAddr string, signer sdk.AccAddress) sdk.Msg {
+func (src *PathEnd) MsgTransferNFT(dst *PathEnd, dstHeight uint64, id, denom string, dstAddr sdk.AccAddress, signer sdk.AccAddress) sdk.Msg {
 	return nftTypes.NewMsgTransferNFT(
 		src.PortID,
 		src.ChannelID,
