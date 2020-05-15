@@ -20,9 +20,8 @@ func testClientPair(t *testing.T, src, dst *Chain) {
 func testClient(t *testing.T, src, dst *Chain) {
 	clients, err := src.QueryClients(1, 1000)
 	require.NoError(t, err)
-	require.Equal(t, len(clients), 1)
-	require.Equal(t, clients[0].GetID(), src.PathEnd.ClientID)
-
+	require.Equal(t, len(clients), 2)
+	require.Equal(t, clients[1].GetID(), src.PathEnd.ClientID)
 	client, err := src.QueryClientState()
 	require.NoError(t, err)
 	require.NotNil(t, client)
@@ -44,7 +43,7 @@ func testConnection(t *testing.T, src, dst *Chain) {
 	require.Equal(t, conns[0].GetClientID(), src.PathEnd.ClientID)
 	require.Equal(t, conns[0].GetCounterparty().GetClientID(), dst.PathEnd.ClientID)
 	require.Equal(t, conns[0].GetCounterparty().GetConnectionID(), dst.PathEnd.ConnectionID)
-	require.Equal(t, conns[0].GetState().String(), "OPEN")
+	require.Equal(t, conns[0].GetState().String(), "STATE_OPEN")
 
 	h, err := src.Client.Status()
 	require.NoError(t, err)
@@ -54,7 +53,7 @@ func testConnection(t *testing.T, src, dst *Chain) {
 	require.Equal(t, conn.Connection.GetClientID(), src.PathEnd.ClientID)
 	require.Equal(t, conn.Connection.GetCounterparty().GetClientID(), dst.PathEnd.ClientID)
 	require.Equal(t, conn.Connection.GetCounterparty().GetConnectionID(), dst.PathEnd.ConnectionID)
-	require.Equal(t, conn.Connection.GetState().String(), "OPEN")
+	require.Equal(t, conn.Connection.GetState().String(), "STATE_OPEN")
 }
 
 // testChannelPair tests that the only channel on src and dst is between the two chains
@@ -68,8 +67,8 @@ func testChannel(t *testing.T, src, dst *Chain) {
 	chans, err := src.QueryChannels(1, 1000)
 	require.NoError(t, err)
 	require.Equal(t, 1, len(chans))
-	require.Equal(t, chans[0].Ordering.String(), "ORDERED")
-	require.Equal(t, chans[0].State.String(), "OPEN")
+	require.Equal(t, chans[0].Ordering.String(), "ORDER_ORDERED")
+	require.Equal(t, chans[0].State.String(), "STATE_OPEN")
 	require.Equal(t, chans[0].Counterparty.ChannelID, dst.PathEnd.ChannelID)
 	require.Equal(t, chans[0].Counterparty.GetPortID(), dst.PathEnd.PortID)
 
@@ -78,8 +77,8 @@ func testChannel(t *testing.T, src, dst *Chain) {
 
 	ch, err := src.QueryChannel(h.SyncInfo.LatestBlockHeight)
 	require.NoError(t, err)
-	require.Equal(t, ch.Channel.Ordering.String(), "ORDERED")
-	require.Equal(t, ch.Channel.State.String(), "OPEN")
+	require.Equal(t, ch.Channel.Ordering.String(), "ORDER_ORDERED")
+	require.Equal(t, ch.Channel.State.String(), "STATE_OPEN")
 	require.Equal(t, ch.Channel.Counterparty.ChannelID, dst.PathEnd.ChannelID)
 	require.Equal(t, ch.Channel.Counterparty.GetPortID(), dst.PathEnd.PortID)
 }

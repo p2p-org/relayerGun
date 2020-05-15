@@ -2,12 +2,11 @@ package cmd
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	chanState "github.com/cosmos/cosmos-sdk/x/ibc/04-channel/exported"
-	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 	"github.com/iqlusioninc/relayer/relayer"
 	"github.com/spf13/cobra"
 	"strconv"
 	"time"
+	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 )
 
 ////////////////////////////////////////
@@ -542,7 +541,7 @@ func createChannelStepCmd() *cobra.Command {
 		Args:    cobra.ExactArgs(11),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
-			ordering := chanState.OrderFromString(args[10])
+			ordering := relayer.OrderFromString(args[10])
 			chains, err := config.Chains.Gets(src, dst)
 			if err != nil {
 				return err
