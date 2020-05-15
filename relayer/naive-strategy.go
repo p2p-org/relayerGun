@@ -266,8 +266,8 @@ func packetMsgFromTxQuery(src, dst *Chain, sh *SyncHeaders, seq uint64) (*Chain,
 	case err != nil:
 	case len(rcvPackets) == 0 && len(timeoutPackets) == 0:
 		return nil, nil, fmt.Errorf("no relay msgs created from query response")
-	//case len(rcvPackets)+len(timeoutPackets) > 1:
-	//	return nil, nil, fmt.Errorf("more than one relay msg found in tx query")
+		//case len(rcvPackets)+len(timeoutPackets) > 1:
+		//	return nil, nil, fmt.Errorf("more than one relay msg found in tx query")
 	}
 
 	// sanity check the sequence number against the one we are querying for
@@ -287,7 +287,7 @@ func packetMsgFromTxQuery(src, dst *Chain, sh *SyncHeaders, seq uint64) (*Chain,
 	for i, _ := range rcvPackets {
 		msgs = append(msgs, rcvPackets[i].Msg(dst, src))
 	}
-	return src, msgs, nil
+	return dst, msgs, nil
 	//if seq != timeoutPackets[0].Seq() {
 	//	return nil, nil, fmt.Errorf("Different sequence number from query (%d vs %d)", seq, timeoutPackets[0].Seq())
 	//}
