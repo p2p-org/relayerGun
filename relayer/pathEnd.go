@@ -4,7 +4,6 @@ import (
 	"strings"
 	"time"
 
-	nftTypes "github.com/corestario/marketplace/x/nftIBC/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	clientTypes "github.com/cosmos/cosmos-sdk/x/ibc/02-client/types"
 	connTypes "github.com/cosmos/cosmos-sdk/x/ibc/03-connection/types"
@@ -13,6 +12,7 @@ import (
 	xferTypes "github.com/cosmos/cosmos-sdk/x/ibc/20-transfer/types"
 	commitmenttypes "github.com/cosmos/cosmos-sdk/x/ibc/23-commitment/types"
 	ibctypes "github.com/cosmos/cosmos-sdk/x/ibc/types"
+	nftTypes "github.com/p2p-org/marketplace/x/nftIBC/types"
 )
 
 // TODO: add Order chanTypes.Order as a property and wire it up in validation

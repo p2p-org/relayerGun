@@ -18,7 +18,7 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	app "github.com/corestario/marketplace"
+	app "github.com/p2p-org/marketplace"
 	"os"
 	"strings"
 
