@@ -7,11 +7,12 @@ require (
 	github.com/avast/retry-go v2.6.0+incompatible
 	github.com/cenkalti/backoff/v3 v3.2.2 // indirect
 	github.com/containerd/continuity v0.0.0-20200228182428-0f16d7a0959c // indirect
-	github.com/p2p-org/marketplace v0.0.0-20191227095102-07bb99b5023b
 	github.com/cosmos/cosmos-sdk v0.38.0
+	github.com/cosmos/gaia v1.0.0
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d
 	github.com/gorilla/mux v1.7.4
 	github.com/ory/dockertest/v3 v3.5.5
+	github.com/p2p-org/marketplace v0.0.0-20191227095102-07bb99b5023b
 	github.com/sirupsen/logrus v1.5.0 // indirect
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/viper v1.6.3
@@ -23,7 +24,7 @@ require (
 
 replace github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
 
-replace github.com/p2p-org/marketplace => ./../marketplace
+replace github.com/p2p-org/marketplace => github.com/p2p-org/marketplace v0.0.0-20200518191713-200e13371b9c
 
 replace github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.34.4-0.20200507135526-b3cada10017d
 
