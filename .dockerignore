@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+*.swp
+*.swo
+
+# Build
+vendor
+.vendor-new
+build
+
+# IDE
+.vscode
+.idea
+*.iml
+.github
+.git
+.cache
+*.md
+
+*.log
+
+/data
+*.yml

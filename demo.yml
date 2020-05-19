@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  relayer:
+    container_name: relayer
+    image: "relayer:latest"
+    restart: unless-stopped
+    volumes:
+      - ~/data:/data
+    networks:
+      - dwh-tier
+    environment:
+      - DATA_DIR=/data
+      - CHAIN_ID0=ibc0
+      - CHAIN_ID1=ibc1
+
+networks:
+  dwh-tier:
+    external:
+      name: dwh-network
