@@ -30,6 +30,8 @@ var (
 	flagDelay       = "delay"
 	flagGenOnly     = "gen-only"
 	flagRelay       = "relay"
+	flagMaxTxSize    = "max-tx-size"
+	flagMaxMsgLength = "max-msgs"
 )
 
 func genOnlyFlag(cmd *cobra.Command) *cobra.Command {
@@ -59,6 +61,14 @@ func liteFlags(cmd *cobra.Command) *cobra.Command {
 		panic(err)
 	}
 	if err := viper.BindPFlag(flagURL, cmd.Flags().Lookup(flagURL)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func heightFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().Int64(flags.FlagHeight, -1, "Height of headers to fetch")
+	if err := viper.BindPFlag(flags.FlagHeight, cmd.Flags().Lookup(flags.FlagHeight)); err != nil {
 		panic(err)
 	}
 	return cmd
@@ -213,6 +223,18 @@ func delayFlag(cmd *cobra.Command) *cobra.Command {
 func metricsPortFlag(cmd *cobra.Command) *cobra.Command {
 	cmd.Flags().StringP(flagMetricsPort, "m", "", "metrics port")
 	if err := viper.BindPFlag(flagMetricsPort, cmd.Flags().Lookup(flagMetricsPort)); err != nil {
+		panic(err)
+	}
+	return cmd
+}
+
+func strategyFlag(cmd *cobra.Command) *cobra.Command {
+	cmd.Flags().StringP(flagMaxTxSize, "s", "2", "maximum size (in MB) of the messages in a relay transaction")
+	cmd.Flags().StringP(flagMaxMsgLength, "l", "5", "maximum number of messages in a relay transaction")
+	if err := viper.BindPFlag(flagMaxTxSize, cmd.Flags().Lookup(flagMaxTxSize)); err != nil {
+		panic(err)
+	}
+	if err := viper.BindPFlag(flagMaxMsgLength, cmd.Flags().Lookup(flagMaxMsgLength)); err != nil {
 		panic(err)
 	}
 	return cmd

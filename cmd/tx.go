@@ -245,7 +245,13 @@ func relayMsgsCmd() *cobra.Command {
 				return err
 			}
 
-			if err = relayer.RelayPacketsOrderedChan(c[src], c[dst], sh, sp); err != nil {
+			path := config.Paths.MustGet(args[0])
+			strategy, err := GetStrategyWithOptions(cmd, path.MustGetStrategy())
+			if err != nil {
+				return err
+			}
+
+			if err = strategy.RelayPacketsOrderedChan(c[src], c[dst], sp, sh); err != nil {
 				return err
 			}
 
@@ -255,7 +261,7 @@ func relayMsgsCmd() *cobra.Command {
 
 	cmd = gasFlag(cmd)
 	cmd = gasPriceFlag(cmd)
-	return cmd
+	return strategyFlag(cmd)
 }
 
 func sendPacketCmd() *cobra.Command {

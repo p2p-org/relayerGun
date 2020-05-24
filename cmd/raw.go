@@ -2,11 +2,11 @@ package cmd
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 	"github.com/iqlusioninc/relayer/relayer"
 	"github.com/spf13/cobra"
-	"strconv"
+	"github.com/cosmos/cosmos-sdk/client/flags"
 	"time"
-	tmclient "github.com/cosmos/cosmos-sdk/x/ibc/07-tendermint/types"
 )
 
 ////////////////////////////////////////
@@ -42,10 +42,10 @@ func rawTransactionCmd() *cobra.Command {
 }
 func updateClientCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "update-client [src-chain-id] [dst-chain-id] [client-id] [[height]]",
+		Use:     "update-client [src-chain-id] [dst-chain-id] [client-id]",
 		Aliases: []string{"uc"},
 		Short:   "update client for dst-chain on src-chain",
-		Args:    cobra.RangeArgs(3, 4),
+		Args:    cobra.ExactArgs(3),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			src, dst := args[0], args[1]
 
@@ -58,18 +58,15 @@ func updateClientCmd() *cobra.Command {
 				return err
 			}
 
-			height := 0
-			if len(args) == 4 {
-				height, err = strconv.Atoi(args[3])
-				if err != nil {
-					return err
-				}
+			height, err := cmd.Flags().GetInt64(flags.FlagHeight)
+			if err != nil {
+				return err
 			}
 
 			var dstHeader *tmclient.Header
 
 			if height > 0 {
-				dstHeader, err = chains[dst].UpdateLiteWithHeaderHeight(int64(height))
+				dstHeader, err = chains[dst].UpdateLiteWithHeaderHeight(height)
 				if err != nil {
 					return err
 				}
@@ -129,7 +126,7 @@ func updateClientCmd() *cobra.Command {
 	cmd = gasPriceFlag(cmd)
 	cmd = delayFlag(cmd)
 	cmd = genOnlyFlag(cmd)
-	return cmd
+	return heightFlag(cmd)
 }
 
 func createClientCmd() *cobra.Command {
@@ -154,7 +151,7 @@ func createClientCmd() *cobra.Command {
 				return err
 			}
 
-			return sendAndPrint([]sdk.Msg{chains[src].PathEnd.CreateClient(dstHeader, chains[src].GetTrustingPeriod(), chains[src].MustGetAddress())}, chains[src], cmd)
+			return sendAndPrint([]sdk.Msg{chains[src].PathEnd.CreateClient(dstHeader, chains[dst].GetTrustingPeriod(), chains[src].MustGetAddress())}, chains[src], cmd)
 		},
 	}
 	return cmd

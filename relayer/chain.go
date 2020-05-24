@@ -19,6 +19,7 @@ import (
 	codecstd "github.com/cosmos/cosmos-sdk/std"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth"
+	authclient "github.com/cosmos/cosmos-sdk/x/auth/client"
 	"github.com/cosmos/go-bip39"
 	"github.com/tendermint/tendermint/libs/log"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
@@ -236,7 +237,7 @@ func (src *Chain) SendMsgsSync(datagrams []sdk.Msg) (res sdk.TxResponse, err err
 }
 
 // BuildAndSignTx takes messages and builds, signs and marshals a sdk.Tx to prepare it for broadcast
-func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
+func (src *Chain) BuildAndSignTx(msgs []sdk.Msg) ([]byte, error) {
 	done := src.UseSDKContext()
 	defer done()
 
@@ -259,13 +260,20 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 		}
 	}
 
-	bldr := auth.NewTxBuilder(
+	ctx := sdkCtx.CLIContext{Client: src.Client}
+	txBldr := auth.NewTxBuilder(
 		auth.DefaultTxEncoder(src.Amino.Codec), acc.GetAccountNumber(),
-		acc.GetSequence(), gas, src.GasAdjustment, false, src.ChainID,
+		acc.GetSequence(), gas, src.GasAdjustment, true, src.ChainID,
 		src.Memo, sdk.NewCoins(), gp).WithKeybase(src.Keybase)
+	if src.GasAdjustment > 0 {
+		txBldr, err = authclient.EnrichWithGas(txBldr, ctx, msgs)
+		if err != nil {
+			return nil, err
+		}
+	}
 
 	if src.debug {
-		msg, err := bldr.BuildSignMsg(datagram)
+		msg, err := txBldr.BuildSignMsg(msgs)
 		if err != nil {
 			return nil, err
 		}
@@ -273,7 +281,7 @@ func (src *Chain) BuildAndSignTx(datagram []sdk.Msg) ([]byte, error) {
 		fmt.Println(string(json))
 	}
 
-	return bldr.BuildAndSign(src.Key, ckeys.DefaultKeyPass, datagram)
+	return txBldr.BuildAndSign(src.Key, ckeys.DefaultKeyPass, msgs)
 }
 
 // BroadcastTxCommit takes the marshaled transaction bytes and broadcasts them
@@ -322,7 +330,7 @@ func (src *Chain) Subscribe(query string) (<-chan ctypes.ResultEvent, context.Ca
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	eventChan, err := src.Client.Subscribe(ctx, fmt.Sprintf("%s-subscriber-%s", src.ChainID, suffix), query)
+	eventChan, err := src.Client.Subscribe(ctx, fmt.Sprintf("%s-subscriber-%s", src.ChainID, suffix), query, 1000)
 	return eventChan, cancel, err
 }
 
