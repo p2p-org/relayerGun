@@ -331,7 +331,7 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 			Dst: []sdk.Msg{},
 		}
 
-		if txs.SendSync(src, dst); !txs.Success() {
+		if txs.Send(src, dst); !txs.Success() {
 			return fmt.Errorf("failed to send first transaction")
 		}
 		log.Println("transfer sent")
