@@ -37,7 +37,10 @@ func defaultPacketTimeoutStamp() uint64 {
 func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequences) error {
 
 	// create the appropriate update client messages
-	msgs := &RelayMsgs{Src: []sdk.Msg{}, Dst: []sdk.Msg{}}
+	msgs := &RelayMsgs{
+		Src: []sdk.Msg{},
+		Dst: []sdk.Msg{},
+	}
 
 	// add messages for src -> dst
 	for _, seq := range sp.Src {
@@ -271,37 +274,13 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		amount.Denom = fmt.Sprintf("%s/%s/%s", src.PathEnd.PortID, src.PathEnd.ChannelID, amount.Denom)
 	}
 
-	if relay {
-		go func() {
-			fmt.Println("Start relaying...")
-			for {
-				sh, err := NewSyncHeaders(src, dst)
-				if err != nil {
-					log.Println(err.Error())
-					continue
-				}
-
-				sp, err := UnrelayedSequences(src, dst, sh)
-				if err != nil {
-					log.Println(err.Error())
-					continue
-				}
-
-				if err = RelayPacketsOrderedChan(src, dst, sh, sp); err != nil {
-					log.Println(err.Error())
-				}
-				time.Sleep(1 * time.Second)
-			}
-
-		}()
-	}
-
 	forever := repeats == 0
 
 	for repeats > 0 || forever {
 
 		var (
 			done          func()
+			timeoutHeight uint64
 			dstAddrString string
 			txs           RelayMsgs
 		)
@@ -309,6 +288,8 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		if err != nil {
 			return err
 		}
+
+		timeoutHeight = dstHeader.GetHeight() + uint64(defaultPacketTimeout)
 
 		// Properly render the address string
 		done = dst.UseSDKContext()
@@ -334,8 +315,98 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		if txs.SendSync(src, dst); !txs.Success() {
 			return fmt.Errorf("failed to send first transaction")
 		}
+		time.Sleep(2 * time.Second)
 		log.Println("transfer sent")
-		time.Sleep(1 * time.Second)
+
+		var (
+			hs                 map[string]*tmclient.Header
+			seqRecv            chanTypes.RecvResponse
+			seqSend            uint64
+			srcCommitResponses []CommitmentResponse
+		)
+
+		if err = retry.Do(func() error {
+			srcCommitResponses = nil
+
+			hs, err = UpdatesWithHeaders(src, dst)
+			if err != nil {
+				return err
+			}
+
+			seqRecv, err = dst.QueryNextSeqRecv(hs[dst.ChainID].Height)
+			if err != nil {
+				return err
+			}
+
+			seqSend, err = src.QueryNextSeqSend(hs[src.ChainID].Height)
+			if err != nil {
+				return err
+			}
+
+			for i := seqSend - N; i < seqSend; i++ {
+				srcCommitRes, err := src.QueryPacketCommitment(hs[src.ChainID].Height-1, int64(i))
+				if err != nil {
+					return err
+				}
+
+				if srcCommitRes.Proof.Proof == nil {
+					return fmt.Errorf("proof nil, retrying")
+				}
+				srcCommitResponses = append(srcCommitResponses, srcCommitRes)
+			}
+
+			return nil
+		}); err != nil {
+			return err
+		}
+
+		// Properly render the source and destination address strings
+		done = src.UseSDKContext()
+		srcAddrString := src.MustGetAddress().String()
+		done()
+
+		done = dst.UseSDKContext()
+		dstAddrString = dstAddr.String()
+		done()
+
+		// reconstructing packet data here instead of retrieving from an indexed node
+		xferPacket := src.PathEnd.XferPacket(
+			sdk.NewCoins(amount),
+			srcAddrString,
+			dstAddrString,
+		)
+
+		dstMsgs := make([]sdk.Msg, 0, N+1)
+
+		dstMsgs = append(dstMsgs, dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()))
+
+		for i, srcCommitRes := range srcCommitResponses {
+			dstMsgs = append(dstMsgs,
+				dst.PathEnd.MsgRecvPacket(
+					src.PathEnd,
+					seqRecv.NextSequenceRecv+uint64(i),
+					timeoutHeight,
+					defaultPacketTimeoutStamp(),
+					xferPacket,
+					srcCommitRes.Proof,
+					srcCommitRes.ProofHeight,
+					dst.MustGetAddress(),
+				))
+		}
+
+		// Debugging by simply passing in the packet information that we know was sent earlier in the SendPacket
+		// part of the command. In a real relayer, this would be a separate command that retrieved the packet
+		// information from an indexing node
+		txs = RelayMsgs{
+			Dst: dstMsgs,
+			Src: []sdk.Msg{},
+		}
+
+		if txs.Send(src, dst); !txs.Success() {
+			return fmt.Errorf("failed to receive tx")
+		}
+		log.Println("transfer received")
+
 		repeats--
 	}
 	return nil

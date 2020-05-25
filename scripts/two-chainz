@@ -128,7 +128,7 @@ gaiacli config --home $chainid1/$gclpth node http://localhost:26557 &> /dev/null
 echo "Starting Gaiad instances..."
 gaiad --home $GAIA_DATA/$chainid0/n0/gaiad start --pruning=nothing --log_level=debug > $chainid0.log 2>&1 &
 gaiad --home $GAIA_DATA/$chainid1/n0/gaiad start --pruning=nothing --log_level=debug > $chainid1.log 2>&1 &
-
-#tail -f $chainid1.log
-
-rly faucet
+#
+##tail -f $chainid1.log
+#
+#rly faucet
