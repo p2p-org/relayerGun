@@ -34,7 +34,7 @@ func defaultPacketTimeoutStamp() uint64 {
 
 // RelayPacketsOrderedChan creates transactions to clear both queues
 // CONTRACT: the SyncHeaders passed in here must be up to date or being kept updated
-func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequences) error {
+func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequences, direction string) error {
 
 	// create the appropriate update client messages
 	msgs := &RelayMsgs{
@@ -42,32 +42,36 @@ func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequence
 		Dst: []sdk.Msg{},
 	}
 
-	// add messages for src -> dst
-	for _, seq := range sp.Src {
-		chain, msg, err := packetMsgFromTxQuery(src, dst, sh, seq)
-		if err != nil {
-			return err
+	if direction == "src" || direction == "both" {
+		// add messages for src -> dst
+		for _, seq := range sp.Src {
+			chain, msg, err := packetMsgFromTxQuery(src, dst, sh, seq)
+			if err != nil {
+				return err
+			}
+			if chain == dst {
+				msgs.Dst = append(msgs.Dst, msg...)
+			} else {
+				msgs.Src = append(msgs.Src, msg...)
+			}
+			break
 		}
-		if chain == dst {
-			msgs.Dst = append(msgs.Dst, msg...)
-		} else {
-			msgs.Src = append(msgs.Src, msg...)
-		}
-		break
 	}
 
-	//add messages for dst -> src
-	for _, seq := range sp.Dst {
-		chain, msg, err := packetMsgFromTxQuery(dst, src, sh, seq)
-		if err != nil {
-			return err
+	if direction == "dst" || direction == "both" {
+		//add messages for dst -> src
+		for _, seq := range sp.Dst {
+			chain, msg, err := packetMsgFromTxQuery(dst, src, sh, seq)
+			if err != nil {
+				return err
+			}
+			if chain == src {
+				msgs.Src = append(msgs.Src, msg...)
+			} else {
+				msgs.Dst = append(msgs.Dst, msg...)
+			}
+			break
 		}
-		if chain == src {
-			msgs.Src = append(msgs.Src, msg...)
-		} else {
-			msgs.Dst = append(msgs.Dst, msg...)
-		}
-		break
 	}
 
 	if !msgs.Ready() {

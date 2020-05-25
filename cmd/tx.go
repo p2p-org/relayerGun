@@ -203,10 +203,10 @@ func fullPathCmd() *cobra.Command {
 
 func relayMsgsCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:     "relay [path-name]",
+		Use:     "relay [path-name] [[direction]]",
 		Aliases: []string{"rly", "queue"},
 		Short:   "relay any packets that remain to be relayed on a given path, in both directions",
-		Args:    cobra.ExactArgs(1),
+		Args:    cobra.RangeArgs(1, 2),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			c, src, dst, err := config.ChainsFromPath(args[0])
 			if err != nil {
@@ -235,6 +235,13 @@ func relayMsgsCmd() *cobra.Command {
 			c[src].NewGas = gas
 			c[dst].NewGas = gas
 
+			direction := ""
+			if args[1] == "" {
+				direction = "both"
+			} else {
+				direction = args[1]
+			}
+
 			sh, err := relayer.NewSyncHeaders(c[src], c[dst])
 			if err != nil {
 				return err
@@ -245,7 +252,7 @@ func relayMsgsCmd() *cobra.Command {
 				return err
 			}
 
-			if err = relayer.RelayPacketsOrderedChan(c[src], c[dst], sh, sp); err != nil {
+			if err = relayer.RelayPacketsOrderedChan(c[src], c[dst], sh, sp, direction); err != nil {
 				return err
 			}
 
