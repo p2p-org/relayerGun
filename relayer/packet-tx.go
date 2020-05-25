@@ -322,6 +322,10 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		time.Sleep(2 * time.Second)
 		log.Println("transfer sent")
 
+		if !relay {
+			continue
+		}
+
 		var (
 			hs                 map[string]*tmclient.Header
 			seqRecv            chanTypes.RecvResponse
