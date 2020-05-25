@@ -40,6 +40,8 @@ func RelayPacketsOrderedChan(src, dst *Chain, sh *SyncHeaders, sp *RelaySequence
 	msgs := &RelayMsgs{
 		Src: []sdk.Msg{},
 		Dst: []sdk.Msg{},
+		//MaxTxSize: 2*1048576,
+		//MaxMsgLength: 100,
 	}
 
 	if direction == "src" || direction == "both" {
@@ -280,7 +282,10 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 
 	forever := repeats == 0
 
+	srcAddress := src.MustGetAddress()
+
 	for repeats > 0 || forever {
+		repeats--
 
 		var (
 			done          func()
@@ -304,9 +309,13 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 
 		msgs := make([]sdk.Msg, 0, N)
 
+		fmt.Println("Generating msgs....")
+
+		coins := sdk.NewCoins(amount)
+
 		for i := uint64(0); i < N; i++ {
 			msgs = append(msgs, src.PathEnd.MsgTransfer(
-				dst.PathEnd, dstHeader.GetHeight(), sdk.NewCoins(amount), dstAddrString, src.MustGetAddress(),
+				dst.PathEnd, dstHeader.GetHeight(), coins, dstAddrString, srcAddress,
 			))
 		}
 
@@ -314,7 +323,11 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		txs = RelayMsgs{
 			Src: msgs,
 			Dst: []sdk.Msg{},
+			//MaxTxSize: 2*1048576,
+			//MaxMsgLength: 100,
 		}
+
+		fmt.Println("Sending msgs...")
 
 		if txs.SendSync(src, dst); !txs.Success() {
 			return fmt.Errorf("failed to send first transaction")
@@ -388,6 +401,8 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 
 		dstMsgs = append(dstMsgs, dst.PathEnd.UpdateClient(hs[src.ChainID], dst.MustGetAddress()))
 
+		dstAddr := dst.MustGetAddress()
+
 		for i, srcCommitRes := range srcCommitResponses {
 			dstMsgs = append(dstMsgs,
 				dst.PathEnd.MsgRecvPacket(
@@ -398,7 +413,7 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 					xferPacket,
 					srcCommitRes.Proof,
 					srcCommitRes.ProofHeight,
-					dst.MustGetAddress(),
+					dstAddr,
 				))
 		}
 
@@ -408,14 +423,14 @@ func (src *Chain) Gun(dst *Chain, amount sdk.Coin, dstAddr sdk.AccAddress, sourc
 		txs = RelayMsgs{
 			Dst: dstMsgs,
 			Src: []sdk.Msg{},
+			//MaxTxSize: 2*1048576,
+			//MaxMsgLength: 100,
 		}
 
-		if txs.Send(src, dst); !txs.Success() {
+		if txs.SendSync(src, dst); !txs.Success() {
 			return fmt.Errorf("failed to receive tx")
 		}
 		log.Println("transfer received")
-
-		repeats--
 	}
 	return nil
 }
