@@ -12,14 +12,13 @@ require (
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d
 	github.com/gorilla/mux v1.7.4
 	github.com/ory/dockertest/v3 v3.5.5
-	github.com/prometheus/client_golang v1.5.1
-	github.com/sirupsen/logrus v1.5.0 // indirect
+	github.com/prometheus/client_golang v1.11.1
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/viper v1.7.0
 	github.com/stretchr/testify v1.5.1
 	github.com/tendermint/tendermint v0.33.4
 	github.com/tendermint/tm-db v0.5.1
-	gopkg.in/yaml.v2 v2.2.8
+	gopkg.in/yaml.v2 v2.3.0
 )
 
 replace github.com/keybase/go-keychain => github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4
